@@ -92,7 +92,6 @@
             category.image_url      = [currentCategory objectForKey:@"image"];
             category.name           = [currentCategory objectForKey:@"name"];
             category.image          = [NSData dataWithContentsOfURL:[NSURL URLWithString:category.image_url]];
-            NSLog(@"%@", category.image);
             category.last_update    = [[NSDate alloc] init];
         }
         
@@ -161,6 +160,18 @@
         activity.image_url      = [currentActivity objectForKey:@"image"];
         activity.tags           = [currentActivity objectForKey:@"tags"];
         activity.title          = [currentActivity objectForKey:@"title"];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Institution"];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category"
+                                                  inManagedObjectContext:managedObjectContext];
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"id == %d", activity.category_id];
+        
+        [fetchRequest setEntity:entity];
+        [fetchRequest setPredicate:pred];
+        
+        NSArray *queryResults = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        Category *category = [queryResults objectAtIndex:0];
+        [activity setFkactivity2category:category];
     }
     
     [myApp saveContext];
