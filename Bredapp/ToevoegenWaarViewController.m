@@ -19,7 +19,6 @@
 @end
 
 @implementation ToevoegenWaarViewController{
-    
     NSMutableArray *myAnnotations;
 }
 
@@ -41,6 +40,8 @@
     [super viewDidLoad];
     
     addressField.delegate = self;
+
+    myAnnotations = [[NSMutableArray alloc] init];
     
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
@@ -184,6 +185,8 @@
             [self.mapView removeAnnotations:myAnnotations];
             [self.mapView addAnnotation: annotation];
             
+            [myAnnotations removeAllObjects];
+            
             [myAnnotations addObject:annotation];
             
             MKCoordinateRegion region;
@@ -240,6 +243,7 @@
     [self.mapView removeAnnotations:myAnnotations];
     [self.mapView addAnnotation: annotation];
     
+    [myAnnotations removeAllObjects];
     [myAnnotations addObject:annotation];
     
     region.span = span;
@@ -285,6 +289,7 @@
             [self.mapView removeAnnotations:myAnnotations];
             [self.mapView addAnnotation: annotation];
             
+            [myAnnotations removeAllObjects];
             [myAnnotations addObject:annotation];
             
             MKCoordinateRegion region;
