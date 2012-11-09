@@ -1,8 +1,8 @@
 //
 //  Category.m
-//  Breda_Inladen
+//  Bredapp
 //
-//  Created by Rick Doorakkers on 30-10-12.
+//  Created by Rick Doorakkers on 09-11-12.
 //  Copyright (c) 2012 Avans_Groep2. All rights reserved.
 //
 
@@ -14,7 +14,8 @@
 @dynamic category_id;
 @dynamic content;
 @dynamic image;
-@dynamic name;
 @dynamic image_url;
+@dynamic name;
+@dynamic last_update;
 
 @end

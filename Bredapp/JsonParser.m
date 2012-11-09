@@ -31,35 +31,73 @@
 
 - (void)loadCategories
 {
-    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.larsvanbeek.nl/BredAppWs/categories"]
-                                                cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                            timeoutInterval:10.0];
+    bool reloadCategories = true;
+    
 	NSError* error = nil;
-	NSURLResponse* response = nil;
-    NSData * jsonData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category"
+                                              inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setIncludesSubentities:NO];
     
-    if (error)
+    NSArray *results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+
+    if (!error && [results count] > 0)
     {
-        NSLog(@"Error performing request %@", error);
-    }
-    
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSDictionary *categories = [jsonString objectFromJSONString];
-    NSDictionary *currentCategory;
-    
-    for (NSString *key in categories)
-    {
-        currentCategory = [categories objectForKey:key];
-        Category *category = (Category *) [NSEntityDescription insertNewObjectForEntityForName:@"Category"
-                                                                        inManagedObjectContext:[self managedObjectContext]];
+        Category *latest = [results objectAtIndex:0];
+        NSDate *curDate = [[NSDate alloc] init];
+        NSTimeInterval distanceBetweenDates = [curDate timeIntervalSinceDate:latest.last_update];
         
-        category.category_id    = [NSNumber numberWithInt:[[currentCategory objectForKey:@"id"] intValue]];
-        category.content        = [currentCategory objectForKey:@"content"];
-        category.image_url      = [currentCategory objectForKey:@"image"];
-        category.name           = [currentCategory objectForKey:@"name"];
+        if (distanceBetweenDates < 1209600)
+        {
+            reloadCategories = false;
+        }
+        else
+        {
+            for (NSManagedObject *managedObject in results)
+            {
+                [managedObjectContext deleteObject:managedObject];
+            }
+            
+            [myApp saveContext];
+        }
     }
     
-    [myApp saveContext];
+    if (reloadCategories)
+    {
+        NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.larsvanbeek.nl/BredAppWs/categories"]
+                                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                timeoutInterval:10.0];
+
+        NSURLResponse* response = nil;
+        NSData * jsonData = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
+        
+        if (error)
+        {
+            NSLog(@"Error performing request %@", error);
+        }
+        
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSDictionary *categories = [jsonString objectFromJSONString];
+        NSDictionary *currentCategory;
+        
+        for (NSString *key in categories)
+        {
+            currentCategory = [categories objectForKey:key];
+            Category *category = (Category *) [NSEntityDescription insertNewObjectForEntityForName:@"Category"
+                                                                            inManagedObjectContext:[self managedObjectContext]];
+            
+            category.category_id    = [NSNumber numberWithInt:[[currentCategory objectForKey:@"id"] intValue]];
+            category.content        = [currentCategory objectForKey:@"content"];
+            category.image_url      = [currentCategory objectForKey:@"image"];
+            category.name           = [currentCategory objectForKey:@"name"];
+            category.image          = [NSData dataWithContentsOfURL:[NSURL URLWithString:category.image_url]];
+            NSLog(@"%@", category.image);
+            category.last_update    = [[NSDate alloc] init];
+        }
+        
+        [myApp saveContext];
+    }
     
     [self performSelectorOnMainThread:@selector(categoriesDone) withObject:nil waitUntilDone:YES];
 }
@@ -127,10 +165,7 @@
     
     [myApp saveContext];
     
-    NSLog(@"blasdf");
     [self performSelectorOnMainThread:@selector(activitiesDone) withObject:nil waitUntilDone:YES];
-    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"ActivitiesDone"
-    //                                                        object:nil];
 }
 
 @end

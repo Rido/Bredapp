@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="K0i-VH-Oud">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="K0i-VH-Oud">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Splash View Controller-->
@@ -138,7 +138,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="zaq-rk-8PW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Instellingen" image="20-gear-2.png" id="OnB-em-shW"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nU6-FF-iM0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nU6-FF-iM0" customClass="CustomNavBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -169,7 +169,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="9II-4P-lrj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Toevoegen" image="216-compose.png" id="JyR-O1-bwD"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zLm-za-VKF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zLm-za-VKF" customClass="CustomNavBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -340,7 +340,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="D3w-pL-Rgs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activiteiten" image="06-magnify.png" id="bvR-6V-MAE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JAu-jA-P1a">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JAu-jA-P1a" customClass="CustomNavBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -356,7 +356,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="aeV-8b-Wdl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Mijn Activiteiten" image="53-house.png" id="tJE-h3-dvr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CV6-Cd-jiL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CV6-Cd-jiL" customClass="CustomNavBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -677,6 +677,9 @@
                 <relationship kind="outlet" name="start" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="CustomNavBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavBar.h"/>
         </class>
         <class className="DetailActivityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailActivityViewController.h"/>
