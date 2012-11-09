@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="K0i-VH-Oud">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="SplashViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Default.png" id="ZwZ-GM-CIZ">
+                                <rect key="frame" x="0.0" y="-20" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.97981106510000004" green="0.22889741929999999" blue="0.27719502820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="8f4-bB-WlH">
+                                <rect key="frame" x="142" y="367" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rGT-lh-vpd">
+                                <rect key="frame" x="46" y="412" width="229" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lPZ-zl-bLC"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="8f4-bB-WlH" id="YqQ-Kr-3VO"/>
+                        <outlet property="backgroundImage" destination="ZwZ-GM-CIZ" id="5kZ-UF-OVG"/>
+                        <outlet property="statusLabel" destination="rGT-lh-vpd" id="wF2-KA-MdZ"/>
+                        <segue destination="EBx-B8-T2z" kind="modal" identifier="doneLoading" id="ycB-xK-Feq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="225"/>
+        </scene>
+        <!--Table View Controller - Mijn Activiteiten-->
+        <scene sceneID="fMJ-wa-CP8">
+            <objects>
+                <tableViewController id="HH3-qf-HiZ" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="c3Y-cq-3af">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iLB-SZ-uGs">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Mijn Activiteiten" id="LVH-M4-uYZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t6q-6X-jyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="-988"/>
+        </scene>
+        <!--Lijst Activiteiten View Controller - Lijst-->
+        <scene sceneID="8kJ-pb-PKu">
+            <objects>
+                <tableViewController id="DTY-Tr-nIY" customClass="LijstActiviteitenViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="FO1-Py-wHJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="50" id="t4V-8N-eqQ" customClass="ActivityCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1,1km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nRU-nK-RXy">
+                                            <rect key="frame" x="5" y="3" width="37" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="pmP-8G-k2d">
+                                            <rect key="frame" x="43" y="10" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F6U-VC-kbF">
+                                            <rect key="frame" x="81" y="3" width="219" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Starttijd" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gdx-yA-2Hg">
+                                            <rect key="frame" x="81" y="25" width="219" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="category" destination="pmP-8G-k2d" id="t0i-We-wXN"/>
+                                    <outlet property="distance" destination="nRU-nK-RXy" id="cJ7-qn-P4h"/>
+                                    <outlet property="start" destination="gdx-yA-2Hg" id="SxT-yd-PvK"/>
+                                    <outlet property="title" destination="F6U-VC-kbF" id="hEU-ah-RA1"/>
+                                    <segue destination="Aca-05-N1F" kind="push" identifier="goToDetails" id="9eo-yA-O6D"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lijst" id="zcE-UH-1fw">
+                        <barButtonItem key="rightBarButtonItem" title="Kaart" id="Czc-Qf-igT">
+                            <connections>
+                                <segue destination="dHA-W9-LWy" kind="push" identifier="goToMap" id="Is1-1H-duC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pD7-Sf-iCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="-397"/>
+        </scene>
+        <!--Navigation Controller - Instellingen-->
+        <scene sceneID="BBy-UB-qYD">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="zaq-rk-8PW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Instellingen" image="20-gear-2.png" id="OnB-em-shW"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nU6-FF-iM0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="l9p-7s-RQ9" kind="relationship" relationship="rootViewController" id="8DW-Am-Aow"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cc3-Co-UVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="1363"/>
+        </scene>
+        <!--View Controller - Instellingen-->
+        <scene sceneID="o4a-Jb-7ct">
+            <objects>
+                <viewController id="l9p-7s-RQ9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UO4-gQ-RHZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Instellingen" id="nuW-N6-tgD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMS-P2-l2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="1363"/>
+        </scene>
+        <!--Navigation Controller - Toevoegen-->
+        <scene sceneID="8f5-Gd-AsY">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="9II-4P-lrj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Toevoegen" image="216-compose.png" id="JyR-O1-bwD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zLm-za-VKF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wTR-fu-yF5" kind="relationship" relationship="rootViewController" id="Ony-Sw-aUp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWh-fP-1pT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="761"/>
+        </scene>
+        <!--Toevoegen Wat View Controller - Stap 1/3-->
+        <scene sceneID="Hnx-8E-deq">
+            <objects>
+                <viewController id="wTR-fu-yF5" customClass="ToevoegenWatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gr6-qF-JAv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no_photo.jpeg" id="F4p-Ob-FQV">
+                                <rect key="frame" x="201" y="19" width="100" height="100"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UBi-QA-0Rn">
+                                <rect key="frame" x="201" y="18" width="100" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectOrTakePhoto:" destination="wTR-fu-yF5" eventType="touchUpInside" id="2PO-ia-L0g"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Titel" borderStyle="roundedRect" minimumFontSize="17" id="ssg-h2-Hj9">
+                                <rect key="frame" x="20" y="33" width="159" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textfieldClicked:" destination="wTR-fu-yF5" eventType="touchDown" id="qmz-f5-yHA"/>
+                                    <action selector="textfieldLooseFocus:" destination="wTR-fu-yF5" eventType="editingDidEnd" id="UgV-Ux-X7j"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Categorie" borderStyle="roundedRect" minimumFontSize="17" id="i89-xP-gfS">
+                                <rect key="frame" x="20" y="89" width="159" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fzT-Le-aan">
+                                <rect key="frame" x="142" y="89" width="37" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="▼">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="categorieAction:" destination="wTR-fu-yF5" eventType="touchUpInside" id="tQF-gt-e9G"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tags, Tags..." borderStyle="roundedRect" minimumFontSize="17" id="OsS-jz-TZ4">
+                                <rect key="frame" x="21" y="135" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textfieldClicked:" destination="wTR-fu-yF5" eventType="touchDown" id="Uhf-JY-fre"/>
+                                    <action selector="textfieldLooseFocus:" destination="wTR-fu-yF5" eventType="editingDidEnd" id="O0H-2i-Zh8"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="-1" contentMode="scaleToFill" pagingEnabled="YES" id="uIn-Av-po8">
+                                <rect key="frame" x="21" y="178" width="280" height="72"/>
+                                <color key="backgroundColor" red="0.97397462970000004" green="0.97239422249999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Aanspreekpunt* optioneel" borderStyle="roundedRect" minimumFontSize="17" id="3Re-AQ-Y6Z">
+                                <rect key="frame" x="21" y="268" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textfieldClicked:" destination="wTR-fu-yF5" eventType="touchDown" id="N96-mQ-Aqn"/>
+                                    <action selector="textfieldLooseFocus:" destination="wTR-fu-yF5" eventType="editingDidEnd" id="Kcq-EG-unA"/>
+                                </connections>
+                            </textField>
+                            <view hidden="YES" contentMode="scaleToFill" id="afB-Zj-erd">
+                                <rect key="frame" x="21" y="119" width="160" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="hcW-h3-2kT">
+                                        <rect key="frame" x="0.0" y="39" width="66" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Muziek">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="categorieSelectionMade:" destination="wTR-fu-yF5" eventType="touchUpInside" id="YeA-og-bqv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="lDQ-kK-lvz">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Cultuur">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="categorieSelectionMade:" destination="wTR-fu-yF5" eventType="touchUpInside" id="cyS-PX-NIs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="8oG-fy-MjO">
+                                        <rect key="frame" x="0.0" y="20" width="66" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Sport">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="categorieSelectionMade:" destination="wTR-fu-yF5" eventType="touchUpInside" id="rRR-3u-bMk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91642099056603776" green="0.91642099056603776" blue="0.91642099056603776" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stap 1/3" id="Nvg-LB-mDT">
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="QNb-5z-ffJ">
+                            <connections>
+                                <segue destination="Khb-dl-kge" kind="push" identifier="toStep2" id="jzE-h9-Spc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aanspreekpunt" destination="3Re-AQ-Y6Z" id="6RX-bD-d09"/>
+                        <outlet property="beschrijving" destination="uIn-Av-po8" id="yxR-9i-suk"/>
+                        <outlet property="categorieButton" destination="fzT-Le-aan" id="LQg-Wd-X5r"/>
+                        <outlet property="categorieMenu" destination="afB-Zj-erd" id="DTR-cf-K6f"/>
+                        <outlet property="categorieTextveld" destination="i89-xP-gfS" id="DmO-0d-Upx"/>
+                        <outlet property="foto" destination="F4p-Ob-FQV" id="Dbf-he-tn2"/>
+                        <outlet property="tags" destination="OsS-jz-TZ4" id="9vw-rK-0tt"/>
+                        <outlet property="titel" destination="ssg-h2-Hj9" id="Hpf-Nf-Lfs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F3o-fU-I72" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="761"/>
+        </scene>
+        <!--Navigation Controller - Activiteiten-->
+        <scene sceneID="kGo-3r-d0S">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="D3w-pL-Rgs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Activiteiten" image="06-magnify.png" id="bvR-6V-MAE"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JAu-jA-P1a">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DTY-Tr-nIY" kind="relationship" relationship="rootViewController" id="kH1-sb-bLH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbj-Ea-XhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="-397"/>
+        </scene>
+        <!--Navigation Controller - Mijn Activiteiten-->
+        <scene sceneID="Fhk-ab-8tx">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="aeV-8b-Wdl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mijn Activiteiten" image="53-house.png" id="tJE-h3-dvr"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CV6-Cd-jiL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HH3-qf-HiZ" kind="relationship" relationship="rootViewController" id="Hio-Nv-QZY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbZ-ke-xBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="-988"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RlR-AA-GTh">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="EBx-B8-T2z" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="J5u-pu-hbh"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iWI-HU-nkQ">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aeV-8b-Wdl" kind="relationship" relationship="viewControllers" id="2zI-h4-Vwm"/>
+                        <segue destination="D3w-pL-Rgs" kind="relationship" relationship="viewControllers" id="bJa-sr-Hlm"/>
+                        <segue destination="9II-4P-lrj" kind="relationship" relationship="viewControllers" id="TsK-yQ-7xo"/>
+                        <segue destination="zaq-rk-8PW" kind="relationship" relationship="viewControllers" id="OcH-oO-LfO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nf7-P8-gJ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="635" y="225"/>
+        </scene>
+        <!--Map Activiteiten View Controller - Kaart-->
+        <scene sceneID="9yT-o2-tfa">
+            <objects>
+                <viewController id="dHA-W9-LWy" customClass="MapActiviteitenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZNp-n3-pQD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="5fB-pE-8yP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kaart" id="Pox-oH-fkb"/>
+                    <connections>
+                        <outlet property="mapview" destination="5fB-pE-8yP" id="8uq-ef-8n3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j36-NA-SPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="173"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T7K-RX-au9">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="K0i-VH-Oud" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xjh-wI-hVA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="don-Bp-ePY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQe-rh-Fyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-166" y="225"/>
+        </scene>
+        <!--Toevoegen Waar View Controller - Stap 2/3-->
+        <scene sceneID="k6B-f1-EJ2">
+            <objects>
+                <viewController id="Khb-dl-kge" customClass="ToevoegenWaarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OJo-fF-SEQ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Papierberk 17, Zundert" borderStyle="roundedRect" minimumFontSize="17" id="4Kf-Il-kpd">
+                                <rect key="frame" x="20" y="14" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="5jM-i7-q77">
+                                <rect key="frame" x="20" y="53" width="280" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bJf-4G-6Nk">
+                                <rect key="frame" x="20" y="307" width="122" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Eigen Lokatie">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iSm-Bg-AfD">
+                                <rect key="frame" x="167" y="307" width="133" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Laat adres zien">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stap 2/3" id="OE6-we-FIO">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="W6G-oS-ugb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="GXg-V8-co9">
+                            <connections>
+                                <segue destination="n4o-c5-1ua" kind="push" identifier="toStep3" id="VKu-f1-kE3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addressField" destination="4Kf-Il-kpd" id="bYU-g6-VIc"/>
+                        <outlet property="mapView" destination="5jM-i7-q77" id="a1a-iH-K7C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvM-UI-8Ve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2026" y="761"/>
+        </scene>
+        <!--Detail Activity View Controller - Details Activiteit-->
+        <scene sceneID="xcg-Df-gHa">
+            <objects>
+                <viewController id="Aca-05-N1F" customClass="DetailActivityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ti-IR-3NG">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="qcg-Te-ZkA">
+                                <rect key="frame" x="20" y="183" width="280" height="95"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Voetballen in het park is altijd geweldig en leuk. Kom je elke dinsdag meevoetballen? Graag eigen schoenen mee en verzamelen bij de boom.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bredapp.png" id="rt0-ze-gB9">
+                                <rect key="frame" x="170" y="52" width="130" height="123"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dinsdag 2 oktober 12:00 - 13:00" id="ANa-U8-cDf">
+                                <rect key="frame" x="20" y="52" width="134" height="62"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Parklaan 11a, Breda" id="E5L-Zk-U0T">
+                                <rect key="frame" x="20" y="122" width="134" height="53"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m6N-tq-axU">
+                                <rect key="frame" x="20" y="20" width="280" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details Activiteit" id="Ie3-Tk-8Kr">
+                        <barButtonItem key="rightBarButtonItem" title="Delen" id="1rG-ye-eLU"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="adresLabel" destination="E5L-Zk-U0T" id="9Mk-Dt-g9p"/>
+                        <outlet property="contentLabel" destination="qcg-Te-ZkA" id="6N7-wg-9jv"/>
+                        <outlet property="startLabel" destination="ANa-U8-cDf" id="2i8-pN-4Id"/>
+                        <outlet property="titleLabel" destination="m6N-tq-axU" id="we5-Eg-Qhl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYr-tS-pYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="-397"/>
+        </scene>
+        <!--Toevoegen Wanneer View Controller - Stap 3/3-->
+        <scene sceneID="jYP-4c-J0i">
+            <objects>
+                <viewController id="n4o-c5-1ua" customClass="ToevoegenWanneerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ipt-Vr-Jf1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Aanvangst Activiteit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ev7-Qf-u7D">
+                                <rect key="frame" x="20" y="20" width="230" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Z4D-VE-S3C">
+                                <rect key="frame" x="20" y="49" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="n4o-c5-1ua" id="gVN-Qu-wxq"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Einde Activiteit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kt2-7h-7RP">
+                                <rect key="frame" x="20" y="104" width="230" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="P1W-js-Do7">
+                                <rect key="frame" x="20" y="133" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="n4o-c5-1ua" id="fxX-On-Q0t"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Stap 3/3" id="nQa-OR-bNg">
+                        <barButtonItem key="rightBarButtonItem" title="Volgende" id="pvW-0z-VvI">
+                            <connections>
+                                <segue destination="8qZ-l9-JSv" kind="push" identifier="toVoorbeeld" id="8Rx-NX-yBI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="beginField" destination="Z4D-VE-S3C" id="cN9-Tk-GFQ"/>
+                        <outlet property="endField" destination="P1W-js-Do7" id="PaP-m2-B3E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOd-1n-KNN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2465" y="761"/>
+        </scene>
+        <!--Toevoegen Voorbeeld View Controller - Voorbeeld-->
+        <scene sceneID="cML-3g-Q8g">
+            <objects>
+                <viewController id="8qZ-l9-JSv" customClass="ToevoegenVoorbeeldViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3fw-le-N2U">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="D65-OC-75K">
+                                <rect key="frame" x="20" y="183" width="280" height="95"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Voetballen in het park is altijd geweldig en leuk. Kom je elke dinsdag meevoetballen? Graag eigen schoenen mee en verzamelen bij de boom.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bredapp.png" id="ZHC-jd-fwM">
+                                <rect key="frame" x="170" y="52" width="130" height="123"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Dinsdag 2 oktober 12:00 - 13:00" id="m8a-Yg-Zxi">
+                                <rect key="frame" x="20" y="52" width="134" height="62"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Parklaan 11a, Breda" id="pmo-Oh-2Wv">
+                                <rect key="frame" x="20" y="122" width="134" height="53"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lah-h9-si0">
+                                <rect key="frame" x="20" y="20" width="280" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Voorbeeld" id="vMB-Fl-c0G">
+                        <barButtonItem key="rightBarButtonItem" title="Klaar!" id="5vj-vD-4Cj">
+                            <connections>
+                                <segue destination="EBx-B8-T2z" kind="modal" animates="NO" id="FoY-oj-NTu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Pb-Ke-0sJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885" y="761"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="06-magnify.png" width="24" height="24"/>
+        <image name="20-gear-2.png" width="26" height="28"/>
+        <image name="216-compose.png" width="23" height="18"/>
+        <image name="53-house.png" width="22" height="22"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="bredapp.png" width="173" height="170"/>
+        <image name="no_photo.jpeg" width="250" height="250"/>
+    </resources>
+    <classes>
+        <class className="ActivityCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="category" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="distance" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="start" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DetailActivityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailActivityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adresLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="contentLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="startLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LijstActiviteitenViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LijstActiviteitenViewController.h"/>
+        </class>
+        <class className="MapActiviteitenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapActiviteitenViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapview" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SplashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ToevoegenVoorbeeldViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenVoorbeeldViewController.h"/>
+        </class>
+        <class className="ToevoegenWaarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWaarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="ToevoegenWanneerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWanneerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="beginField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="endField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ToevoegenWatViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWatViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="categorieAction:" candidateClass="UIButton"/>
+                <relationship kind="action" name="categorieSelectionMade:" candidateClass="UIButton"/>
+                <relationship kind="action" name="saveCategorie:"/>
+                <relationship kind="action" name="selectOrTakePhoto:"/>
+                <relationship kind="action" name="textfieldClicked:"/>
+                <relationship kind="action" name="textfieldLooseFocus:"/>
+                <relationship kind="outlet" name="aanspreekpunt" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="beschrijving" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="categorieButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="categorieMenu" candidateClass="UIView"/>
+                <relationship kind="outlet" name="categorieTextveld" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="foto" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titel" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="FoY-oj-NTu"/>
+    </inferredMetricsTieBreakers>
+</document>
