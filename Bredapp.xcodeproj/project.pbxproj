@@ -56,6 +56,7 @@
 		8D02BD9F164BD159006E196E /* ToevoegenWanneerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */; };
 		C724C8A61643F0DE00392E0A /* no_photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C724C8A51643F0DE00392E0A /* no_photo.jpeg */; };
 		C724C8AA1643F11D00392E0A /* ToevoegenWatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C724C8A91643F11D00392E0A /* ToevoegenWatViewController.m */; };
+		CDD9F4A6164D4C070065264A /* Toevoeger.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD9F4A5164D4C070065264A /* Toevoeger.m */; };
 		F50AB45D164BDFED0098D555 /* bredapp.png in Resources */ = {isa = PBXBuildFile; fileRef = F50AB45C164BDFED0098D555 /* bredapp.png */; };
 		F50AB49C164BE6620098D555 /* ToevoegenVoorbeeldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50AB49B164BE6620098D555 /* ToevoegenVoorbeeldViewController.m */; };
 		F5A091F5164A8595008F43D0 /* DetailActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A091F4164A8595008F43D0 /* DetailActivityViewController.m */; };
@@ -133,6 +134,8 @@
 		C724C8A51643F0DE00392E0A /* no_photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_photo.jpeg; sourceTree = "<group>"; };
 		C724C8A81643F11D00392E0A /* ToevoegenWatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenWatViewController.h; sourceTree = "<group>"; };
 		C724C8A91643F11D00392E0A /* ToevoegenWatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenWatViewController.m; sourceTree = "<group>"; };
+		CDD9F4A4164D4C070065264A /* Toevoeger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toevoeger.h; sourceTree = "<group>"; };
+		CDD9F4A5164D4C070065264A /* Toevoeger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toevoeger.m; sourceTree = "<group>"; };
 		F50AB45C164BDFED0098D555 /* bredapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bredapp.png; sourceTree = "<group>"; };
 		F50AB49A164BE6610098D555 /* ToevoegenVoorbeeldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenVoorbeeldViewController.h; sourceTree = "<group>"; };
 		F50AB49B164BE6620098D555 /* ToevoegenVoorbeeldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenVoorbeeldViewController.m; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 		6489A75B16159E09007282EF /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				CDD9F4A4164D4C070065264A /* Toevoeger.h */,
+				CDD9F4A5164D4C070065264A /* Toevoeger.m */,
 				6406A3D3164D166A00E17158 /* Category.h */,
 				6406A3D4164D166B00E17158 /* Category.m */,
 				6434CD3616402EF40066354E /* Activity.h */,
@@ -428,6 +433,7 @@
 				F50AB49C164BE6620098D555 /* ToevoegenVoorbeeldViewController.m in Sources */,
 				6406A3D5164D166B00E17158 /* Category.m in Sources */,
 				6406A3E4164D2D8000E17158 /* CustomNavBar.m in Sources */,
+				CDD9F4A6164D4C070065264A /* Toevoeger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "ToevoegenWaarViewController.h"
 #import "Activity.h"
 #import "Category.h"
+#import "Toevoeger.h"
 
 @interface ToevoegenWatViewController ()
 
@@ -258,7 +259,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep2"]) {
-        
+        //[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
+        /*
         activity = [[Activity alloc] init];
         activity.title = titel.text;
         activity.category_id = "";
@@ -270,7 +272,16 @@
         ToevoegenWaarViewController *vc = [segue destinationViewController];
         vc.activity = activity;
         vc.category = category;
+       */
         
+        Toevoeger *toevoeger = [[Toevoeger alloc] init];
+        toevoeger.title = titel.text;
+        toevoeger.category_id = "";
+        toevoeger.tags = tags.text;
+        toevoeger.content = beschrijving.text;
+        
+        ToevoegenWaarViewController *vc = [segue destinationViewController];
+        vc.toevoeger = toevoeger;
     }
 }
 

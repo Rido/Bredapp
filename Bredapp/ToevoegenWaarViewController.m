@@ -29,6 +29,7 @@
 @synthesize geocoder;
 @synthesize activity;
 @synthesize category;
+@synthesize toevoeger;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"titel: %@", toevoeger.title);
     
     addressField.delegate = self;
 

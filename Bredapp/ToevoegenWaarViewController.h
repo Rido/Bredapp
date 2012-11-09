@@ -11,6 +11,8 @@
 #import "Activity.h"
 #import "Category.h"
 
+#import "Toevoeger.h"
+
 @interface ToevoegenWaarViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>{
     CLGeocoder *_geocoder;
 }
@@ -21,5 +23,7 @@
 
 @property (strong, nonatomic) Activity *activity;
 @property (strong, nonatomic) Category *category;
+
+@property (strong, nonatomic) Toevoeger *toevoeger;
 
 @end
