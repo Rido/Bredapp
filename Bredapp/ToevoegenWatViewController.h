@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
+#import "Category.h"
 
 @interface ToevoegenWatViewController : UIViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
@@ -20,6 +22,9 @@
 @property (strong, nonatomic) IBOutlet UITextView *beschrijving;
 @property (strong, nonatomic) IBOutlet UITextField *aanspreekpunt;
 @property (strong, nonatomic) IBOutlet UIImageView *foto;
+
+@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) Category *category;
 
 - (IBAction)categorieSelectionMade:(UIButton *)sender;
 - (IBAction)categorieAction:(UIButton *)sender;

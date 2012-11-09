@@ -8,6 +8,7 @@
 
 #import "ToevoegenWanneerViewController.h"
 #import "ToevoegenVoorbeeldViewController.h"
+#import "Activity.h"
 
 @interface ToevoegenWanneerViewController ()
 
@@ -17,6 +18,8 @@
 @synthesize datePicker;
 @synthesize selectedTextField;
 @synthesize databaseDateFormat;
+@synthesize activity;
+@synthesize category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -80,7 +83,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {
-        NSLog(@"Naar voorbeeld!");
+
+        ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
+        vc.activity = activity;
+        vc.category = category;
+        
     }
 }
 

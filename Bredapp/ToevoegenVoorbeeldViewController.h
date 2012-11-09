@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
+#import "Category.h"
 
 @interface ToevoegenVoorbeeldViewController : UIViewController
+
+@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) Category *category;
 
 @end

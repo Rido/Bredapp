@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Activity.h"
+#import "Category.h"
 
 @interface ToevoegenWaarViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>{
     CLGeocoder *_geocoder;
@@ -16,5 +18,8 @@
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) IBOutlet UITextField *addressField;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) Category *category;
 
 @end

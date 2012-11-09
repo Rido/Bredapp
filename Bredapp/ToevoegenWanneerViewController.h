@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
 
 @interface ToevoegenWanneerViewController : UIViewController <UITextFieldDelegate>
 
@@ -17,5 +18,8 @@
 @property (strong, nonatomic) UITextField *selectedTextField;
 
 @property (nonatomic, retain) NSString *databaseDateFormat;
+
+@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) Category *category;
 
 @end

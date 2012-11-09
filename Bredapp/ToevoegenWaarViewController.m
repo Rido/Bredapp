@@ -13,6 +13,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "ToevoegenWanneerViewController.h"
+#import "Activity.h"
+#import "Category.h"
 
 @interface ToevoegenWaarViewController ()
 
@@ -23,6 +25,8 @@
 @synthesize addressField;
 @synthesize mapView;
 @synthesize geocoder;
+@synthesize activity;
+@synthesize category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -158,7 +162,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep3"]) {
-        NSLog(@"Naar stap 3!");
+        
+        ToevoegenWanneerViewController *vc = [segue destinationViewController];
+        vc.activity = activity;
+        vc.category = category;
+        
     }
 }
 

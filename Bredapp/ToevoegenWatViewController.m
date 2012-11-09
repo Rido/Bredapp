@@ -9,6 +9,7 @@
 #import "ToevoegenWatViewController.h"
 #import "ToevoegenWaarViewController.h"
 #import "Activity.h"
+#import "Category.h"
 
 @interface ToevoegenWatViewController ()
 
@@ -18,6 +19,8 @@
 
 @synthesize titel,beschrijving,tags,aanspreekpunt,foto,categorieTextveld;
 @synthesize categorieArray;
+@synthesize activity;
+@synthesize category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -255,7 +258,19 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep2"]) {
-        NSLog(@"Naar stap 2!");
+        
+        activity = [[Activity alloc] init];
+        activity.title = titel.text;
+        activity.category_id = "";
+        activity.tags = tags.text;
+        activity.content = beschrijving.text;
+        
+        category = [[Category alloc] init];
+
+        ToevoegenWaarViewController *vc = [segue destinationViewController];
+        vc.activity = activity;
+        vc.category = category;
+        
     }
 }
 
