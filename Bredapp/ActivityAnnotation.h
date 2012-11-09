@@ -13,14 +13,16 @@
 @interface ActivityAnnotation : NSObject <MKAnnotation> {
     
 	NSString *title;
+    NSString *subTitle;
+    NSUInteger *activityInArray;
 	CLLocationCoordinate2D coordinate;
     
 }
 
-//yeah
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) NSString *title, *subTitle;
+@property (nonatomic) NSUInteger *activityInArray;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
-- (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d;
+- (id)initWithTitle:(NSString *)theTitle andSubTitle:(NSString *)theSubTitle andTheCoordinate:(CLLocationCoordinate2D)c2d andTheActivityInArray:(NSUInteger *)theActivityInArray;
 
 @end

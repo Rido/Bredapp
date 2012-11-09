@@ -10,18 +10,24 @@
 
 @implementation ActivityAnnotation
 
-@synthesize title, coordinate;
+@synthesize title, subTitle, coordinate;
+@synthesize activityInArray;
 
-- (id)initWithTitle:(NSString *)ttl andCoordinate:(CLLocationCoordinate2D)c2d {
+- (id)initWithTitle:(NSString *)theTitle andSubTitle:(NSString *)theSubTitle andTheCoordinate:(CLLocationCoordinate2D)c2d andTheActivityInArray:(NSUInteger*)theActivityInArray;{
 	[super init];
-	title = ttl;
-	coordinate = c2d;
+    title = theTitle;
+    subTitle = theSubTitle;
+    coordinate = c2d;
+    activityInArray = theActivityInArray;
 	return self;
 }
 
-- (void)dealloc {
-	[self release];
-	[super dealloc];
+- (NSString *)title {
+    return title;
+}
+
+- (NSString *)subTitle {
+    return subTitle;
 }
 
 @end

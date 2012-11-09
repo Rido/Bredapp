@@ -9,11 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "AppDelegate.h"
+#import "ActivityAnnotation.h"
 
-@interface MapActiviteitenViewController : UIViewController
+@interface MapActiviteitenViewController : UIViewController <MKMapViewDelegate>
+
+
 @property (retain, nonatomic) IBOutlet MKMapView *mapview;
 @property (nonatomic, strong) AppDelegate *myApp;
 @property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSArray *activities;
+@property (nonatomic) NSUInteger *selectedInArray;
+@property (nonatomic, strong) ActivityAnnotation *annotation;
 
 @end

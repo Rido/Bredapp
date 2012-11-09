@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "ActivityAnnotation.h"
 #import "Activity.h"
+#import "DetailActivityViewController.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -23,6 +24,9 @@
 @synthesize myApp;
 @synthesize managedObjectContext;
 @synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize activities;
+@synthesize selectedInArray;
+@synthesize annotation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -74,10 +78,10 @@
 		exit(-1);  // Fail
 	}
     
-    [mapview setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+    [mapview setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
     // Load activities into array for annotations.
-    NSArray *activities = [_fetchedResultsController fetchedObjects];
+    activities = [_fetchedResultsController fetchedObjects];
     
     NSUInteger count = [activities count];
     for (NSUInteger i = 0; i < count; i++) {
@@ -88,26 +92,12 @@
         location.latitude = [info.co_lat doubleValue];
         location.longitude = [info.co_long doubleValue];
         // Add the annotation to our map view
-        ActivityAnnotation *annotation = [[ActivityAnnotation alloc] initWithTitle:info.title andCoordinate:location];
+        annotation = [[ActivityAnnotation alloc] initWithTitle:info.title andSubTitle:@"subtitle" andTheCoordinate:location andTheActivityInArray:&i];
+        annotation.activityInArray = 0;
+        NSLog(@"Title: %d",i);
         [self.mapview addAnnotation:annotation];
         //[annotation release];
     }
-    
-    
-    /*
-     Activity *info = [activities objectForKey:1];
-     NSLog(@"Activity latitude: %@", info.co_lat);
-     NSLog(@"Activity longitude: %@", info.co_long);
-     
-     //  location for activity.
-     CLLocationCoordinate2D location;
-     location.latitude = [info.co_lat doubleValue];
-     location.longitude = [info.co_long doubleValue];
-     // Add the annotation to our map view
-     ActivityAnnotation *annotation = [[ActivityAnnotation alloc] initWithTitle:info.title andCoordinate:location];
-     [self.mapview addAnnotation:annotation];
-     [annotation release];
-     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,4 +113,53 @@
     [self setMapview:nil];
     [super viewDidUnload];
 }
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)anno {
+    
+    static NSString *identifier = @"MyLocation";
+    if ([anno isKindOfClass:[ActivityAnnotation class]]) {
+        
+        MKPinAnnotationView *annotationView =
+        (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        
+        if (annotationView == nil) {
+            annotationView = [[MKPinAnnotationView alloc]
+                              initWithAnnotation:anno
+                              reuseIdentifier:identifier];
+        } else {
+            annotationView.annotation = anno;
+        }
+        
+        annotationView.enabled = YES;
+        annotationView.canShowCallout = YES;
+        
+        // Create a UIButton object to add on the
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [rightButton setTitle:anno.title forState:UIControlStateNormal];
+        [annotationView setRightCalloutAccessoryView:rightButton];
+        
+        /*
+         UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+         [leftButton setTitle:anno.title forState:UIControlStateNormal];
+         [annotationView setLeftCalloutAccessoryView:leftButton];
+         */
+        
+        return annotationView;
+    }
+    
+    return nil;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    DetailActivityViewController *destinationVC = segue.destinationViewController;
+    Activity *selected = activities[0];
+    destinationVC.activity = selected;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)pinView calloutAccessoryControlTapped:(UIControl *)control {
+    NSLog(@"Pressed!");
+    
+    [self performSegueWithIdentifier:@"fromMapToDetails" sender:self];
+}
+
 @end
