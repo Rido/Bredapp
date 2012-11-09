@@ -13,10 +13,15 @@
 		427EF1A41646A13800DCBAB0 /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF1A31646A13800DCBAB0 /* NSString+JSON.m */; };
 		427EF1A61646A15B00DCBAB0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427EF1A51646A15B00DCBAB0 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		427EF1A81646A17000DCBAB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427EF1A71646A17000DCBAB0 /* MapKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6406A3D5164D166B00E17158 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6406A3D4164D166B00E17158 /* Category.m */; };
+		6406A3DE164D2B4700E17158 /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6406A3DA164D2B4700E17158 /* navbar.png */; };
+		6406A3DF164D2B4700E17158 /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6406A3DB164D2B4700E17158 /* navbar@2x.png */; };
+		6406A3E0164D2B4700E17158 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 6406A3DC164D2B4700E17158 /* overlay.png */; };
+		6406A3E1164D2B4700E17158 /* overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6406A3DD164D2B4700E17158 /* overlay@2x.png */; };
+		6406A3E4164D2D8000E17158 /* CustomNavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6406A3E3164D2D8000E17158 /* CustomNavBar.m */; };
 		641340CE164BFB830038B506 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 641340CD164BFB830038B506 /* icon.png */; };
 		641340D1164BFB860038B506 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 641340D0164BFB860038B506 /* icon@2x.png */; };
 		6434CD3816402EF40066354E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6434CD3716402EF40066354E /* Activity.m */; };
-		6434CD3E1640339B0066354E /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6434CD3D1640339B0066354E /* Category.m */; };
 		644AEF741623491D0005AA67 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 644AEF731623491D0005AA67 /* JsonParser.m */; };
 		6489A73016159912007282EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6489A72F16159912007282EF /* UIKit.framework */; };
 		6489A73216159912007282EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6489A73116159912007282EF /* Foundation.framework */; };
@@ -72,12 +77,18 @@
 		427EF1A31646A13800DCBAB0 /* NSString+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
 		427EF1A51646A15B00DCBAB0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		427EF1A71646A17000DCBAB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6406A3D3164D166A00E17158 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		6406A3D4164D166B00E17158 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
+		6406A3DA164D2B4700E17158 /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
+		6406A3DB164D2B4700E17158 /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		6406A3DC164D2B4700E17158 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
+		6406A3DD164D2B4700E17158 /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay@2x.png"; sourceTree = "<group>"; };
+		6406A3E2164D2D8000E17158 /* CustomNavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavBar.h; sourceTree = "<group>"; };
+		6406A3E3164D2D8000E17158 /* CustomNavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavBar.m; sourceTree = "<group>"; };
 		641340CD164BFB830038B506 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		641340D0164BFB860038B506 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		6434CD3616402EF40066354E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		6434CD3716402EF40066354E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		6434CD3C1640339B0066354E /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
-		6434CD3D1640339B0066354E /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		644AEF6E162348490005AA67 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		644AEF6F1623484A0005AA67 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		644AEF721623491D0005AA67 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
@@ -164,6 +175,8 @@
 				427EF1A01646A12700DCBAB0 /* CLLocation+Geocodereverse.m */,
 				644AEF6E162348490005AA67 /* JSONKit.h */,
 				644AEF6F1623484A0005AA67 /* JSONKit.m */,
+				6406A3E2164D2D8000E17158 /* CustomNavBar.h */,
+				6406A3E3164D2D8000E17158 /* CustomNavBar.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -264,6 +277,10 @@
 				641340CD164BFB830038B506 /* icon.png */,
 				F50AB45C164BDFED0098D555 /* bredapp.png */,
 				F5F38BD1164BB68100C3F8ED /* sport_icon.png */,
+				6406A3DA164D2B4700E17158 /* navbar.png */,
+				6406A3DB164D2B4700E17158 /* navbar@2x.png */,
+				6406A3DC164D2B4700E17158 /* overlay.png */,
+				6406A3DD164D2B4700E17158 /* overlay@2x.png */,
 				C724C8A51643F0DE00392E0A /* no_photo.jpeg */,
 				64B3F1D616428BAD000AF870 /* 05-plus.png */,
 				64B3F1D716428BAD000AF870 /* 05-plus@2x.png */,
@@ -291,10 +308,10 @@
 		6489A75B16159E09007282EF /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				6406A3D3164D166A00E17158 /* Category.h */,
+				6406A3D4164D166B00E17158 /* Category.m */,
 				6434CD3616402EF40066354E /* Activity.h */,
 				6434CD3716402EF40066354E /* Activity.m */,
-				6434CD3C1640339B0066354E /* Category.h */,
-				6434CD3D1640339B0066354E /* Category.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -376,6 +393,10 @@
 				F50AB45D164BDFED0098D555 /* bredapp.png in Resources */,
 				641340CE164BFB830038B506 /* icon.png in Resources */,
 				641340D1164BFB860038B506 /* icon@2x.png in Resources */,
+				6406A3DE164D2B4700E17158 /* navbar.png in Resources */,
+				6406A3DF164D2B4700E17158 /* navbar@2x.png in Resources */,
+				6406A3E0164D2B4700E17158 /* overlay.png in Resources */,
+				6406A3E1164D2B4700E17158 /* overlay@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +414,6 @@
 				6489A76D1615B3C0007282EF /* Breda_Inladen.xcdatamodeld in Sources */,
 				644AEF741623491D0005AA67 /* JsonParser.m in Sources */,
 				6434CD3816402EF40066354E /* Activity.m in Sources */,
-				6434CD3E1640339B0066354E /* Category.m in Sources */,
 				C724C8AA1643F11D00392E0A /* ToevoegenWatViewController.m in Sources */,
 				427EF19A1646A0D700DCBAB0 /* ToevoegenWaarViewController.m in Sources */,
 				427EF19E1646A10200DCBAB0 /* MapAnnotation.m in Sources */,
@@ -406,6 +426,8 @@
 				F5F38BE4164BC6B000C3F8ED /* ActivityAnnotation.m in Sources */,
 				8D02BD9F164BD159006E196E /* ToevoegenWanneerViewController.m in Sources */,
 				F50AB49C164BE6620098D555 /* ToevoegenVoorbeeldViewController.m in Sources */,
+				6406A3D5164D166B00E17158 /* Category.m in Sources */,
+				6406A3E4164D2D8000E17158 /* CustomNavBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
