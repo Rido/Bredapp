@@ -44,7 +44,7 @@
     
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 2.0; //user needs to press for 2 seconds
+    lpgr.minimumPressDuration = 0.5; //user needs to just click
     [self.mapView addGestureRecognizer:lpgr];
     [lpgr release];
     
@@ -105,7 +105,7 @@
          
          addressField.text = locatedAt;
          
-         MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"test" subtitle:@"bla" coordinate:touchMapCoordinate];
+         MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:touchMapCoordinate];
          
          MKCoordinateRegion region;
          region.center = annotation.coordinate;
@@ -234,7 +234,7 @@
     location.latitude = mapView.userLocation.location.coordinate.latitude;
     location.longitude = mapView.userLocation.location.coordinate.longitude;
     
-    MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"" subtitle:@"" coordinate:mapView.userLocation.location.coordinate];
+    MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:mapView.userLocation.location.coordinate];
     
     
     [self.mapView removeAnnotations:myAnnotations];
@@ -247,6 +247,20 @@
     [mapView setRegion:region animated:YES];
     
 }
+
+
+
+/*
+- (MapAnnotation *) withCoordinate:(CLLocationCoordinate2D)coords {
+    MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activeit" coordinate:coords];
+    
+    [self.mapView removeAnnotations:myAnnotations];
+    [self.mapView addAnnotation: annotation];
+    
+    [myAnnotations addObject:annotation];
+    
+    return annotation;
+}*/
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -266,7 +280,7 @@
         for (id object in placemarks) {
             CLPlacemark *placemark = object;
             
-            MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:[NSString stringWithFormat:@"%@ %@", placemark.postalCode, placemark.locality] subtitle:placemark.subLocality coordinate:placemark.location.coordinate];
+            MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:placemark.location.coordinate];
             
             [self.mapView removeAnnotations:myAnnotations];
             [self.mapView addAnnotation: annotation];
