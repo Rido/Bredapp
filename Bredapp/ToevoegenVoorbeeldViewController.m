@@ -15,6 +15,14 @@
 
 @implementation ToevoegenVoorbeeldViewController
 
+@synthesize activity;
+@synthesize category;
+@synthesize titleLabel;
+@synthesize datetimeTextView;
+@synthesize whereTextView;
+@synthesize descriptionTextView;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,7 +39,7 @@
      initWithBarButtonSystemItem:UIBarButtonSystemItemAction
      target:self
      action:@selector(share)];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)share
@@ -61,10 +69,4 @@
     NSLog(@"Klaar!");
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
-- (void)viewDidUnload {
-    [super viewDidUnload];
-}
 @end

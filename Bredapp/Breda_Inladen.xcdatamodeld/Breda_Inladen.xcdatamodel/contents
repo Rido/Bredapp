@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Activity" representedClassName="Activity" syncable="YES">
         <attribute name="activity_id" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="begin" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="category_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="co_lat" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="co_long" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="co_lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="co_long" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="device_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
@@ -24,7 +24,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-1181" positionY="-2034" width="128" height="238"/>
+        <element name="Activity" positionX="-1181" positionY="-2034" width="128" height="240"/>
         <element name="Category" positionX="-1359" positionY="-2034" width="128" height="135"/>
     </elements>
 </model>

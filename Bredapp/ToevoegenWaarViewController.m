@@ -41,8 +41,11 @@
 {
     [super viewDidLoad];
     
+<<<<<<< HEAD
     //NSLog(@"titel: %@", toevoeger.title);
     
+=======
+>>>>>>> 60155fca27c8399e55720d9072c56d3f632e920c
     addressField.delegate = self;
 
     myAnnotations = [[NSMutableArray alloc] init];
@@ -323,7 +326,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep3"]) {
-
+        
+        activity.co_lat = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.latitude];
+        activity.co_long = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.longitude];
+        
         ToevoegenWanneerViewController *vc = [segue destinationViewController];
         vc.activity = activity;
         vc.category = category;

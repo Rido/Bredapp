@@ -8,7 +8,6 @@
 
 #import "ToevoegenWanneerViewController.h"
 #import "ToevoegenVoorbeeldViewController.h"
-#import "Activity.h"
 
 @interface ToevoegenWanneerViewController ()
 
@@ -20,6 +19,8 @@
 @synthesize databaseDateFormat;
 @synthesize activity;
 @synthesize category;
+@synthesize beginField;
+@synthesize endField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,20 +72,27 @@
     
     NSString *newDateString = [outputFormatter stringFromDate:datePicker.date];
     
-    // Date format voor database
-    NSDateFormatter *databaseOutputFormatter = [[NSDateFormatter alloc] init];
-    [databaseOutputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    databaseDateFormat = [databaseOutputFormatter stringFromDate:datePicker.date];
-    
     // Datum weergeven in tekstveld
     selectedTextField.text = newDateString;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {
-
+        
+        NSDateFormatter *databaseOutputFormatter = [[NSDateFormatter alloc] init];
+        [databaseOutputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        
+        activity.begin = [databaseOutputFormatter dateFromString: beginField.text];
+        activity.end = [databaseOutputFormatter dateFromString: endField.text];
+        
         ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
+
+        vc.titleLabel.text = activity.title;
+        vc.datetimeTextView.text = [databaseOutputFormatter stringFromDate:activity.begin];
+        vc.whereTextView.text = @"Hier komt het adres";
+        vc.descriptionTextView.text = activity.description;
+        
+        vc.activity = activity;
         
     }
 }
