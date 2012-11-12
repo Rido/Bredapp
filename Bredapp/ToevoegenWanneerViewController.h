@@ -21,6 +21,5 @@
 @property (nonatomic, retain) NSString *databaseDateFormat;
 
 @property (strong, nonatomic) Activity *activity;
-@property (strong, nonatomic) Category *category;
 
 @end

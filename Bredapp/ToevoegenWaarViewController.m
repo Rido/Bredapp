@@ -25,7 +25,6 @@
 @synthesize addressField;
 @synthesize mapView;
 @synthesize geocoder;
-@synthesize category;
 @synthesize activity;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,12 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-<<<<<<< HEAD
-    //NSLog(@"titel: %@", toevoeger.title);
-    
-=======
->>>>>>> 60155fca27c8399e55720d9072c56d3f632e920c
+
     addressField.delegate = self;
 
     myAnnotations = [[NSMutableArray alloc] init];
@@ -332,7 +326,6 @@
         
         ToevoegenWanneerViewController *vc = [segue destinationViewController];
         vc.activity = activity;
-        vc.category = category;
         
     }
 }

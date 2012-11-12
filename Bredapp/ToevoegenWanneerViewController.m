@@ -18,7 +18,6 @@
 @synthesize selectedTextField;
 @synthesize databaseDateFormat;
 @synthesize activity;
-@synthesize category;
 @synthesize beginField;
 @synthesize endField;
 

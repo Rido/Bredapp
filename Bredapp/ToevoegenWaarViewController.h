@@ -20,6 +20,5 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong, nonatomic) Activity *activity;
-@property (strong, nonatomic) Category *category;
 
 @end
