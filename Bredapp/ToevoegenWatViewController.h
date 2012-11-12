@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "Activity.h"
 #import "Category.h"
 
 @interface ToevoegenWatViewController : UIViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate>{
     UIPickerView*categoriePicker;
+    NSMutableArray*categorieen;
 }
 
-@property (strong,nonatomic)NSArray * categorieArray;
+@property (nonatomic, strong) AppDelegate *myApp;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic,retain)NSFetchedResultsController * fetchedResultsController;
 
 @property (strong, nonatomic) IBOutlet UITextField *categorieTextveld;
 @property (strong, nonatomic) IBOutlet UITextField *titel;

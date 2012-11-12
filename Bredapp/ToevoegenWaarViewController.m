@@ -41,6 +41,11 @@
 {
     [super viewDidLoad];
     
+<<<<<<< HEAD
+    //NSLog(@"titel: %@", toevoeger.title);
+    
+=======
+>>>>>>> 60155fca27c8399e55720d9072c56d3f632e920c
     addressField.delegate = self;
 
     myAnnotations = [[NSMutableArray alloc] init];
