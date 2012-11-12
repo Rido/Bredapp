@@ -8,6 +8,8 @@
 
 #import "ToevoegenWatViewController.h"
 #import "ToevoegenWaarViewController.h"
+#import "Activity.h"
+#import "Category.h"
 #import "Toevoeger.h"
 
 @interface ToevoegenWatViewController ()
@@ -33,11 +35,27 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    categorieArray = [NSArray arrayWithObjects:@"Sport",@"Cultuur",@"Muziek", nil];
+    categorieArray = [[NSArray alloc] initWithObjects:@"Sport",@"Cultuur",@"Muziek", nil];
 
+    categoriePicker = [[UIPickerView alloc]init];
+    categoriePicker.showsSelectionIndicator = YES;
+    categoriePicker.dataSource = self;
+    categoriePicker.delegate = self;
+    categoriePicker.userInteractionEnabled = YES;
     
-    //categoriePicker.delegate = self; //om deze reden deded ze het niet XD
-   // categoriePicker.dataSource = self; //dit moest nog gedaan worden
+    UITapGestureRecognizer *categorie_tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(categorie_tapped)];
+    [categorie_tap setDelegate:self];
+    [categoriePicker addGestureRecognizer:categorie_tap];
+    
+    self.categorieTextveld.inputView = categoriePicker;
+}
+
+-(void)categorie_tapped{
+    if([self->categoriePicker selectedRowInComponent:0]>=0)
+    {
+        [self.categorieTextveld setText:[categorieArray objectAtIndex:[self->categoriePicker selectedRowInComponent:0]]];
+        [self.categorieTextveld resignFirstResponder];
+    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -60,14 +78,6 @@
 {
     return [categorieArray objectAtIndex:row];
 }
-
-/*
--(void)sync{
-    if([self.categoriePicker selectedRowInComponent:0] >= 0){
-        [self.categorieTextveld setText:[categorieArray objectAtIndex:[self.categoriePicker selectedRowInComponent:0]]];
-    }
-}
-*/
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -98,52 +108,10 @@
  }
  */
 
-- (IBAction)categorieAction:(UIButton *)sender {
-    if (sender.tag == 0) {
-        sender.tag = 1;
-        self.categorieMenu.hidden = NO;
-        [sender setTitle:@"▲" forState:UIControlStateNormal];
-    } else {
-        sender.tag = 0;
-        self.categorieMenu.hidden = YES;
-        [sender setTitle:@"▼" forState:UIControlStateNormal];
-    }
-}
-
--(IBAction)categorieSelectionMade:(UIButton *)sender
-{
-    self.categorieTextveld.text = sender.titleLabel.text;
-    [self.categorieButton setTitle:@"▼" forState:UIControlStateNormal];
-    //self.ddMenuShowButton.tag = 0;
-    self.categorieMenu.hidden = YES;
-    //We hoeven hier niet meer te doen maar kunnen dat aan de hand van de tags wel!
-    /*
-    switch (sender.tag) {
-        case 10:
-            //self.view.backgroundColor = [UIColor redColor];
-            break;
-        case 2:
-            //self.view.backgroundColor = [UIColor blueColor];
-            break;
-        case 3:
-            //self.view.backgroundColor = [UIColor greenColor];
-            break;
-            
-        default:
-            break;
-    }
-    */
-}
-
 - (IBAction)selectOrTakePhoto:(id)sender {
     UIImagePickerController * pickerC = [[UIImagePickerController alloc]init];
     pickerC.delegate = self;
     [self presentViewController:pickerC animated:YES completion:nil];
-}
-
-- (IBAction)saveCategorie:(id)sender {
-    //[self sync];
-    //self.categoriePicker.alpha = 0;
 }
 
 - (IBAction)textfieldClicked:(id)sender {
@@ -246,7 +214,7 @@
 }
 
 - (void)viewDidUnload {
-    [self setCategorieButton:nil];
+    //[self setCategorieButton:nil];
     [super viewDidUnload];
 }
 - (void)dealloc {

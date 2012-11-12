@@ -7,28 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
+#import "Category.h"
 
-@interface ToevoegenWatViewController : UIViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface ToevoegenWatViewController : UIViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate>{
+    UIPickerView*categoriePicker;
+}
 
-@property (assign,nonatomic)NSArray * categorieArray;
+@property (strong,nonatomic)NSArray * categorieArray;
 
-@property (strong, nonatomic) IBOutlet UIView * categorieMenu;
 @property (strong, nonatomic) IBOutlet UITextField *categorieTextveld;
-@property (strong, nonatomic) IBOutlet UIButton *categorieButton;
 @property (strong, nonatomic) IBOutlet UITextField *titel;
 @property (strong, nonatomic) IBOutlet UITextField *tags;
 @property (strong, nonatomic) IBOutlet UITextView *beschrijving;
 @property (strong, nonatomic) IBOutlet UITextField *aanspreekpunt;
 @property (strong, nonatomic) IBOutlet UIImageView *foto;
 
-- (IBAction)categorieSelectionMade:(UIButton *)sender;
-- (IBAction)categorieAction:(UIButton *)sender;
+@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) Category *category;
+
 - (IBAction)selectOrTakePhoto:(id)sender;
-- (IBAction)saveCategorie:(id)sender;
 - (IBAction)textfieldClicked:(id)sender;
 - (IBAction)textfieldLooseFocus:(id)sender;
 
--(void)sync;
+-(void)categorie_tapped;
 -(UIImage*)imageWithImage:(UIImage*)image
              scaledToSize:(CGSize)newSize;
 
