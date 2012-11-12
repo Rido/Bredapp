@@ -8,8 +8,6 @@
 
 #import "ToevoegenWatViewController.h"
 #import "ToevoegenWaarViewController.h"
-#import "Activity.h"
-#import "Category.h"
 #import "Toevoeger.h"
 
 @interface ToevoegenWatViewController ()
@@ -20,8 +18,6 @@
 
 @synthesize titel,beschrijving,tags,aanspreekpunt,foto,categorieTextveld;
 @synthesize categorieArray;
-@synthesize activity;
-@synthesize category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -276,7 +272,7 @@
         
         Toevoeger *toevoeger = [[Toevoeger alloc] init];
         toevoeger.title = titel.text;
-        toevoeger.category_id = "";
+        //toevoeger.category_id = "";
         toevoeger.tags = tags.text;
         toevoeger.content = beschrijving.text;
         

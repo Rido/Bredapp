@@ -7,14 +7,13 @@
 //
 
 #import "ToevoegenVoorbeeldViewController.h"
+#import "SHK.h"
 
 @interface ToevoegenVoorbeeldViewController ()
 
 @end
 
 @implementation ToevoegenVoorbeeldViewController
-@synthesize activity;
-@synthesize category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +27,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [[UIBarButtonItem alloc]
+     initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+     target:self
+     action:@selector(share)];
+    // Do any additional setup after loading the view.
+}
+
+- (void)share
+{
+    // Create the item to share (in this example, a url)
+    NSURL *url = [NSURL URLWithString:@"http://getsharekit.com"];
+    SHKItem *item = [SHKItem URL:url title:@"ShareKit is Awesome!" contentType:SHKURLContentTypeWebpage];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showFromToolbar:self.navigationController.toolbar];
 }
 
 - (void)didReceiveMemoryWarning

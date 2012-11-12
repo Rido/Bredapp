@@ -18,8 +18,7 @@
 @synthesize datePicker;
 @synthesize selectedTextField;
 @synthesize databaseDateFormat;
-@synthesize activity;
-@synthesize category;
+@synthesize toevoeger;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"latitude: %d", toevoeger.co_lat);
 	// Do any additional setup after loading the view.
 }
 
@@ -85,8 +85,6 @@
     if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {
 
         ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
-        vc.activity = activity;
-        vc.category = category;
         
     }
 }

@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "Activity.h"
-#import "Category.h"
-
 #import "Toevoeger.h"
 
 @interface ToevoegenWaarViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>{
@@ -20,9 +17,6 @@
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) IBOutlet UITextField *addressField;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-
-@property (strong, nonatomic) Activity *activity;
-@property (strong, nonatomic) Category *category;
 
 @property (strong, nonatomic) Toevoeger *toevoeger;
 
