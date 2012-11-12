@@ -20,6 +20,7 @@
 
 @synthesize titel,beschrijving,tags,aanspreekpunt,foto,categorieTextveld;
 @synthesize categorieArray;
+@synthesize activity, category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -224,28 +225,22 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep2"]) {
         //[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
-        /*
+        
         activity = [[Activity alloc] init];
+        
         activity.title = titel.text;
-        activity.category_id = "";
+        activity.category_id = [categoriePicker selectedRowInComponent:0];
         activity.tags = tags.text;
         activity.content = beschrijving.text;
         
         category = [[Category alloc] init];
+        category.category_id = [categoriePicker selectedRowInComponent:0];
+        category.name = @"Naam";
 
         ToevoegenWaarViewController *vc = [segue destinationViewController];
         vc.activity = activity;
         vc.category = category;
-       */
         
-        Toevoeger *toevoeger = [[Toevoeger alloc] init];
-        toevoeger.title = titel.text;
-        //toevoeger.category_id = "";
-        toevoeger.tags = tags.text;
-        toevoeger.content = beschrijving.text;
-        
-        ToevoegenWaarViewController *vc = [segue destinationViewController];
-        vc.toevoeger = toevoeger;
     }
 }
 

@@ -18,7 +18,8 @@
 @synthesize datePicker;
 @synthesize selectedTextField;
 @synthesize databaseDateFormat;
-@synthesize toevoeger;
+@synthesize activity;
+@synthesize category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"latitude: %d", toevoeger.co_lat);
 	// Do any additional setup after loading the view.
 }
 

@@ -12,10 +12,10 @@
 @implementation Category
 
 @dynamic category_id;
+@dynamic name;
 @dynamic content;
 @dynamic image;
 @dynamic image_url;
-@dynamic name;
 @dynamic last_update;
 
 @end

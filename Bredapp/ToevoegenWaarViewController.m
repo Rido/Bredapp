@@ -25,7 +25,8 @@
 @synthesize addressField;
 @synthesize mapView;
 @synthesize geocoder;
-@synthesize toevoeger;
+@synthesize category;
+@synthesize activity;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -322,11 +323,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep3"]) {
-        
+
         ToevoegenWanneerViewController *vc = [segue destinationViewController];
-        //toevoeger.co_lat = mapView.userLocation.location.coordinate.latitude;
-        //toevoeger.co_long = mapView.userLocation.location.coordinate.longitude;
-        vc.toevoeger = toevoeger;
+        vc.activity = activity;
+        vc.category = category;
         
     }
 }
