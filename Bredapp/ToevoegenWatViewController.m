@@ -83,6 +83,7 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage * takenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    takenImage = [self imageWithImage:takenImage scaledToSize:CGSizeMake(400, 400)];
     self.foto.image = takenImage;
 }
 
