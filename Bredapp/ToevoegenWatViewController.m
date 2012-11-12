@@ -11,6 +11,7 @@
 #import "Activity.h"
 #import "Category.h"
 #import "Toevoeger.h"
+#import "JsonParser.h"
 
 @interface ToevoegenWatViewController ()
 
@@ -19,14 +20,14 @@
 @implementation ToevoegenWatViewController{}
 
 @synthesize titel,beschrijving,tags,aanspreekpunt,foto,categorieTextveld;
-@synthesize categorieArray;
 @synthesize activity, category;
+@synthesize myApp, managedObjectContext;
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -36,8 +37,31 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    categorieArray = [[NSArray alloc] initWithObjects:@"Sport",@"Cultuur",@"Muziek", nil];
+    myApp = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [myApp managedObjectContext];
+    categorieen = [[NSMutableArray alloc]init];
+    
+    
+    //laad categorieen in van db http://www.larsvanbeek.nl/BredAppWs/categories/
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+	}
+    
+    id  sectionInfo =
+    [[_fetchedResultsController sections] objectAtIndex:0];
+    
+    for(int i = 0; i<[sectionInfo numberOfObjects]; i++)
+    {
+        Category * t = [[self.fetchedResultsController fetchedObjects] objectAtIndex:i];
+        [categorieen addObject:t];
+    }
+    
+    
 
+    
     categoriePicker = [[UIPickerView alloc]init];
     categoriePicker.showsSelectionIndicator = YES;
     categoriePicker.dataSource = self;
@@ -51,10 +75,38 @@
     self.categorieTextveld.inputView = categoriePicker;
 }
 
+- (NSFetchedResultsController *)fetchedResultsController {
+    
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Category" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                              initWithKey:@"category_id" ascending:NO];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    
+    NSFetchedResultsController *theFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:managedObjectContext sectionNameKeyPath:nil
+                                                   cacheName:@"CategoryList"];
+    self.fetchedResultsController = theFetchedResultsController;
+    //_fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
+}
+
+
 -(void)categorie_tapped{
     if([self->categoriePicker selectedRowInComponent:0]>=0)
     {
-        [self.categorieTextveld setText:[categorieArray objectAtIndex:[self->categoriePicker selectedRowInComponent:0]]];
+        Category *t = [categorieen objectAtIndex:[self->categoriePicker selectedRowInComponent:0]];
+        category = t;
+        [self.categorieTextveld setText:t.name];
         [self.categorieTextveld resignFirstResponder];
     }
 }
@@ -72,12 +124,20 @@
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [categorieArray count];
+    id  sectionInfo =
+    [[_fetchedResultsController sections] objectAtIndex:component];
+    return [sectionInfo numberOfObjects];
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [categorieArray objectAtIndex:row];
+    //id  sectionInfo =
+    //[[_fetchedResultsController sections] objectAtIndex:component];
+    //Category * t = [[self.fetchedResultsController fetchedObjects] objectAtIndex:row];
+    //[categorieen addObject:t];
+    //return t.name;
+    Category *t = [categorieen objectAtIndex:row];
+    return t.name;
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
@@ -227,21 +287,18 @@
     if ([segue.identifier isEqualToString:@"toStep2"]) {
         //[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
         
-        activity = [[Activity alloc] init];
+        activity = (Activity *) [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
+                                                                        inManagedObjectContext:[self managedObjectContext]];
+        //activity
+        activity.category_id = category.category_id;
+        activity.title = self.titel.text;
+        activity.fkactivity2category = category;
+        activity.tags = self.tags.text;
+        activity.content = self.beschrijving.text;
         
-        activity.title = titel.text;
-        activity.category_id = [categoriePicker selectedRowInComponent:0];
-        activity.tags = tags.text;
-        activity.content = beschrijving.text;
         
-        category = [[Category alloc] init];
-        category.category_id = [categoriePicker selectedRowInComponent:0];
-        category.name = @"Naam";
-
         ToevoegenWaarViewController *vc = [segue destinationViewController];
         vc.activity = activity;
-        vc.category = category;
-        
     }
 }
 

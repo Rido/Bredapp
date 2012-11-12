@@ -41,7 +41,7 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"titel: %@", toevoeger.title);
+    //NSLog(@"titel: %@", toevoeger.title);
     
     addressField.delegate = self;
 
