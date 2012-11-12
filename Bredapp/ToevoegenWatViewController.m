@@ -36,6 +36,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Custom buttons
+//    UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
+//    UIImage *backImage = [UIImage imageNamed:@"back_button.png"];
+//    [back setBackgroundImage:backImage forState:UIControlStateNormal];
+//    [back addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
+//    back.frame = CGRectMake(50, 20, 51, 43);
+//    
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:back];
+//    self.navigationItem.leftBarButtonItem = backButton;
+    
     myApp = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [myApp managedObjectContext];
     categorieen = [[NSMutableArray alloc]init];
