@@ -10,7 +10,6 @@
 #import "ToevoegenWaarViewController.h"
 #import "Activity.h"
 #import "Category.h"
-#import "Toevoeger.h"
 #import "JsonParser.h"
 
 @interface ToevoegenWatViewController ()

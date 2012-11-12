@@ -10,7 +10,10 @@
 #import "Activity.h"
 #import "Category.h"
 
-@interface ToevoegenWanneerViewController : UIViewController <UITextFieldDelegate>
+@interface ToevoegenWanneerViewController : UIViewController <UITextFieldDelegate> {
+    NSDate *beginDate;
+    NSDate *endDate;
+}
 
 @property (strong, nonatomic) IBOutlet UITextField *beginField;
 @property (strong, nonatomic) IBOutlet UITextField *endField;

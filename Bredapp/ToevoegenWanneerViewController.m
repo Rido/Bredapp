@@ -71,28 +71,29 @@
     
     NSString *newDateString = [outputFormatter stringFromDate:datePicker.date];
     
+    if (selectedTextField == beginField)
+    {
+        beginDate = datePicker.date;
+    }
+    else if (selectedTextField == endField)
+    {
+        endDate = datePicker.date;
+    }
+    
     // Datum weergeven in tekstveld
     selectedTextField.text = newDateString;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {
-        
         NSDateFormatter *databaseOutputFormatter = [[NSDateFormatter alloc] init];
-        [databaseOutputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [databaseOutputFormatter setDateFormat:@"EEEE d MMMM HH:mm"];
         
-        activity.begin = [databaseOutputFormatter dateFromString: beginField.text];
-        activity.end = [databaseOutputFormatter dateFromString: endField.text];
+        activity.begin = beginDate;
+        activity.end = endDate;
         
         ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
-
-        vc.titleLabel.text = activity.title;
-        vc.datetimeTextView.text = [databaseOutputFormatter stringFromDate:activity.begin];
-        vc.whereTextView.text = @"Hier komt het adres";
-        vc.descriptionTextView.text = activity.description;
-        
         vc.activity = activity;
-        
     }
 }
 

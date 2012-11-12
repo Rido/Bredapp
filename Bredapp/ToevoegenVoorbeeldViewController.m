@@ -22,7 +22,6 @@
 @synthesize whereTextView;
 @synthesize descriptionTextView;
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,11 +33,16 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-    [[UIBarButtonItem alloc]
-     initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-     target:self
-     action:@selector(share)];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    titleLabel.text = activity.title;
+    datetimeTextView.text = [formatter stringFromDate:activity.begin];
+    whereTextView.text = @"hier komt adres";
+    descriptionTextView.text = activity.content;
     
 }
 
