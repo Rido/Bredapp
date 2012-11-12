@@ -78,7 +78,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {
-
+        
         NSDateFormatter *databaseOutputFormatter = [[NSDateFormatter alloc] init];
         [databaseOutputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         
@@ -86,8 +86,13 @@
         activity.end = [databaseOutputFormatter dateFromString: endField.text];
         
         ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
+
+        vc.titleLabel.text = activity.title;
+        vc.datetimeTextView.text = [databaseOutputFormatter stringFromDate:activity.begin];
+        vc.whereTextView.text = @"Hier komt het adres";
+        vc.descriptionTextView.text = activity.description;
+        
         vc.activity = activity;
-        vc.category = category;
         
     }
 }
