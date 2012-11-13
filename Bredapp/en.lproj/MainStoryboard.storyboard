@@ -453,6 +453,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="GXg-V8-co9">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="n4o-c5-1ua" kind="push" identifier="toStep3" id="dst-Fh-Qye"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -460,7 +463,6 @@
                         <outlet property="eigenLocatie" destination="bJf-4G-6Nk" id="jD8-0i-UOL"/>
                         <outlet property="laatZien" destination="iSm-Bg-AfD" id="nk6-z2-7K8"/>
                         <outlet property="mapView" destination="5jM-i7-q77" id="a1a-iH-K7C"/>
-                        <segue destination="n4o-c5-1ua" kind="push" identifier="toStep3" id="Cjp-BX-2Cx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvM-UI-8Ve" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -680,86 +682,6 @@
         <image name="no_photo.jpeg" width="250" height="250"/>
         <image name="overlay.png" width="192" height="32"/>
     </resources>
-    <classes>
-        <class className="ActivityCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="category" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="distance" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="start" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CustomNavBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavBar.h"/>
-        </class>
-        <class className="DetailActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailActivityViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="adresLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="contentLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="startLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LijstActiviteitenViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LijstActiviteitenViewController.h"/>
-        </class>
-        <class className="MapActiviteitenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapActiviteitenViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapview" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="SplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ToevoegenVoorbeeldViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenVoorbeeldViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="datetimeTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="whereTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="ToevoegenWaarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWaarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="eigenLocatie" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="laatZien" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="ToevoegenWanneerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWanneerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="beginField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="endField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ToevoegenWatViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWatViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectOrTakePhoto:"/>
-                <relationship kind="action" name="textfieldClicked:"/>
-                <relationship kind="action" name="textfieldLooseFocus:"/>
-                <relationship kind="outlet" name="aanspreekpunt" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="beschrijving" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="categorieTextveld" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="foto" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titel" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

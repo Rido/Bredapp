@@ -34,20 +34,33 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Bredapp/ToevoegenVoorbeeldViewController.m"
-         timestampString = "374505621.04725"
+         timestampString = "374510345.194952"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
          landmarkName = "-delen:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Bredapp/ToevoegenVoorbeeldViewController.m"
-         timestampString = "374505621.04725"
+         timestampString = "374510345.194952"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
+         landmarkName = "-delen:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Bredapp/ToevoegenVoorbeeldViewController.m"
+         timestampString = "374510345.194952"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "63"

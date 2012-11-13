@@ -33,7 +33,6 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -43,7 +42,6 @@
     datetimeTextView.text = [formatter stringFromDate:activity.begin];
     whereTextView.text = activity.adres;
     descriptionTextView.text = activity.content;
-    
 }
 
 - (IBAction)delen:(id)sender {
@@ -60,6 +58,7 @@
     content = [content stringByAppendingString:date];
     content = [content stringByAppendingString:where];
     content = [content stringByAppendingString:description];
+   
     SHKItem *item = [SHKItem image:image title:content];
     
     // Get the ShareKit action sheet

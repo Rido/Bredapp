@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42575C85165293E0002D9C34 /* MySKHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 42575C84165293E0002D9C34 /* MySKHConfig.m */; };
 		427109FD165095F000663624 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427109FC165095F000663624 /* CFNetwork.framework */; };
 		427109FF165095F600663624 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427109FE165095F600663624 /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		42710A011650960200663624 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42710A001650960200663624 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -15,7 +16,6 @@
 		42710A071650963500663624 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42710A061650963500663624 /* MessageUI.framework */; };
 		427493CD1651B7B70075F306 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 427493861651B77D0075F306 /* libShareKit.a */; };
 		427493CE1651B7D20075F306 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 427493881651B77D0075F306 /* ShareKit.bundle */; };
-		427493D11651B9690075F306 /* MySKHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 427493D01651B9690075F306 /* MySKHConfig.m */; };
 		427EF19A1646A0D700DCBAB0 /* ToevoegenWaarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF1991646A0D700DCBAB0 /* ToevoegenWaarViewController.m */; };
 		427EF19E1646A10200DCBAB0 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF19D1646A10200DCBAB0 /* MapAnnotation.m */; };
 		427EF1A11646A12700DCBAB0 /* CLLocation+Geocodereverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF1A01646A12700DCBAB0 /* CLLocation+Geocodereverse.m */; };
@@ -338,6 +338,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42575C83165293E0002D9C34 /* MySKHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySKHConfig.h; sourceTree = "<group>"; };
+		42575C84165293E0002D9C34 /* MySKHConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySKHConfig.m; sourceTree = "<group>"; };
 		427109FC165095F000663624 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		427109FE165095F600663624 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		42710A001650960200663624 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -345,8 +347,6 @@
 		42710A041650962D00663624 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		42710A061650963500663624 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		427493591651B77B0075F306 /* ShareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShareKit.xcodeproj; path = Submodules/ShareKit/ShareKit.xcodeproj; sourceTree = "<group>"; };
-		427493CF1651B9690075F306 /* MySKHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySKHConfig.h; sourceTree = "<group>"; };
-		427493D01651B9690075F306 /* MySKHConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySKHConfig.m; sourceTree = "<group>"; };
 		427EF1981646A0D700DCBAB0 /* ToevoegenWaarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenWaarViewController.h; sourceTree = "<group>"; };
 		427EF1991646A0D700DCBAB0 /* ToevoegenWaarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenWaarViewController.m; sourceTree = "<group>"; };
 		427EF19C1646A10200DCBAB0 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
@@ -575,6 +575,8 @@
 				6489A76B1615B3C0007282EF /* Breda_Inladen.xcdatamodeld */,
 				427EF19C1646A10200DCBAB0 /* MapAnnotation.h */,
 				427EF19D1646A10200DCBAB0 /* MapAnnotation.m */,
+				42575C83165293E0002D9C34 /* MySKHConfig.h */,
+				42575C84165293E0002D9C34 /* MySKHConfig.m */,
 				427EF1981646A0D700DCBAB0 /* ToevoegenWaarViewController.h */,
 				427EF1991646A0D700DCBAB0 /* ToevoegenWaarViewController.m */,
 				C724C8A81643F11D00392E0A /* ToevoegenWatViewController.h */,
@@ -591,8 +593,6 @@
 				F5F38BE3164BC6B000C3F8ED /* ActivityAnnotation.m */,
 				F50AB49A164BE6610098D555 /* ToevoegenVoorbeeldViewController.h */,
 				F50AB49B164BE6620098D555 /* ToevoegenVoorbeeldViewController.m */,
-				427493CF1651B9690075F306 /* MySKHConfig.h */,
-				427493D01651B9690075F306 /* MySKHConfig.m */,
 			);
 			path = Bredapp;
 			sourceTree = "<group>";
@@ -1024,7 +1024,7 @@
 				F50AB49C164BE6620098D555 /* ToevoegenVoorbeeldViewController.m in Sources */,
 				6406A3D5164D166B00E17158 /* Category.m in Sources */,
 				6406A3E4164D2D8000E17158 /* CustomNavBar.m in Sources */,
-				427493D11651B9690075F306 /* MySKHConfig.m in Sources */,
+				42575C85165293E0002D9C34 /* MySKHConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

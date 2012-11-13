@@ -59,8 +59,8 @@
     UIPanGestureRecognizer* panRec = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didDragMap:)];
     [panRec setDelegate:self];
     [self.mapView addGestureRecognizer:panRec];
-    
-    mapView.mapType = MKMapTypeHybrid;
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    //mapView.mapType = MKMapTypeHybrid;
     mapView.showsUserLocation = true;
     
 }
