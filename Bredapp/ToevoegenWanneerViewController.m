@@ -73,11 +73,11 @@
     
     if (selectedTextField == beginField)
     {
-        beginDate = datePicker.date;
+        activity.begin = datePicker.date;
     }
     else if (selectedTextField == endField)
     {
-        endDate = datePicker.date;
+        activity.end = datePicker.date;
     }
     
     // Datum weergeven in tekstveld
@@ -85,12 +85,8 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {
-        NSDateFormatter *databaseOutputFormatter = [[NSDateFormatter alloc] init];
-        [databaseOutputFormatter setDateFormat:@"EEEE d MMMM HH:mm"];
-        
-        activity.begin = beginDate;
-        activity.end = endDate;
+    if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {       
+
         
         ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
         vc.activity = activity;

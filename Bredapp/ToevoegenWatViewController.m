@@ -16,7 +16,9 @@
 
 @end
 
-@implementation ToevoegenWatViewController{}
+@implementation ToevoegenWatViewController{
+    NSString *fotoUrl;
+}
 
 @synthesize titel,beschrijving,tags,aanspreekpunt,foto,categorieTextveld;
 @synthesize activity, category;
@@ -67,8 +69,6 @@
         Category * t = [[self.fetchedResultsController fetchedObjects] objectAtIndex:i];
         [categorieen addObject:t];
     }
-    
-    
 
     
     categoriePicker = [[UIPickerView alloc]init];
@@ -153,6 +153,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage * takenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     takenImage = [self imageWithImage:takenImage scaledToSize:CGSizeMake(400, 400)];
+    fotoUrl = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSLog(@"URL: %@", fotoUrl);
     self.foto.image = takenImage;
 }
 

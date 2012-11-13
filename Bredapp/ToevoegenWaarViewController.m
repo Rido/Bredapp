@@ -167,26 +167,51 @@
 }
 
 - (IBAction)eigenLocatie:(id)sender {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.005;
-    span.longitudeDelta = 0.005;
-    CLLocationCoordinate2D location;
-    location.latitude = mapView.userLocation.location.coordinate.latitude;
-    location.longitude = mapView.userLocation.location.coordinate.longitude;
     
-    MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:mapView.userLocation.location.coordinate];
+    if (!self.geocoder) {
+        self.geocoder = [[CLGeocoder alloc] init];
+    }
     
+    CLLocation *locatie = [[CLLocation alloc] initWithLatitude:mapView.userLocation.coordinate.latitude longitude:mapView.userLocation.coordinate.longitude];
     
-    [self.mapView removeAnnotations:myAnnotations];
-    [self.mapView addAnnotation: annotation];
-    
-    [myAnnotations removeAllObjects];
-    [myAnnotations addObject:annotation];
-    
-    region.span = span;
-    region.center = location;
-    [mapView setRegion:region animated:YES];
+    [self.geocoder reverseGeocodeLocation: locatie completionHandler:
+     
+     ^(NSArray *placemarks, NSError *error) {
+         
+         
+         
+         //Get nearby address
+         
+         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+         
+         
+         
+         //String to hold address
+         
+         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+         
+         addressField.text = locatedAt;
+         
+         MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:locatie.coordinate];
+         
+         MKCoordinateRegion region;
+         region.center = annotation.coordinate;
+         
+         MKCoordinateSpan span;
+         span.latitudeDelta = 0.01;
+         span.longitudeDelta = 0.01;
+         region.span = span;
+         
+         [self.mapView removeAnnotations:mapView.annotations];
+         [self.mapView addAnnotation: annotation];
+         [self.mapView setRegion:region animated:YES];
+         [annotation release];
+         
+         //Print the location to console
+         //NSLog(@"I am currently at %@",locatedAt);
+         
+         
+     }];
 }
 
 - (IBAction)toonAdres:(id)sender {
@@ -325,7 +350,7 @@
         activity.co_lat = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.latitude];
         activity.co_long = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.longitude];
         NSLog(@"Address: %@", addressField.text);
-        //activity.adres = addressField.text;
+        activity.adres = addressField.text;
     
         ToevoegenWanneerViewController *vc = [segue destinationViewController];
         vc.activity = activity;

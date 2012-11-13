@@ -15,7 +15,7 @@
 
 @implementation ToevoegenVoorbeeldViewController
 
-@synthesize activity;
+@synthesize activity, activityImage;
 @synthesize category;
 @synthesize titleLabel;
 @synthesize datetimeTextView;
@@ -47,9 +47,20 @@
 }
 
 - (IBAction)delen:(id)sender {
-    // Create the item to share (in this example, a url)
-    NSURL *url = [NSURL URLWithString:@"http://getsharekit.com"];
-    SHKItem *item = [SHKItem URL:url title:@"ShareKit is Awesome!" contentType:SHKURLContentTypeWebpage];
+    // Example: Use an image in our resource bundle
+    //Hier ff de name aanpassen met de activity fotourl
+    UIImage *image = [UIImage imageNamed:@"Default.png"];
+    
+    NSString *title = [NSString stringWithFormat:@"%@\n", titleLabel.text];
+    NSString *date = [NSString stringWithFormat:@"%@\n", datetimeTextView.text];
+    NSString *where = [NSString stringWithFormat:@"%@\n", whereTextView.text];
+    NSString *description = [NSString stringWithFormat:@"%@\n", descriptionTextView.text];
+    NSString *content = title;
+    
+    content = [content stringByAppendingString:date];
+    content = [content stringByAppendingString:where];
+    content = [content stringByAppendingString:description];
+    SHKItem *item = [SHKItem image:image title:content];
     
     // Get the ShareKit action sheet
     SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
@@ -73,6 +84,7 @@
 }
 
 - (void)dealloc {
+    [activityImage release];
     [super dealloc];
 }
 @end

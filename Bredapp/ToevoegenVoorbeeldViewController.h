@@ -16,6 +16,7 @@
 @property (retain, nonatomic) IBOutlet UITextView *datetimeTextView;
 @property (retain, nonatomic) IBOutlet UITextView *whereTextView;
 @property (retain, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (retain, nonatomic) IBOutlet UIImageView *activityImage;
 
 @property (strong, nonatomic) Activity *activity;
 @property (strong, nonatomic) Category *category;

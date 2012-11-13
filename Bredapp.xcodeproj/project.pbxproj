@@ -365,8 +365,6 @@
 		641340D0164BFB860038B506 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		6434CD3616402EF40066354E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		6434CD3716402EF40066354E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
-		64438B75165172370087254F /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
-		64438B76165172370087254F /* next_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next_button@2x.png"; sourceTree = "<group>"; };
 		64438B8316517AC90087254F /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 		64438B8416517AC90087254F /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay@2x.png"; sourceTree = "<group>"; };
 		64438B8916517BB20087254F /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
@@ -613,8 +611,6 @@
 		6489A75416159972007282EF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				64438B75165172370087254F /* back_button@2x.png */,
-				64438B76165172370087254F /* next_button@2x.png */,
 				64438B8916517BB20087254F /* navbar.png */,
 				64438B8A16517BB20087254F /* navbar@2x.png */,
 				641340D0164BFB860038B506 /* icon@2x.png */,
@@ -1124,7 +1120,10 @@
 				GCC_PREFIX_HEADER = "Bredapp/Bredapp-Prefix.pch";
 				INFOPLIST_FILE = "Bredapp/Bredapp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Bredapp;
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;
@@ -1139,7 +1138,10 @@
 				GCC_PREFIX_HEADER = "Bredapp/Bredapp-Prefix.pch";
 				INFOPLIST_FILE = "Bredapp/Bredapp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = Bredapp;
 				USER_HEADER_SEARCH_PATHS = "Submodules/**";
 				WRAPPER_EXTENSION = app;

@@ -11,8 +11,6 @@
 #import "Category.h"
 
 @interface ToevoegenWanneerViewController : UIViewController <UITextFieldDelegate> {
-    NSDate *beginDate;
-    NSDate *endDate;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *beginField;

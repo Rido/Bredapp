@@ -7,6 +7,7 @@
 //
 
 #import "DetailActivityViewController.h"
+#import "SHK.h"
 
 @interface DetailActivityViewController ()
 
@@ -14,8 +15,7 @@
 
 @implementation DetailActivityViewController
 
-@synthesize activity;
-@synthesize titleLabel,contentLabel,startLabel,adresLabel;
+@synthesize activity, titleLabel,contentLabel,startLabel,adresLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +42,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)delen:(id)sender {
+    UIImage *image = [UIImage imageNamed:@"Default.png"];
+    
+    NSString *title = [NSString stringWithFormat:@"%@\n", titleLabel.text];
+    NSString *date = [NSString stringWithFormat:@"%@\n", startLabel.text];
+    NSString *where = [NSString stringWithFormat:@"%@\n", adresLabel.text];
+    NSString *description = [NSString stringWithFormat:@"%@\n", contentLabel.text];
+    NSString *content = title;
+    
+    content = [content stringByAppendingString:date];
+    content = [content stringByAppendingString:where];
+    content = [content stringByAppendingString:description];
+    SHKItem *item = [SHKItem image:image title:content];
+    
+    // Get the ShareKit action sheet
+    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+    
+    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+    // but sometimes it may not find one. To be safe, set it explicitly
+    [SHK setRootViewController:self];
+    
+    // Display the action sheet
+    [actionSheet showFromToolbar:self.navigationController.toolbar];
+}
+
+
 - (void)viewDidUnload {
     [self setTitleLabel:nil];
     [self setContentLabel:nil];
@@ -50,4 +76,7 @@
     [super viewDidUnload];
 }
 
+- (void)dealloc {
+    [super dealloc];
+}
 @end
