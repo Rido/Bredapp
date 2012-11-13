@@ -166,7 +166,30 @@
     }
 }
 
-- (IBAction)updateLocatie:(id)sender {
+- (IBAction)eigenLocatie:(id)sender {
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.005;
+    span.longitudeDelta = 0.005;
+    CLLocationCoordinate2D location;
+    location.latitude = mapView.userLocation.location.coordinate.latitude;
+    location.longitude = mapView.userLocation.location.coordinate.longitude;
+    
+    MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:mapView.userLocation.location.coordinate];
+    
+    
+    [self.mapView removeAnnotations:myAnnotations];
+    [self.mapView addAnnotation: annotation];
+    
+    [myAnnotations removeAllObjects];
+    [myAnnotations addObject:annotation];
+    
+    region.span = span;
+    region.center = location;
+    [mapView setRegion:region animated:YES];
+}
+
+- (IBAction)toonAdres:(id)sender {
     if (!self.geocoder) {
         self.geocoder = [[CLGeocoder alloc] init];
     }
@@ -205,8 +228,6 @@
     }];
 }
 
-
-
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
     MKCoordinateRegion region;
     MKCoordinateSpan span;
@@ -225,31 +246,9 @@
 {
     [self setAddressField:nil];
     [self setMapView:nil];
+    [self setEigenLocatie:nil];
+    [self setLaatZien:nil];
     [super viewDidUnload];
-    
-}
-
-- (IBAction)mijnLocatie:(id)sender {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.005;
-    span.longitudeDelta = 0.005;
-    CLLocationCoordinate2D location;
-    location.latitude = mapView.userLocation.location.coordinate.latitude;
-    location.longitude = mapView.userLocation.location.coordinate.longitude;
-    
-    MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:mapView.userLocation.location.coordinate];
-    
-    
-    [self.mapView removeAnnotations:myAnnotations];
-    [self.mapView addAnnotation: annotation];
-    
-    [myAnnotations removeAllObjects];
-    [myAnnotations addObject:annotation];
-    
-    region.span = span;
-    region.center = location;
-    [mapView setRegion:region animated:YES];
     
 }
 
@@ -315,6 +314,8 @@
 }
 
 - (void)dealloc {
+    [_eigenLocatie release];
+    [_laatZien release];
     [super dealloc];
 }
 
@@ -323,7 +324,9 @@
         
         activity.co_lat = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.latitude];
         activity.co_long = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.longitude];
-        
+        NSLog(@"Address: %@", addressField.text);
+        //activity.adres = addressField.text;
+    
         ToevoegenWanneerViewController *vc = [segue destinationViewController];
         vc.activity = activity;
         

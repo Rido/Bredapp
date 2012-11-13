@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "SplashViewController.h"
 #import "LijstActiviteitenViewController.h"
+#import "MySKHConfig.h"
+#import "SHKConfiguration.h"
 
 @implementation AppDelegate
 
@@ -22,6 +24,9 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     SplashViewController *controller = (SplashViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    DefaultSHKConfigurator *configurator = [[MySKHConfig alloc] init];
+    [SHKConfiguration sharedInstanceWithConfigurator:configurator];
     
     // Override point for customization after application launch.
     return YES;

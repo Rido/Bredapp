@@ -20,5 +20,7 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong, nonatomic) Activity *activity;
+@property (retain, nonatomic) IBOutlet UIButton *eigenLocatie;
+@property (retain, nonatomic) IBOutlet UIButton *laatZien;
 
 @end

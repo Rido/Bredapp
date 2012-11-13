@@ -15,6 +15,7 @@
 @dynamic activity_id;
 @dynamic begin;
 @dynamic category_id;
+@dynamic adres;
 @dynamic co_lat;
 @dynamic co_long;
 @dynamic content;
