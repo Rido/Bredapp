@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="K0i-VH-Oud">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="K0i-VH-Oud">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Splash View Controller-->
@@ -180,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="1167" y="761"/>
         </scene>
-        <!--Toevoegen Wat View Controller - Stap 1/3-->
+        <!--Toevoegen Wat View Controller - Toevoegen-->
         <scene sceneID="Hnx-8E-deq">
             <objects>
                 <viewController id="wTR-fu-yF5" customClass="ToevoegenWatViewController" sceneMemberID="viewController">
@@ -207,7 +207,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Titel" borderStyle="roundedRect" minimumFontSize="17" id="ssg-h2-Hj9">
-                                <rect key="frame" x="20" y="33" width="159" height="30"/>
+                                <rect key="frame" x="20" y="40" width="159" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -247,11 +247,26 @@
                                     <action selector="textfieldLooseFocus:" destination="wTR-fu-yF5" eventType="editingDidEnd" id="Kcq-EG-unA"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="overlay.png" id="bEd-KM-w3Z">
+                                <rect key="frame" x="64" y="0.0" width="192" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stap 1 / 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nVD-cv-hsW">
+                                <rect key="frame" x="118" y="5" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Stap 1/3" id="Nvg-LB-mDT">
+                    <navigationItem key="navigationItem" title="Toevoegen" id="Nvg-LB-mDT">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="WMQ-hR-YKR">
+                            <color key="tintColor" red="0.0050101902173913526" green="0.0020823400682647062" blue="0.0049124303538570398" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="QNb-5z-ffJ">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Khb-dl-kge" kind="push" identifier="toStep2" id="jzE-h9-Spc"/>
                             </connections>
@@ -369,7 +384,7 @@
             </objects>
             <point key="canvasLocation" x="-166" y="225"/>
         </scene>
-        <!--Toevoegen Waar View Controller - Stap 2/3-->
+        <!--Toevoegen Waar View Controller - Toevoegen-->
         <scene sceneID="k6B-f1-EJ2">
             <objects>
                 <viewController id="Khb-dl-kge" customClass="ToevoegenWaarViewController" sceneMemberID="viewController">
@@ -378,13 +393,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Papierberk 17, Zundert" borderStyle="roundedRect" minimumFontSize="17" id="4Kf-Il-kpd">
-                                <rect key="frame" x="20" y="14" width="280" height="31"/>
+                                <rect key="frame" x="19" y="40" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="5jM-i7-q77">
-                                <rect key="frame" x="20" y="53" width="280" height="246"/>
+                                <rect key="frame" x="20" y="85" width="280" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bJf-4G-6Nk">
@@ -399,7 +414,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="mijnLocatie:" destination="Khb-dl-kge" eventType="touchUpInside" id="FWM-ez-Q2M"/>
+                                    <action selector="eigenLocatie:" destination="Khb-dl-kge" eventType="touchDown" id="U8a-kK-M4y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iSm-Bg-AfD">
@@ -414,15 +429,29 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="updateLocatie:" destination="Khb-dl-kge" eventType="touchUpInside" id="C56-OO-oW0"/>
+                                    <action selector="toonAdres:" destination="Khb-dl-kge" eventType="touchDown" id="jv9-5v-chb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="overlay.png" id="VVC-n2-Rb9">
+                                <rect key="frame" x="64" y="-1" width="192" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stap 2 / 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cw1-Fx-LMh">
+                                <rect key="frame" x="117" y="6" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Stap 2/3" id="OE6-we-FIO">
-                        <barButtonItem key="backBarButtonItem" title="Terug" id="W6G-oS-ugb"/>
+                    <navigationItem key="navigationItem" title="Toevoegen" id="OE6-we-FIO">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="FmM-fP-Mnr">
+                            <color key="tintColor" red="0.0050101902173913526" green="0.0" blue="0.0049802864412545307" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="GXg-V8-co9">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="n4o-c5-1ua" kind="push" identifier="toStep3" id="VKu-f1-kE3"/>
                             </connections>
@@ -430,6 +459,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressField" destination="4Kf-Il-kpd" id="bYU-g6-VIc"/>
+                        <outlet property="eigenLocatie" destination="bJf-4G-6Nk" id="jD8-0i-UOL"/>
+                        <outlet property="laatZien" destination="iSm-Bg-AfD" id="nk6-z2-7K8"/>
                         <outlet property="mapView" destination="5jM-i7-q77" id="a1a-iH-K7C"/>
                     </connections>
                 </viewController>
@@ -491,7 +522,7 @@
             </objects>
             <point key="canvasLocation" x="2020" y="-397"/>
         </scene>
-        <!--Toevoegen Wanneer View Controller - Stap 3/3-->
+        <!--Toevoegen Wanneer View Controller - Toevoegen-->
         <scene sceneID="jYP-4c-J0i">
             <objects>
                 <viewController id="n4o-c5-1ua" customClass="ToevoegenWanneerViewController" sceneMemberID="viewController">
@@ -500,14 +531,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Aanvangst Activiteit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ev7-Qf-u7D">
-                                <rect key="frame" x="20" y="20" width="230" height="21"/>
+                                <rect key="frame" x="20" y="35" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Z4D-VE-S3C">
-                                <rect key="frame" x="20" y="49" width="230" height="30"/>
+                                <rect key="frame" x="20" y="64" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -516,14 +547,14 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Einde Activiteit:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kt2-7h-7RP">
-                                <rect key="frame" x="20" y="104" width="230" height="21"/>
+                                <rect key="frame" x="20" y="119" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="P1W-js-Do7">
-                                <rect key="frame" x="20" y="133" width="230" height="30"/>
+                                <rect key="frame" x="20" y="148" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -531,11 +562,26 @@
                                     <outlet property="delegate" destination="n4o-c5-1ua" id="fxX-On-Q0t"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="overlay.png" id="jUY-gK-hJ5">
+                                <rect key="frame" x="64" y="-1" width="192" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Stap 3 / 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7OX-X1-qCW">
+                                <rect key="frame" x="117" y="6" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Stap 3/3" id="nQa-OR-bNg">
+                    <navigationItem key="navigationItem" title="Toevoegen" id="nQa-OR-bNg">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="gn0-HX-QyL">
+                            <color key="tintColor" red="0.0020340913489339369" green="0.0" blue="0.0050101902173913526" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Volgende" id="pvW-0z-VvI">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="8qZ-l9-JSv" kind="push" identifier="toVoorbeeld" id="8Rx-NX-yBI"/>
                             </connections>
@@ -586,10 +632,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VuA-Iw-Rgt">
+                                <rect key="frame" x="0.0" y="323" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Delen" id="Cxj-JG-X7S">
+                                        <connections>
+                                            <action selector="delen:" destination="8qZ-l9-JSv" id="eRU-rE-Dyl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Voorbeeld" id="vMB-Fl-c0G">
+                        <barButtonItem key="backBarButtonItem" title="Terug" id="6We-Fd-zTd"/>
                         <barButtonItem key="rightBarButtonItem" title="Klaar!" id="5vj-vD-4Cj">
                             <connections>
                                 <segue destination="EBx-B8-T2z" kind="modal" animates="NO" id="FoY-oj-NTu"/>
@@ -616,7 +674,88 @@
         <image name="Default.png" width="320" height="480"/>
         <image name="bredapp.png" width="173" height="170"/>
         <image name="no_photo.jpeg" width="250" height="250"/>
+        <image name="overlay.png" width="192" height="32"/>
     </resources>
+    <classes>
+        <class className="ActivityCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="category" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="distance" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="start" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CustomNavBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavBar.h"/>
+        </class>
+        <class className="DetailActivityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailActivityViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="adresLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="contentLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="startLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="LijstActiviteitenViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LijstActiviteitenViewController.h"/>
+        </class>
+        <class className="MapActiviteitenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapActiviteitenViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapview" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SplashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SplashViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ToevoegenVoorbeeldViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenVoorbeeldViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="delen:"/>
+                <relationship kind="outlet" name="datetimeTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="whereTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ToevoegenWaarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWaarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="eigenLocatie" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="laatZien" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="ToevoegenWanneerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWanneerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="beginField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="endField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ToevoegenWatViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWatViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectOrTakePhoto:"/>
+                <relationship kind="action" name="textfieldClicked:"/>
+                <relationship kind="action" name="textfieldLooseFocus:"/>
+                <relationship kind="outlet" name="aanspreekpunt" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="beschrijving" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="categorieTextveld" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="foto" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titel" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

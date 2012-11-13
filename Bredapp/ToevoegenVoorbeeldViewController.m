@@ -41,13 +41,12 @@
     
     titleLabel.text = activity.title;
     datetimeTextView.text = [formatter stringFromDate:activity.begin];
-    whereTextView.text = @"hier komt adres";
+    whereTextView.text = activity.adres;
     descriptionTextView.text = activity.content;
     
 }
 
-- (void)share
-{
+- (IBAction)delen:(id)sender {
     // Create the item to share (in this example, a url)
     NSURL *url = [NSURL URLWithString:@"http://getsharekit.com"];
     SHKItem *item = [SHKItem URL:url title:@"ShareKit is Awesome!" contentType:SHKURLContentTypeWebpage];
@@ -73,4 +72,7 @@
     NSLog(@"Klaar!");
 }
 
+- (void)dealloc {
+    [super dealloc];
+}
 @end
