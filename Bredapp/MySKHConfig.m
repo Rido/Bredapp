@@ -94,11 +94,11 @@
 }
 
 - (NSString*)twitterConsumerKey {
-	return @"48Ii81VO5NtDKIsQDZ3Ggw";
+	return @"A1YYcO17yMeS2oJIQtMlQ";
 }
 
 - (NSString*)twitterSecret {
-	return @"WYc2HSatOQGXlUCsYnuW3UjrlqQj0xvkvvOIsKek32g";
+	return @"7TvJ3Q3ftsWZkIl52eFmIyjLqBcsfXaurbbde3VZx4";
 }
 // You need to set this if using OAuth, see note above (xAuth users can skip it)
 - (NSString*)twitterCallbackUrl {
@@ -112,86 +112,9 @@
 - (NSString*)twitterUsername {
 	return @"";
 }
-// Evernote - http://www.evernote.com/about/developer/api/
-/*	You need to set to sandbox until you get approved by evernote
- // Sandbox
- #define SHKEvernoteUserStoreURL    @"https://sandbox.evernote.com/edam/user"
- #define SHKEvernoteNetStoreURLBase @"http://sandbox.evernote.com/edam/note/"
- 
- // Or production
- #define SHKEvernoteUserStoreURL    @"https://www.evernote.com/edam/user"
- #define SHKEvernoteNetStoreURLBase @"http://www.evernote.com/edam/note/"
- */
 
-- (NSString *)evernoteHost {
-    return @"sandbox.evernote.com";
-}
-
-- (NSString*)evernoteConsumerKey {
-	return @"hansmeyer0711-4037";
-}
-
-- (NSString*)evernoteSecret {
-	return @"e9d68467cd4c1aeb";
-}
-// Flickr - http://www.flickr.com/services/apps/create/
-/*
- 1 - This requires the CFNetwork.framework
- 2 - One needs to setup the flickr app as a "web service" on the flickr authentication flow settings, and enter in your app's custom callback URL scheme.
- 3 - make sure you define and create the same URL scheme in your apps info.plist. It can be as simple as yourapp://flickr */
-- (NSString*)flickrConsumerKey {
-    return @"72f05286417fae8da2d7e779f0eb1b2a";
-}
-
-- (NSString*)flickrSecretKey {
-    return @"b5e731f395031782";
-}
-// The user defined callback url
-- (NSString*)flickrCallbackUrl{
-    return @"app://flickr";
-}
-
-// Bit.ly for shortening URLs in case you use original SHKTwitter sharer (pre iOS5). If you use iOS 5 builtin framework, the URL will be shortened anyway, these settings are not used in this case. http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key If you do not enter credentials, URL will be shared unshortened.
-- (NSString*)bitLyLogin {
-	return @"vilem";
-}
-
-- (NSString*)bitLyKey {
-	return @"R_466f921d62a0789ac6262b7711be8454";
-}
-
-// LinkedIn - https://www.linkedin.com/secure/developer
-- (NSString*)linkedInConsumerKey {
-	return @"9f8m5vx0yhjf";
-}
-
-- (NSString*)linkedInSecret {
-	return @"UWGKcBWreMKhwzRG";
-}
-
-- (NSString*)linkedInCallbackUrl {
-	return @"http://yourdomain.com/callback";
-}
-
-- (NSString*)readabilityConsumerKey {
-	return @"ctruman";
-}
-
-- (NSString*)readabilitySecret {
-	return @"RGXDE6wTygKtkwDBHpnjCAyvz2dtrhLD";
-}
-
-//Only supports XAuth currently
-- (NSNumber*)readabilityUseXAuth {
-    return [NSNumber numberWithInt:1];;
-}
-// Foursquare V2 - https://developer.foursquare.com
-- (NSString*)foursquareV2ClientId {
-    return @"NFJOGLJBI4C4RSZ3DQGR0W4ED5ZWAAE5QO3FW02Z3LLVZCT4";
-}
-
-- (NSString*)foursquareV2RedirectURI {
-    return @"app://foursquare";
+- (NSString*)sharersPlistName {
+	return @"BredaShares.plist";
 }
 
 /*

@@ -21,6 +21,7 @@
 @synthesize datetimeTextView;
 @synthesize whereTextView;
 @synthesize descriptionTextView;
+@synthesize myApp, managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +35,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    myApp = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    self.managedObjectContext = [myApp managedObjectContext];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -136,6 +140,26 @@
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     NSLog(@"Return string: %@",returnString);
+    
+    Activity *newActivity = (Activity *) [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
+                                                                       inManagedObjectContext:[self managedObjectContext]];
+
+    newActivity.activity_id = [NSNumber numberWithInt:[returnString intValue]];
+    newActivity.begin = activity.begin;
+    newActivity.category_id = activity.category_id;
+    newActivity.adres = activity.adres;
+    newActivity.co_lat = activity.co_lat;
+    newActivity.co_long = activity.co_long;
+    newActivity.content = activity.content;
+    newActivity.device_id = activity.device_id;
+    newActivity.end = activity.end;
+    newActivity.image = activity.image;
+    newActivity.tags = activity.tags;
+    newActivity.title = activity.title;
+    newActivity.image_url = activity.image_url;
+    newActivity.fkactivity2category = activity.fkactivity2category;
+    
+    [myApp saveContext];
 }
 
 - (void)dealloc {
