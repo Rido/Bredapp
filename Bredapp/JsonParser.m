@@ -164,12 +164,14 @@
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Institution"];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Category"
                                                   inManagedObjectContext:managedObjectContext];
-        NSPredicate *pred = [NSPredicate predicateWithFormat:@"id == %d", activity.category_id];
-        
+
+        NSPredicate *pred = [NSPredicate predicateWithFormat:@"category_id == %d", [activity.category_id intValue]];
         [fetchRequest setEntity:entity];
         [fetchRequest setPredicate:pred];
         
+        
         NSArray *queryResults = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+       
         Category *category = [queryResults objectAtIndex:0];
         [activity setFkactivity2category:category];
     }

@@ -61,7 +61,6 @@
 		64B3F1F316428BAD000AF870 /* 216-compose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E316428BAD000AF870 /* 216-compose@2x.png */; };
 		64B3F1F416428BAD000AF870 /* 259-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E416428BAD000AF870 /* 259-list.png */; };
 		64B3F1F516428BAD000AF870 /* 259-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E516428BAD000AF870 /* 259-list@2x.png */; };
-		64C045E2163EE35D007EBFE5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 644AEF6F1623484A0005AA67 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8D02BD9F164BD159006E196E /* ToevoegenWanneerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */; };
 		C724C8A61643F0DE00392E0A /* no_photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C724C8A51643F0DE00392E0A /* no_photo.jpeg */; };
 		C724C8AA1643F11D00392E0A /* ToevoegenWatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C724C8A91643F11D00392E0A /* ToevoegenWatViewController.m */; };
@@ -369,8 +368,6 @@
 		64438B8416517AC90087254F /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay@2x.png"; sourceTree = "<group>"; };
 		64438B8916517BB20087254F /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
 		64438B8A16517BB20087254F /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
-		644AEF6E162348490005AA67 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		644AEF6F1623484A0005AA67 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		644AEF721623491D0005AA67 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
 		644AEF731623491D0005AA67 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
 		6489A72B16159912007282EF /* Bredapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bredapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -502,8 +499,6 @@
 				427EF1A31646A13800DCBAB0 /* NSString+JSON.m */,
 				427EF19F1646A12700DCBAB0 /* CLLocation+Geocodereverse.h */,
 				427EF1A01646A12700DCBAB0 /* CLLocation+Geocodereverse.m */,
-				644AEF6E162348490005AA67 /* JSONKit.h */,
-				644AEF6F1623484A0005AA67 /* JSONKit.m */,
 				6406A3E2164D2D8000E17158 /* CustomNavBar.h */,
 				6406A3E3164D2D8000E17158 /* CustomNavBar.m */,
 			);
@@ -1003,7 +998,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C045E2163EE35D007EBFE5 /* JSONKit.m in Sources */,
 				6489A73C16159912007282EF /* main.m in Sources */,
 				6489A74016159912007282EF /* AppDelegate.m in Sources */,
 				6489A7661615A117007282EF /* SplashViewController.m in Sources */,

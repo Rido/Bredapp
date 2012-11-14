@@ -85,8 +85,16 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
     if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {       
+        
+        /*if([activity.title length] == 0 || [activity.category_id intValue] == 0){
+           NSLog(@"id: %d", [activity.category_id intValue]); 
+            ControleViewController *cvc = [[ControleViewController alloc] init];
+            [self.navigationController pushViewController:cvc animated:NO];
+            [cvc release];
 
+        }*/
         
         ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
         vc.activity = activity;
