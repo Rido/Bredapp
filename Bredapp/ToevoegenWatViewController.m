@@ -21,7 +21,7 @@
 
 @synthesize titel,beschrijving,tags,aanspreekpunt,foto,categorieTextveld;
 @synthesize activity, category;
-@synthesize myApp, managedObjectContext,selectedText;
+@synthesize myApp, managedObjectContext,selectedText,categoriePlaatje;
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -114,7 +114,6 @@
 -(void)categorie_tapped{
     if([self->categoriePicker selectedRowInComponent:0]>=0)
     {
-        NSLog(@"yo")   ;
         Category *t = [categorieen objectAtIndex:[self->categoriePicker selectedRowInComponent:0]];
         category = t;
         [self.categorieTextveld setText:t.name];
@@ -152,12 +151,17 @@
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    NSLog(@"lalal");
     selectedRow = row;
     Category *t =  [categorieen objectAtIndex:row];
     category = t;
     categorieTextveld.text = t.name;
+    categoriePlaatje.image = [UIImage imageWithData:(t.image)];
     selectedText = categorieTextveld.text;
+    
+    
+   // NSData *imageData = UIImagePNGRepresentation(image);
+    
+    //UIImage *image=[UIImage imageWithData:data];
 }
 
 - (void)setComboData:(NSMutableArray *)data
@@ -387,6 +391,7 @@
     [super viewDidUnload];
 }
 - (void)dealloc {
+
     [super dealloc];
 }
 

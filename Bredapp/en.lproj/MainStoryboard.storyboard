@@ -188,7 +188,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no_photo.jpeg" id="F4p-Ob-FQV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="no_photo.jpeg" id="F4p-Ob-FQV">
                                 <rect key="frame" x="201" y="19" width="100" height="100"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UBi-QA-0Rn">
@@ -207,7 +207,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Titel" borderStyle="roundedRect" minimumFontSize="17" id="ssg-h2-Hj9">
-                                <rect key="frame" x="20" y="40" width="159" height="30"/>
+                                <rect key="frame" x="20" y="40" width="173" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -216,7 +216,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Categorie" borderStyle="roundedRect" minimumFontSize="17" id="i89-xP-gfS">
-                                <rect key="frame" x="20" y="89" width="159" height="30"/>
+                                <rect key="frame" x="20" y="89" width="135" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -258,6 +258,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="fIf-U6-1x2">
+                                <rect key="frame" x="163" y="89" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -275,6 +279,7 @@
                     <connections>
                         <outlet property="aanspreekpunt" destination="3Re-AQ-Y6Z" id="6RX-bD-d09"/>
                         <outlet property="beschrijving" destination="uIn-Av-po8" id="yxR-9i-suk"/>
+                        <outlet property="categoriePlaatje" destination="fIf-U6-1x2" id="aZT-gw-1IO"/>
                         <outlet property="categorieTextveld" destination="i89-xP-gfS" id="DmO-0d-Upx"/>
                         <outlet property="foto" destination="F4p-Ob-FQV" id="Dbf-he-tn2"/>
                         <outlet property="tags" destination="OsS-jz-TZ4" id="9vw-rK-0tt"/>
@@ -752,11 +757,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ToevoegenWatViewController.h"/>
             <relationships>
                 <relationship kind="action" name="selectOrTakePhoto:"/>
-                <relationship kind="action" name="showPicker:"/>
                 <relationship kind="action" name="textfieldClicked:"/>
                 <relationship kind="action" name="textfieldLooseFocus:"/>
                 <relationship kind="outlet" name="aanspreekpunt" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="beschrijving" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="categoriePlaatje" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="categorieTextveld" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="foto" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="tags" candidateClass="UITextField"/>
