@@ -2,4 +2,58 @@
 <Bucket
    type = "1"
    version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Bredapp/AppDelegate.m"
+         timestampString = "374590298.151432"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
+         landmarkName = "-handleOpenURL:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Bredapp/AppDelegate.m"
+         timestampString = "374590298.151432"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "83"
+         endingLineNumber = "83"
+         landmarkName = "-handleOpenURL:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Bredapp/AppDelegate.m"
+         timestampString = "374590298.151432"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
+         landmarkName = "-handleOpenURL:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Bredapp/AppDelegate.m"
+         timestampString = "374590363.135227"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "-application:openURL:sourceApplication:annotation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+   </FileBreakpoints>
 </Bucket>
