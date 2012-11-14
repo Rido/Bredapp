@@ -7,6 +7,7 @@
 //
 
 #import "DetailActivityViewController.h"
+#import "ImageCache.h"
 #import <Socialize/Socialize.h>
 
 @interface DetailActivityViewController ()
@@ -15,7 +16,7 @@
 
 @implementation DetailActivityViewController
 
-@synthesize activity, titleLabel,contentLabel,startLabel,adresLabel;
+@synthesize activity, imageView, titleLabel,contentLabel,startLabel,endLabel,adresLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,11 +30,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE d MMMM HH:mm"];
+    
 	// Do any additional setup after loading the view.
-    titleLabel.text = [activity title];
-    adresLabel.text = @"Grote Markt 1";
+    titleLabel.text = activity.title;
+    adresLabel.text = activity.address;
     contentLabel.text = [activity content];
-    startLabel.text = @"2012 23 november, 1700 uur";
+    startLabel.text = [dateFormatter stringFromDate:activity.begin];
+    endLabel.text = [dateFormatter stringFromDate:activity.end];
+    
+    if (activity.image.length > 5)
+    {
+        self.imageView.image = [UIImage imageWithData: activity.image];
+    }
+    else if (activity.image_url.length > 5)
+    {
+        NSDictionary *imageInfo = [[NSDictionary alloc] initWithObjectsAndKeys:activity.image_url, @"url", nil];
+        
+        [NSThread detachNewThreadSelector:@selector(loadImageInBackground:)
+                                 toTarget:self
+                               withObject:imageInfo];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,9 +61,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)delen:(id)sender {
-    UIImage *image = [UIImage imageNamed:@"Default.png"];
-    
+- (IBAction)delen:(id)sender {    
     NSString *title = [NSString stringWithFormat:@"%@\n", titleLabel.text];
     NSString *date = [NSString stringWithFormat:@"%@\n", startLabel.text];
     NSString *where = [NSString stringWithFormat:@"%@\n", adresLabel.text];
@@ -56,6 +73,17 @@
     content = [content stringByAppendingString:description];
 
     [self showShareDialogWithOptions];
+}
+
+- (void) loadImageInBackground:(NSDictionary *)info
+{
+    NSURL *imageURL = [NSURL URLWithString:[info objectForKey:@"url"]];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    
+    // Assume image is an instance variable
+    UIImage *image = [UIImage imageWithData: imageData];
+    activity.image = imageData;
+    [self.imageView setImage:image];
 }
 
 - (void)showShareDialogWithOptions {

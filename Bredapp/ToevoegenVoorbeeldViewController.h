@@ -12,8 +12,12 @@
 #import "Activity.h"
 #import "TempActivity.h"
 #import "FileUploadEngine.h"
+#import "MBProgressHUD.h"
 
-@interface ToevoegenVoorbeeldViewController : UIViewController
+@interface ToevoegenVoorbeeldViewController : UIViewController <MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 
 @property (nonatomic, strong) AppDelegate *myApp;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;

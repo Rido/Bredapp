@@ -12,9 +12,11 @@
 @interface DetailActivityViewController : UIViewController
 
 @property (nonatomic, strong) Activity *activity;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UITextView *contentLabel;
 @property (strong, nonatomic) IBOutlet UITextView *startLabel;
 @property (strong, nonatomic) IBOutlet UITextView *adresLabel;
+@property (strong, nonatomic) IBOutlet UITextView *endLabel;
 
 @end

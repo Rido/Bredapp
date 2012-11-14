@@ -7,7 +7,6 @@
 //
 
 #import "ToevoegenVoorbeeldViewController.h"
-#import "MBProgressHUD.h"
 
 @interface ToevoegenVoorbeeldViewController ()
 
@@ -100,7 +99,44 @@
     }
     else
     {
-        [self performSegueWithIdentifier:@"toBegin" sender:self];
+        HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        HUD.mode = MBProgressHUDModeDeterminate;
+        HUD.dimBackground = YES;
+        HUD.delegate = self;
+        
+        HUD.labelText = @"Foto uploaden";
+        
+        // Post Image
+        NSData *image = UIImageJPEGRepresentation(activity.image, 0.1);
+        
+        self.flUploadEngine = [[FileUploadEngine alloc] initWithHostName:@"larsvanbeek.nl" customHeaderFields:nil];
+        
+        NSMutableDictionary *postParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                           @"app", @"bredapp",
+                                           nil];
+        self.flOperation = [self.flUploadEngine postDataToServer:postParams path:@"/BredAppWs/images"];
+        
+        [self.flOperation addData:image forKey:@"image" mimeType:@"image/jpeg" fileName:@"upload.jpg"];
+        
+        [self.flOperation addCompletionHandler:^(MKNetworkOperation *completedOperation)
+         {
+             HUD.labelText = @"Activiteit verwerken";
+             activity.image_url = [NSString stringWithFormat:@"http://www.larsvanbeek.nl/BredAppWs/%@", [completedOperation responseString]];
+             
+             [self postActivity];
+             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"258-checkmark.png"]];
+             HUD.mode = MBProgressHUDModeCustomView;
+             
+             HUD.labelText = @"Verwerkt!";
+
+             [self performSegueWithIdentifier:@"toBegin" sender:self];
+         }
+         errorHandler:^(MKNetworkOperation *completedOperation, NSError *error)
+         {
+             NSLog(@"%@", error);
+         }];
+        
+        [self.flUploadEngine enqueueOperation:self.flOperation ];
     }
 }
 
@@ -111,39 +147,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)postActivity
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        
-    // Post Image
-    NSData *image = UIImageJPEGRepresentation(activity.image, 0.1);
-    
-    self.flUploadEngine = [[FileUploadEngine alloc] initWithHostName:@"larsvanbeek.nl" customHeaderFields:nil];
-    
-    NSMutableDictionary *postParams = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @"app", @"bredapp",
-                                       nil];
-    self.flOperation = [self.flUploadEngine postDataToServer:postParams path:@"/BredAppWs/images"];
-    
-    [self.flOperation addData:image forKey:@"image" mimeType:@"image/jpeg" fileName:@"upload.jpg"];
-    
-    [self.flOperation onCompletion:^(MKNetworkOperation *operation)
-    {
-        NSLog(@"%@", [operation responseString]);
-        activity.image_url = [NSString stringWithFormat:@"http://www.larsvanbeek.nl/%@", [operation responseString]];
-    }
-    onError:^(NSError *error) {
-        NSLog(@"%@", error);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:[error localizedDescription]
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Dismiss"
-                                              otherButtonTitles:nil];
-        [alert show];        
-    }];
-    
-    //[self.flUploadEngine enqueueOperation:self.flOperation ];
-    
     NSString *device_id = @"123dsdasl";
     NSString *category_id = [activity.category_id stringValue];
     NSString *location = activity.address;
@@ -162,10 +167,9 @@
     [dateFormatterE setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSString *end = [dateFormatterE stringFromDate:activity.begin];
-    NSLog(@"%@", activity.image_url);
     
     NSString *post = [NSString stringWithFormat:@"device_id=%1$@&category_id=%2$@&location=%3$@&title=%4$@&content=%5$@&tags=%6$@&co_lat=%7$@&co_long=%8$@&begin=%9$@&end=%10$@&image=%11$@",device_id,category_id,location,title,description,tags,co_lat,co_long,begin,end,activity.image_url];
-    NSLog(@"%@",post);
+    //NSLog(@"%@",post);
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
     //NSLog([NSString stringWithFormat:@"%@",post]);
@@ -180,11 +184,10 @@
     
     NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
-    NSLog(@"Return string: %@",returnString);
     
     Activity *newActivity = (Activity *) [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
                                                                        inManagedObjectContext:[self managedObjectContext]];
-
+    
     newActivity.activity_id = [NSNumber numberWithInt:[returnString intValue]];
     newActivity.begin = activity.begin;
     newActivity.category_id = activity.category_id;
@@ -201,8 +204,6 @@
     newActivity.fkactivity2category = activity.fkactivity2category;
     
     [myApp saveContext];
-    
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 @end

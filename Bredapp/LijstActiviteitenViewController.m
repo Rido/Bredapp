@@ -8,6 +8,7 @@
 
 #import "LijstActiviteitenViewController.h"
 #import "Activity.h"
+#import "Category.h"
 #import "DetailActivityViewController.h"
 #import "ActivityCell.h"
 
@@ -119,7 +120,7 @@
     cell.title.text = info.title;
     cell.start.text = @"17:00 uur";
     cell.distance.text = @"10m";
-    cell.category.image = [UIImage imageNamed:@"sport_icon.png"];
+    cell.category.image = [UIImage imageWithData:info.fkactivity2category.image];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
