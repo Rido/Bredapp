@@ -1,9 +1,28 @@
 //
-//  MySKHConfig.m
-//  Bredapp
+//  DefaultSHKConfigurationDelegate.m
+//  ShareKit
 //
-//  Created by redj on 11/13/12.
-//  Copyright (c) 2012 Avans_Groep2. All rights reserved.
+//  Created by Edward Dale on 10/16/10.
+
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
+//
 //
 
 #import "MySKHConfig.h"
@@ -16,12 +35,13 @@
  These values are used by any service that shows 'shared from XYZ'
  */
 - (NSString*)appName {
-	return @"Share Kit Demo App";
+	return @"Bredapp";
 }
 
 - (NSString*)appURL {
-	return @"https://github.com/ShareKit/ShareKit/";
+	return @"http://iavans.nl";
 }
+
 
 /*
  API Keys
@@ -40,13 +60,6 @@
  leaving that decision up to the user.
  */
 
-
-// Vkontakte
-// SHKVkontakteAppID is the Application ID provided by Vkontakte
-- (NSString*)vkontakteAppId {
-	return @"2706858";
-}
-
 // Facebook - https://developers.facebook.com/apps
 // SHKFacebookAppID is the Application ID provided by Facebook
 // SHKFacebookLocalAppID is used if you need to differentiate between several iOS apps running against a single Facebook app. Useful, if you have full and lite versions of the same app,
@@ -58,20 +71,18 @@
 //
 //    Your CFBundleURLSchemes entry: fb555lite
 - (NSString*)facebookAppId {
-	return @"232705466797125";
+	return @"123900381091262";
 }
 
 - (NSString*)facebookLocalAppId {
-	return @"";
+	return @"bredapp";
 }
-// Read It Later - http://readitlaterlist.com/api/signup/
-- (NSString*)readItLaterKey {
-	return @"45aT6Vfvg66eWNebybd680gu13pdba3d";
+
+//Change if your app needs some special Facebook permissions only. In most cases you can leave it as it is.
+- (NSArray*)facebookListOfPermissions {
+    return [NSArray arrayWithObjects:@"publish_stream", @"offline_access", nil];
 }
-// Diigo - http://diigo.com/api_dev
--(NSString*)diigoKey {
-    return @"f401ddc3546cdf3c";
-}
+
 // Twitter - http://dev.twitter.com/apps/new
 /*
  Important Twitter settings to get right:
@@ -89,8 +100,12 @@
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
 
+/*
+ If you want to force use of old-style, pre-IOS5 twitter framework, for example to ensure
+ twitter accounts don't end up in the devices account store, set this to true.
+ */
 - (NSNumber*)forcePreIOS5TwitterAccess {
-    return [NSNumber numberWithBool:false];
+	return [NSNumber numberWithBool:false];
 }
 
 - (NSString*)twitterConsumerKey {
@@ -102,7 +117,7 @@
 }
 // You need to set this if using OAuth, see note above (xAuth users can skip it)
 - (NSString*)twitterCallbackUrl {
-	return @"http://twitter.sharekit.com";
+	return @"";
 }
 // To use xAuth, set to 1
 - (NSNumber*)twitterUseXAuth {
@@ -113,25 +128,188 @@
 	return @"";
 }
 
-- (NSString*)sharersPlistName {
-	return @"BredaShares.plist";
-}
-
 /*
  UI Configuration : Basic
  ------------------------
  These provide controls for basic UI settings.  For more advanced configuration see below.
  */
 
+// Toolbars
+- (NSString*)barStyle {
+	return @"UIBarStyleDefault";// See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIKitDataTypesReference/Reference/reference.html#//apple_ref/c/econst/UIBarStyleDefault
+}
+
 - (UIColor*)barTintForView:(UIViewController*)vc {
-	
-    if ([NSStringFromClass([vc class]) isEqualToString:@"SHKTwitter"])
-        return [UIColor colorWithRed:0 green:151.0f/255 blue:222.0f/255 alpha:1];
-    
-    if ([NSStringFromClass([vc class]) isEqualToString:@"SHKFacebook"])
-        return [UIColor colorWithRed:59.0f/255 green:89.0f/255 blue:152.0f/255 alpha:1];
-    
     return nil;
+}
+
+// Forms
+- (UIColor *)formFontColor {
+    return nil;
+}
+
+- (UIColor*)formBackgroundColor {
+    return nil;
+}
+
+// iPad views. You can change presentation style for different sharers
+- (NSString *)modalPresentationStyleForController:(UIViewController *)controller {
+	return @"UIModalPresentationFormSheet";// See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalPresentationStyle
+}
+
+- (NSString*)modalTransitionStyle {
+	return @"UIModalTransitionStyleCoverVertical";// See: http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIViewController_Class/Reference/Reference.html#//apple_ref/occ/instp/UIViewController/modalTransitionStyle
+}
+// ShareMenu Ordering
+- (NSNumber*)shareMenuAlphabeticalOrder {
+	return [NSNumber numberWithInt:0];// Setting this to 1 will show list in Alphabetical Order, setting to 0 will follow the order in SHKShares.plist
+}
+
+/* Name of the plist file that defines the class names of the sharers to use. Usually should not be changed, but this allows you to subclass a sharer and have the subclass be used. Also helps, if you want to exclude some sharers - you can create your own plist, and add it to your project. This way you do not need to change original SHKSharers.plist, which is a part of subproject - this allows you upgrade easily as you did not change ShareKit itself
+ 
+ You can specify also your own bundle here, if needed. For example:
+ return [[[NSBundle mainBundle] pathForResource:@"Vito" ofType:@"bundle"] stringByAppendingPathComponent:@"VKRSTestSharers.plist"]
+ */
+- (NSString*)sharersPlistName {
+	return @"BredaShares.plist";
+}
+
+// SHKActionSheet settings
+- (NSNumber*)showActionSheetMoreButton {
+	return [NSNumber numberWithBool:false];// Setting this to true will show More... button in SHKActionSheet, setting to false will leave the button out.
+}
+
+/*
+ Favorite Sharers
+ ----------------
+ These values are used to define the default favorite sharers appearing on ShareKit's action sheet.
+ */
+- (NSArray*)defaultFavoriteURLSharers {
+    return [NSArray arrayWithObjects:@"SHKTwitter",@"SHKFacebook", @"SHKReadItLater", nil];
+}
+- (NSArray*)defaultFavoriteImageSharers {
+    return [NSArray arrayWithObjects:@"SHKMail",@"SHKFacebook", @"SHKCopy", nil];
+}
+- (NSArray*)defaultFavoriteTextSharers {
+    return [NSArray arrayWithObjects:@"SHKMail",@"SHKTwitter",@"SHKFacebook", nil];
+}
+- (NSArray*)defaultFavoriteFileSharers {
+    return [NSArray arrayWithObjects:@"SHKMail",@"SHKEvernote", nil];
+}
+
+//by default, user can see last used sharer on top of the SHKActionSheet. You can switch this off here, so that user is always presented the same sharers for each SHKShareType.
+- (NSNumber*)autoOrderFavoriteSharers {
+    return [NSNumber numberWithBool:false];
+}
+
+
+/*
+ UI Configuration : Advanced
+ ---------------------------
+ If you'd like to do more advanced customization of the ShareKit UI, like background images and more,
+ check out http://getsharekit.com/customize. To use a subclass, you can create your own, and let ShareKit know about it in your configurator, overriding one (or more) of these methods.
+ */
+
+- (Class)SHKActionSheetSubclass {
+    return NSClassFromString(@"SHKActionSheet");
+}
+
+- (Class)SHKShareMenuSubclass {
+    return NSClassFromString(@"SHKShareMenu");
+}
+
+- (Class)SHKShareMenuCellSubclass {
+    return NSClassFromString(@"UITableViewCell");
+}
+
+- (Class)SHKFormControllerSubclass {
+    return NSClassFromString(@"SHKFormController");
+}
+
+/*
+ Advanced Configuration
+ ----------------------
+ These settings can be left as is.  This only need to be changed for uber custom installs.
+ */
+- (NSNumber*)maxFavCount {
+	return [NSNumber numberWithInt:3];
+}
+
+- (NSString*)favsPrefixKey {
+	return @"SHK_FAVS_";
+}
+
+- (NSString*)authPrefix {
+	return @"SHK_AUTH_";
+}
+
+- (NSNumber*)allowOffline {
+	return [NSNumber numberWithBool:true];
+}
+
+- (NSNumber*)allowAutoShare {
+	return [NSNumber numberWithBool:true];
+}
+
+/*
+ Debugging settings
+ ------------------
+ see DefaultSHKConfigurator.h
+ */
+
+/*
+ SHKItem sharer specific values defaults
+ -------------------------------------
+ These settings can be left as is. SHKItem is what you put your data in and inject to ShareKit to actually share. Some sharers might be instructed to share the item in specific ways, e.g. SHKPrint's print quality, SHKMail's send to specified recipients etc. Sometimes you need to change the default behaviour - you can do it here globally, or per share during share item (SHKItem) composing. Example is in the demo app - ExampleShareLink.m - share method */
+
+/* SHKPrint */
+
+- (NSNumber*)printOutputType {
+    return [NSNumber numberWithInt:UIPrintInfoOutputPhoto];
+}
+
+/* SHKMail */
+
+//You can use this to prefill recipients. User enters them in MFMailComposeViewController by default. Should be array of NSStrings.
+- (NSArray *)mailToRecipients {
+	return nil;
+}
+
+- (NSNumber*)isMailHTML {
+    return [NSNumber numberWithInt:1];
+}
+
+//used only if you share image. Values from 1.0 to 0.0 (maximum compression).
+- (NSNumber*)mailJPGQuality {
+    return [NSNumber numberWithFloat:1];
+}
+
+// append 'Sent from <appName>' signature to Email
+- (NSNumber*)sharedWithSignature {
+	return [NSNumber numberWithInt:0];
+}
+
+/* SHKFacebook */
+
+//when you share URL on Facebook, FBDialog scans the page and fills picture and description automagically by default. Use these item properties to set your own.
+- (NSString *)facebookURLSharePictureURI {
+    return nil;
+}
+
+- (NSString *)facebookURLShareDescription {
+    return nil;
+}
+
+/* SHKTextMessage */
+
+//You can use this to prefill recipients. User enters them in MFMessageComposeViewController by default. Should be array of NSStrings.
+- (NSArray *)textMessageToRecipients {
+    return nil;
+}
+
+-(NSString*) popOverSourceRect;
+{
+    return NSStringFromCGRect(CGRectZero);
 }
 
 @end

@@ -15,11 +15,13 @@
 
 @implementation ToevoegenWanneerViewController
 @synthesize datePicker;
+@synthesize datePickerEndDate;
 @synthesize selectedTextField;
 @synthesize databaseDateFormat;
 @synthesize activity;
 @synthesize beginField;
 @synthesize endField;
+@synthesize newDateString;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +35,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    // Datepicker voor het endfield instellen
+    datePickerEndDate = [[UIDatePicker alloc] init];
+    datePickerEndDate.datePickerMode = UIDatePickerModeDateAndTime;
+    
+    // Datepicker eerst onzichtbaar maken
+    datePickerEndDate.alpha = 0;
+    
+    // Onzichtbare datepicker aan endDate veld koppelen
+    [endField setInputView:datePickerEndDate];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +72,7 @@
     
     [datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     
-    [textField setInputView:datePicker];
+    [beginField setInputView:datePicker];
 }
 
 - (void) datePickerValueChanged:(id)sender
@@ -69,15 +81,31 @@
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setDateFormat:@"EEEE d MMMM HH:mm"];
     
-    NSString *newDateString = [outputFormatter stringFromDate:datePicker.date];
-    
     if (selectedTextField == beginField)
     {
+        // Date string vullen met beginField datum
+        newDateString = [outputFormatter stringFromDate:datePicker.date];
+        
         activity.begin = datePicker.date;
+        
+        // Te selecteren datums voor endField op basis van begin date
+        datePickerEndDate.minimumDate = datePicker.date;
+        datePickerEndDate.maximumDate = [datePicker.date dateByAddingTimeInterval:86400];
+        
+        // Datepicker voor endField weer zichtbaar maken
+        datePickerEndDate.alpha = 1;
+        
+        [datePickerEndDate addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+        
+        [endField setInputView:datePickerEndDate];
+        
     }
     else if (selectedTextField == endField)
     {
-        activity.end = datePicker.date;
+        // Date string vullen met endField datum
+        newDateString = [outputFormatter stringFromDate:datePickerEndDate.date];
+        
+        activity.end = datePickerEndDate.date;
     }
     
     // Datum weergeven in tekstveld
@@ -87,14 +115,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([segue.identifier isEqualToString:@"toVoorbeeld"]) {       
-        
-        /*if([activity.title length] == 0 || [activity.category_id intValue] == 0){
-           NSLog(@"id: %d", [activity.category_id intValue]); 
-            ControleViewController *cvc = [[ControleViewController alloc] init];
-            [self.navigationController pushViewController:cvc animated:NO];
-            [cvc release];
-
-        }*/
         
         ToevoegenVoorbeeldViewController *vc = [segue destinationViewController];
         vc.activity = activity;
