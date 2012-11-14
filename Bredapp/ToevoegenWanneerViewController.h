@@ -20,7 +20,7 @@
 @property (strong, nonatomic) UITextField *selectedTextField;
 
 @property (nonatomic, retain) NSString *databaseDateFormat;
-@property (nonatomic, retain) NSString *newDateString;
+@property (nonatomic, retain) NSString *theNewDateString;
 
 @property (strong, nonatomic) TempActivity *activity;
 

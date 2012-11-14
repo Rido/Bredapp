@@ -236,7 +236,7 @@
         {
             //foto maken
             #if TARGET_IPHONE_SIMULATOR
-            NSLog("Dit is de simulator je kunt geen foto maken!");
+            NSLog(@"Dit is de simulator je kunt geen foto maken!");
             #else
             pickerC.sourceType = UIImagePickerControllerSourceTypeCamera;
             [self presentViewController:pickerC animated:YES completion:nil];
@@ -390,10 +390,6 @@
     //[self setCategorieButton:nil];
     [super viewDidUnload];
 }
-- (void)dealloc {
-
-    [super dealloc];
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep2"]) {
@@ -410,7 +406,7 @@
         activity.fkactivity2category = category;
         activity.tags = self.tags.text;
         activity.content = self.beschrijving.text;
-        
+        activity.image = self.foto.image;
         
         ToevoegenWaarViewController *vc = [segue destinationViewController];
         vc.activity = activity;

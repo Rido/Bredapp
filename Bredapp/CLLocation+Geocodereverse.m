@@ -17,9 +17,9 @@
 
     gUrl = [gUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-	NSString *infoData = [[[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:gUrl] 
-														 encoding:NSUTF8StringEncoding 
-															error:nil] autorelease];
+	NSString *infoData = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:gUrl] 
+                                                        encoding:NSUTF8StringEncoding
+                                                           error:nil];
 	
 	NSString *value = @"";
 	

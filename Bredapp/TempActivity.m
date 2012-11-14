@@ -13,7 +13,7 @@
 @synthesize activity_id;
 @synthesize begin;
 @synthesize category_id;
-@synthesize adres;
+@synthesize address;
 @synthesize co_lat;
 @synthesize co_long;
 @synthesize content;

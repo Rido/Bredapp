@@ -21,7 +21,7 @@
 @synthesize activity;
 @synthesize beginField;
 @synthesize endField;
-@synthesize newDateString;
+@synthesize theNewDateString;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -84,7 +84,7 @@
     if (selectedTextField == beginField)
     {
         // Date string vullen met beginField datum
-        newDateString = [outputFormatter stringFromDate:datePicker.date];
+        theNewDateString = [outputFormatter stringFromDate:datePicker.date];
         
         activity.begin = datePicker.date;
         
@@ -103,13 +103,13 @@
     else if (selectedTextField == endField)
     {
         // Date string vullen met endField datum
-        newDateString = [outputFormatter stringFromDate:datePickerEndDate.date];
+        theNewDateString = [outputFormatter stringFromDate:datePickerEndDate.date];
         
         activity.end = datePickerEndDate.date;
     }
     
     // Datum weergeven in tekstveld
-    selectedTextField.text = newDateString;
+    selectedTextField.text = theNewDateString;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

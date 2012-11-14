@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "SplashViewController.h"
 #import "LijstActiviteitenViewController.h"
-#import "MySKHConfig.h"
-#import "SHKConfiguration.h"
+#import <Socialize/Socialize.h>
 
 @implementation AppDelegate
 
@@ -25,8 +24,8 @@
     SplashViewController *controller = (SplashViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
-    DefaultSHKConfigurator *configurator = [[MySKHConfig alloc] init];
-    [SHKConfiguration sharedInstanceWithConfigurator:configurator];
+    [Socialize storeConsumerKey:@"bf3bdc91-2998-43ed-a7be-c0d89df76c14"];
+    [Socialize storeConsumerSecret:@"9723f820-30f1-4b33-b908-a11af0101a8c"];
     
     // Override point for customization after application launch.
     return YES;
