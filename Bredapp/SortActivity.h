@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface SortActivity : NSObject
+@interface SortActivity : NSObject<CLLocationManagerDelegate>{
+    CLLocationManager *locationManager;
+}
 
 @property (nonatomic, strong) AppDelegate *myApp;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 
 - (void)sortDistanceActivity;
 
