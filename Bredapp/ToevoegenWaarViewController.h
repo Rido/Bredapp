@@ -11,7 +11,7 @@
 #import "TempActivity.h"
 #import "Category.h"
 
-@interface ToevoegenWaarViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>{
+@interface ToevoegenWaarViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate, MKMapViewDelegate>{
     CLGeocoder *_geocoder;
 }
 
