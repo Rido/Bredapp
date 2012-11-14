@@ -58,6 +58,27 @@
     return _fetchedResultsController;
 }
 
+- (IBAction)sortingChanged:(UISegmentedControl *)sender {
+    
+    if(sender.selectedSegmentIndex == 0) {
+        
+        // Sorteren op tijd
+        NSLog(@"Sorteren op tijd");
+    
+    } else if (sender.selectedSegmentIndex == 1) {
+        
+        // Sorteren op afstand
+        NSLog(@"Sorteren op afstand");
+        
+    } else {
+        
+        // Sorteren op categorie
+        NSLog(@"Sorteren op categorie");
+        
+    }
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
