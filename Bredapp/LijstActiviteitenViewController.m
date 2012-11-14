@@ -116,10 +116,12 @@
 
 - (void)configureCell:(ActivityCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     Activity *info = [_fetchedResultsController objectAtIndexPath:indexPath];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE d MMMM HH:mm"];
     
     cell.title.text = info.title;
-    cell.start.text = @"17:00 uur";
-    cell.distance.text = @"10m";
+    cell.start.text = [dateFormatter stringFromDate:info.begin];
+    cell.distance.text = [info.distance stringValue];
     cell.category.image = [UIImage imageWithData:info.fkactivity2category.image];
 }
 

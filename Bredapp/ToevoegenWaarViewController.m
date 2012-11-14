@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Avans_Groep2. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "ToevoegenWaarViewController.h"
 #import "MapAnnotation.h"
 #import "NSString+JSON.h"
@@ -43,6 +44,14 @@
     addressField.delegate = self;
 
     myAnnotations = [[NSMutableArray alloc] init];
+    
+    [self.addressField.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.addressField.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.addressField.layer setBorderWidth: 1.0];
+    [self.addressField.layer setCornerRadius:8.0f];
+    [self.addressField.layer setMasksToBounds:YES];
+    [self.addressField.layer setShadowRadius:0.0f];
+    self.addressField.borderStyle = UITextBorderStyleLine;
     
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];

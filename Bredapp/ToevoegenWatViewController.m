@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Avans_Groep2. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "ToevoegenWatViewController.h"
 #import "ToevoegenWaarViewController.h"
 #import "TempActivity.h"
@@ -52,6 +53,42 @@
     self.managedObjectContext = [myApp managedObjectContext];
     categorieen = [[NSMutableArray alloc]init];
     
+    [self.titel.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.titel.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.titel.layer setBorderWidth: 1.0];
+    [self.titel.layer setCornerRadius:8.0f];
+    [self.titel.layer setMasksToBounds:YES];
+    self.titel.borderStyle = UITextBorderStyleLine;
+    
+    [self.tags.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.tags.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.tags.layer setBorderWidth: 1.0];
+    [self.tags.layer setCornerRadius:8.0f];
+    [self.tags.layer setMasksToBounds:YES];
+    [self.tags.layer setShadowRadius:0.0f];
+    self.tags.borderStyle = UITextBorderStyleLine;
+    
+    [self.beschrijving.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.beschrijving.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.beschrijving.layer setBorderWidth: 1.0];
+    [self.beschrijving.layer setCornerRadius:8.0f];
+    [self.beschrijving.layer setMasksToBounds:YES];
+    
+    [self.aanspreekpunt.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.aanspreekpunt.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.aanspreekpunt.layer setBorderWidth: 1.0];
+    [self.aanspreekpunt.layer setCornerRadius:8.0f];
+    [self.aanspreekpunt.layer setMasksToBounds:YES];
+    [self.aanspreekpunt.layer setShadowRadius:0.0f];
+    self.aanspreekpunt.borderStyle = UITextBorderStyleLine;
+    
+    [self.categorieTextveld.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.categorieTextveld.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.categorieTextveld.layer setBorderWidth: 1.0];
+    [self.categorieTextveld.layer setCornerRadius:8.0f];
+    [self.categorieTextveld.layer setMasksToBounds:YES];
+    [self.categorieTextveld.layer setShadowRadius:0.0f];
+    self.categorieTextveld.borderStyle = UITextBorderStyleLine;
     
     //laad categorieen in van db http://www.larsvanbeek.nl/BredAppWs/categories/
     NSError *error;

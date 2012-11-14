@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Avans_Groep2. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "ToevoegenWanneerViewController.h"
 #import "ToevoegenVoorbeeldViewController.h"
 
@@ -40,12 +41,27 @@
     datePickerEndDate = [[UIDatePicker alloc] init];
     datePickerEndDate.datePickerMode = UIDatePickerModeDateAndTime;
     
+    [self.beginField.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.beginField.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.beginField.layer setBorderWidth: 1.0];
+    [self.beginField.layer setCornerRadius:8.0f];
+    [self.beginField.layer setMasksToBounds:YES];
+    [self.beginField.layer setShadowRadius:0.0f];
+    self.beginField.borderStyle = UITextBorderStyleLine;
+    
+    [self.endField.layer setBackgroundColor: [[UIColor whiteColor] CGColor]];
+    [self.endField.layer setBorderColor: [[UIColor blackColor] CGColor]];
+    [self.endField.layer setBorderWidth: 1.0];
+    [self.endField.layer setCornerRadius:8.0f];
+    [self.endField.layer setMasksToBounds:YES];
+    [self.endField.layer setShadowRadius:0.0f];
+    self.endField.borderStyle = UITextBorderStyleLine;
+    
     // Datepicker eerst onzichtbaar maken
     datePickerEndDate.alpha = 0;
     
     // Onzichtbare datepicker aan endDate veld koppelen
     [endField setInputView:datePickerEndDate];
-    
 }
 
 - (void)didReceiveMemoryWarning
