@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "Category.h"
 #import "Activity.h"
+#import "TempActivity.h"
 
 @interface ToevoegenVoorbeeldViewController : UIViewController
+
+@property (nonatomic, strong) AppDelegate *myApp;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @property (retain, nonatomic) IBOutlet UILabel *titleLabel;
 @property (retain, nonatomic) IBOutlet UITextView *datetimeTextView;
@@ -18,7 +23,7 @@
 @property (retain, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (retain, nonatomic) IBOutlet UIImageView *activityImage;
 
-@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) TempActivity *activity;
 @property (strong, nonatomic) Category *category;
 
 @end

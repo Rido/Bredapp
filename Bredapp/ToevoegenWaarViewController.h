@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "Activity.h"
+#import "TempActivity.h"
 #import "Category.h"
 
 @interface ToevoegenWaarViewController : UIViewController <UITextFieldDelegate, UIGestureRecognizerDelegate>{
@@ -19,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *addressField;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
-@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) TempActivity *activity;
 @property (retain, nonatomic) IBOutlet UIButton *eigenLocatie;
 @property (retain, nonatomic) IBOutlet UIButton *laatZien;
 

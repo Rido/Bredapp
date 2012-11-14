@@ -8,8 +8,7 @@
 
 #import "ToevoegenWatViewController.h"
 #import "ToevoegenWaarViewController.h"
-#import "Activity.h"
-#import "Category.h"
+#import "TempActivity.h"
 #import "JsonParser.h"
 
 @interface ToevoegenWatViewController ()
@@ -22,7 +21,7 @@
 
 @synthesize titel,beschrijving,tags,aanspreekpunt,foto,categorieTextveld;
 @synthesize activity, category;
-@synthesize myApp, managedObjectContext;
+@synthesize myApp, managedObjectContext,selectedText,categoriePlaatje;
 @synthesize fetchedResultsController = _fetchedResultsController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    selectedRow = 0;
 	// Do any additional setup after loading the view.
     
     // Custom buttons
@@ -71,16 +71,17 @@
     }
 
     
-    categoriePicker = [[UIPickerView alloc]init];
-    categoriePicker.showsSelectionIndicator = YES;
-    categoriePicker.dataSource = self;
-    categoriePicker.delegate = self;
-    categoriePicker.userInteractionEnabled = YES;
+   // categoriePicker = [[UIPickerView alloc]init];
+   // categoriePicker.showsSelectionIndicator = YES;
+   // categoriePicker.dataSource = self;
+   // categoriePicker.delegate = self;
+   // categoriePicker.userInteractionEnabled = YES;
     
-    UITapGestureRecognizer *categorie_tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(categorie_tapped)];
-    [categorie_tap setDelegate:self];
-    [categoriePicker addGestureRecognizer:categorie_tap];
+   // UITapGestureRecognizer *categorie_tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(categorie_tapped)];
+   // [categorie_tap setDelegate:self];
+   // [categoriePicker addGestureRecognizer:categorie_tap];
     
+    self.categorieTextveld.delegate = self;
     self.categorieTextveld.inputView = categoriePicker;
 }
 
@@ -149,6 +150,25 @@
     return t.name;
 }
 
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    selectedRow = row;
+    Category *t =  [categorieen objectAtIndex:row];
+    category = t;
+    categorieTextveld.text = t.name;
+    categoriePlaatje.image = [UIImage imageWithData:(t.image)];
+    selectedText = categorieTextveld.text;
+    
+    
+   // NSData *imageData = UIImagePNGRepresentation(image);
+    
+    //UIImage *image=[UIImage imageWithData:data];
+}
+
+- (void)setComboData:(NSMutableArray *)data
+{
+    categoriedataArray = data;
+}
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage * takenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
@@ -174,6 +194,20 @@
     return newImage;
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [self showPicker:textField];
+    return YES;
+    /*
+    BOOL editable = YES;
+    if(textField == categorieTextveld)
+    {
+        editable = YES;
+    }
+    return editable;
+     */
+}
+
 /*
  //IOS 6 functie
  -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
@@ -182,9 +216,73 @@
  */
 
 - (IBAction)selectOrTakePhoto:(id)sender {
-    UIImagePickerController * pickerC = [[UIImagePickerController alloc]init];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:@"" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Foto maken",@"Bestaande foto",@"Annuleer", nil];
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
+
+    
+    
+    /*UIImagePickerController * pickerC = [[UIImagePickerController alloc]init];
     pickerC.delegate = self;
     [self presentViewController:pickerC animated:YES completion:nil];
+     */
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+        UIImagePickerController * pickerC = [[UIImagePickerController alloc]init];
+        pickerC.delegate = self;
+    
+        if(buttonIndex == 0)
+        {
+            //foto maken
+            #if TARGET_IPHONE_SIMULATOR
+            NSLog("Dit is de simulator je kunt geen foto maken!");
+            #else
+            pickerC.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:pickerC animated:YES completion:nil];
+            #endif
+        }
+        else if(buttonIndex == 1)
+        {
+            //foto zoeken
+            //UIImagePickerController * pickerC = [[UIImagePickerController alloc]init];
+            
+            [self presentViewController:pickerC animated:YES completion:nil];
+        }
+}
+
+- (IBAction)showPicker:(id)sender
+{
+    categoriePicker = [[UIPickerView alloc] init];
+    categoriePicker.showsSelectionIndicator = YES;
+    categoriePicker.dataSource = self;
+    categoriePicker.delegate = self;
+    
+    [categoriePicker selectRow:selectedRow inComponent:0 animated:NO];
+    
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    toolbar.barStyle = UIBarStyleBlackTranslucent;
+    [toolbar sizeToFit];
+    
+    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                       target:nil
+                                                                                       action:nil];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Klaar"
+                                                                   style:UIBarButtonItemStyleDone
+                                                                  target:self
+                                                                  action:@selector(doneClicked:)];
+    
+    [toolbar setItems:[NSArray arrayWithObjects:flexibleSpaceLeft, doneButton, nil]];
+    
+    categorieTextveld.inputView = categoriePicker;
+    categorieTextveld.inputAccessoryView = toolbar;
+}
+
+
+- (void)doneClicked:(id)sender
+{
+    [categorieTextveld resignFirstResponder];
 }
 
 - (IBAction)textfieldClicked:(id)sender {
@@ -227,6 +325,8 @@
     }
 }
 
+
+
 - (IBAction)textfieldLooseFocus:(id)sender {
     //NSLog(@"User clicked %@", sender);
     
@@ -236,7 +336,7 @@
     //tag 3 = beschrijving er kan GEEN IBAction aan een UITextView gekoppeld worden
     //tag 4 = aanspreekpunt
     
-    if([sender tag] == 4)
+    if([sender tag] == 4 || [sender tag] == 3)
     {
         [UIView animateWithDuration:0.5 animations:^{
             CGRect frame;
@@ -291,6 +391,7 @@
     [super viewDidUnload];
 }
 - (void)dealloc {
+
     [super dealloc];
 }
 
@@ -298,8 +399,11 @@
     if ([segue.identifier isEqualToString:@"toStep2"]) {
         //[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
         
-        activity = (Activity *) [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
-                                                                        inManagedObjectContext:[self managedObjectContext]];
+//        activity = (Activity *) [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
+//                                                                        inManagedObjectContext:[self managedObjectContext]];
+        
+        activity = [[TempActivity alloc] init];
+        
         //activity
         activity.category_id = category.category_id;
         activity.title = self.titel.text;

@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Activity.h"
-#import "Category.h"
+#import "TempActivity.h"
 
 @interface ToevoegenWanneerViewController : UIViewController <UITextFieldDelegate> {
 }
@@ -23,6 +22,6 @@
 @property (nonatomic, retain) NSString *databaseDateFormat;
 @property (nonatomic, retain) NSString *newDateString;
 
-@property (strong, nonatomic) Activity *activity;
+@property (strong, nonatomic) TempActivity *activity;
 
 @end
