@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSString *content;
 @property (nonatomic, retain) NSString *device_id;
 @property (nonatomic, retain) NSDate *end;
-@property (nonatomic, retain) NSData *image;
+@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) NSString *tags;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *image_url;

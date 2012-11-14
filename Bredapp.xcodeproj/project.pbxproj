@@ -61,6 +61,7 @@
 		64B3F1F316428BAD000AF870 /* 216-compose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E316428BAD000AF870 /* 216-compose@2x.png */; };
 		64B3F1F416428BAD000AF870 /* 259-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E416428BAD000AF870 /* 259-list.png */; };
 		64B3F1F516428BAD000AF870 /* 259-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E516428BAD000AF870 /* 259-list@2x.png */; };
+		64B88CF11653C5E50007A5EE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88CF01653C5E50007A5EE /* MBProgressHUD.m */; };
 		8D02BD9F164BD159006E196E /* ToevoegenWanneerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */; };
 		C724C8A61643F0DE00392E0A /* no_photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C724C8A51643F0DE00392E0A /* no_photo.jpeg */; };
 		C724C8AA1643F11D00392E0A /* ToevoegenWatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C724C8A91643F11D00392E0A /* ToevoegenWatViewController.m */; };
@@ -322,20 +323,6 @@
 			remoteGlobalIDString = 7A1AFD3A160E14340086B98A;
 			remoteInfo = Twitter;
 		};
-		427493C91651B7A00075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7AB5342D1552AADD00171BCE;
-			remoteInfo = "Static Library";
-		};
-		427493CB1651B7A00075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7AB5360E1552E26800171BCE;
-			remoteInfo = "Resource Bundle";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -407,6 +394,8 @@
 		64B3F1E316428BAD000AF870 /* 216-compose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "216-compose@2x.png"; sourceTree = "<group>"; };
 		64B3F1E416428BAD000AF870 /* 259-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "259-list.png"; sourceTree = "<group>"; };
 		64B3F1E516428BAD000AF870 /* 259-list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "259-list@2x.png"; sourceTree = "<group>"; };
+		64B88CEF1653C5E50007A5EE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Submodules/MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
+		64B88CF01653C5E50007A5EE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Submodules/MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		8D02BD9D164BD159006E196E /* ToevoegenWanneerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenWanneerViewController.h; sourceTree = "<group>"; };
 		8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenWanneerViewController.m; sourceTree = "<group>"; };
 		C724C8A51643F0DE00392E0A /* no_photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_photo.jpeg; sourceTree = "<group>"; };
@@ -500,6 +489,8 @@
 		644AEF701623484F0005AA67 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				64B88CEF1653C5E50007A5EE /* MBProgressHUD.h */,
+				64B88CF01653C5E50007A5EE /* MBProgressHUD.m */,
 				427EF1A21646A13800DCBAB0 /* NSString+JSON.h */,
 				427EF1A31646A13800DCBAB0 /* NSString+JSON.m */,
 				427EF19F1646A12700DCBAB0 /* CLLocation+Geocodereverse.h */,
@@ -671,8 +662,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				427493CA1651B7A00075F306 /* PBXTargetDependency */,
-				427493CC1651B7A00075F306 /* PBXTargetDependency */,
 			);
 			name = Bredapp;
 			productName = Breda_Inladen;
@@ -1029,23 +1018,11 @@
 				6406A3E4164D2D8000E17158 /* CustomNavBar.m in Sources */,
 				42575C85165293E0002D9C34 /* MySKHConfig.m in Sources */,
 				CDF74D531653B4110057CE07 /* TempActivity.m in Sources */,
+				64B88CF11653C5E50007A5EE /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		427493CA1651B7A00075F306 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Static Library";
-			targetProxy = 427493C91651B7A00075F306 /* PBXContainerItemProxy */;
-		};
-		427493CC1651B7A00075F306 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Resource Bundle";
-			targetProxy = 427493CB1651B7A00075F306 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6489A73816159912007282EF /* InfoPlist.strings */ = {
