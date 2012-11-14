@@ -8,8 +8,7 @@
 
 #import "ToevoegenWatViewController.h"
 #import "ToevoegenWaarViewController.h"
-#import "Activity.h"
-#import "Category.h"
+#import "TempActivity.h"
 #import "JsonParser.h"
 
 @interface ToevoegenWatViewController ()
@@ -395,8 +394,11 @@
     if ([segue.identifier isEqualToString:@"toStep2"]) {
         //[NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
         
-        activity = (Activity *) [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
-                                                                        inManagedObjectContext:[self managedObjectContext]];
+//        activity = (Activity *) [NSEntityDescription insertNewObjectForEntityForName:@"Activity"
+//                                                                        inManagedObjectContext:[self managedObjectContext]];
+        
+        activity = [[TempActivity alloc] init];
+        
         //activity
         activity.category_id = category.category_id;
         activity.title = self.titel.text;
