@@ -15,10 +15,12 @@
 @property (strong, nonatomic) IBOutlet UITextField *beginField;
 @property (strong, nonatomic) IBOutlet UITextField *endField;
 @property (nonatomic, retain) UIDatePicker *datePicker;
+@property (nonatomic, retain) UIDatePicker *datePickerEndDate;
 
 @property (strong, nonatomic) UITextField *selectedTextField;
 
 @property (nonatomic, retain) NSString *databaseDateFormat;
+@property (nonatomic, retain) NSString *newDateString;
 
 @property (strong, nonatomic) TempActivity *activity;
 
