@@ -323,6 +323,20 @@
 			remoteGlobalIDString = 7A1AFD3A160E14340086B98A;
 			remoteInfo = Twitter;
 		};
+		64B88D1F1653C7100007A5EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AB5342D1552AADD00171BCE;
+			remoteInfo = "Static Library";
+		};
+		64B88D211653C7100007A5EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AB5360E1552E26800171BCE;
+			remoteInfo = "Resource Bundle";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -662,6 +676,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				64B88D201653C7100007A5EE /* PBXTargetDependency */,
+				64B88D221653C7100007A5EE /* PBXTargetDependency */,
 			);
 			name = Bredapp;
 			productName = Breda_Inladen;
@@ -1023,6 +1039,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64B88D201653C7100007A5EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Static Library";
+			targetProxy = 64B88D1F1653C7100007A5EE /* PBXContainerItemProxy */;
+		};
+		64B88D221653C7100007A5EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Resource Bundle";
+			targetProxy = 64B88D211653C7100007A5EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6489A73816159912007282EF /* InfoPlist.strings */ = {

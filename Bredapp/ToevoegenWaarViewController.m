@@ -350,7 +350,7 @@
         activity.co_lat = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.latitude];
         activity.co_long = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.longitude];
         
-        activity.adres = addressField.text;
+        activity.address = addressField.text;
     
         ToevoegenWanneerViewController *vc = [segue destinationViewController];
         vc.activity = activity;

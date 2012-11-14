@@ -410,7 +410,7 @@
         activity.fkactivity2category = category;
         activity.tags = self.tags.text;
         activity.content = self.beschrijving.text;
-        
+        activity.image = self.foto.image;
         
         ToevoegenWaarViewController *vc = [segue destinationViewController];
         vc.activity = activity;
