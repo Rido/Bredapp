@@ -9,9 +9,7 @@
 #import "SortActivity.h"
 #import "Activity.h"
 
-@implementation SortActivity {
-    CLLocation *coords;
-}
+@implementation SortActivity
 
 @synthesize  myApp, managedObjectContext;
 
@@ -39,7 +37,8 @@
     seconds = decimal * 3600 - minutes * 60;
     NSString *longt = [NSString stringWithFormat:@"%d° %d' %1.4f\"",
                        degrees, minutes, seconds];
-    coords = locationManager.location;
+
+  
     NSLog(@"Lat: %@", lat);
     NSLog(@"Long: %@", longt);
     [locationManager startUpdatingLocation];
@@ -84,14 +83,25 @@
     
     for(Activity *cur in queryResults)
     {
-       // Bereken meters cur.co_long
-        CLLocation *actLoc = [[CLLocation alloc]init];
-        
+       // Bereken meters cur.co_long        
         
         //actLoc.coordinate.latitude = [cur.co_lat doubleValue];
         //actLoc.coordinate.longitude = cur.co_long;
-        CLLocationDistance distance = [coords getDistanceFrom:actLoc];
+        //CLLocationDistance distance = [coords getDistanceFrom:actLoc];
         //cur.distance = ;
+        
+
+        CLLocationCoordinate2D coord;
+        coord.longitude = (CLLocationDegrees)[cur.co_lat doubleValue];
+        coord.latitude = (CLLocationDegrees)[cur.co_long doubleValue];
+        
+        CLLocation *actLoc = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
+        
+        
+        CLLocationDistance dist = [locationManager.location distanceFromLocation:actLoc];
+        
+        
+        NSLog(@"DIST: %f", dist); // Wrong formatting may show wrong value!
     }
     
     [myApp saveContext];

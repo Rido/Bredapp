@@ -21,13 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Bredapp/ToevoegenWaarViewController.m"
-         timestampString = "374507723.171597"
+         timestampString = "374610813.59286"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "354"
-         endingLineNumber = "354"
-         landmarkName = "-prepareForSegue:sender:"
-         landmarkType = "5">
+         startingLineNumber = "398"
+         endingLineNumber = "398">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
