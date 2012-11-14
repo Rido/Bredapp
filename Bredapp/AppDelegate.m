@@ -26,9 +26,15 @@
     
     [Socialize storeConsumerKey:@"bf3bdc91-2998-43ed-a7be-c0d89df76c14"];
     [Socialize storeConsumerSecret:@"9723f820-30f1-4b33-b908-a11af0101a8c"];
+    [SZTwitterUtils setConsumerKey:@"a1dEtlqJwedSrl0WnxERQ" consumerSecret:@"EwMDmD1LbkUbTWN4vXKYsCSvAa8XK3RAYDTkNfdeI"];
+    [SZFacebookUtils setAppId:@"123900381091262"];
     
     // Override point for customization after application launch.
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [Socialize handleOpenURL:url];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

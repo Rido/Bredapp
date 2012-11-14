@@ -11,6 +11,7 @@
 #import "Category.h"
 #import "Activity.h"
 #import "TempActivity.h"
+#import "FileUploadEngine.h"
 
 @interface ToevoegenVoorbeeldViewController : UIViewController
 
@@ -25,5 +26,8 @@
 
 @property (strong, nonatomic) TempActivity *activity;
 @property (strong, nonatomic) Category *category;
+
+@property (strong, nonatomic) FileUploadEngine *flUploadEngine;
+@property (strong, nonatomic) MKNetworkOperation *flOperation;
 
 @end

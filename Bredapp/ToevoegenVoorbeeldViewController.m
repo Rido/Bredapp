@@ -22,6 +22,8 @@
 @synthesize whereTextView;
 @synthesize descriptionTextView;
 @synthesize myApp, managedObjectContext;
+@synthesize flUploadEngine = _flUploadEngine;
+@synthesize flOperation = _flOperation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -116,7 +118,28 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
         // Post Image
-
+        NSData *image = UIImageJPEGRepresentation(activity.image, 0.1);
+        self.flUploadEngine = [[FileUploadEngine alloc] initWithHostName:@"http://www.larsvanbeek.nl/BredAppWs/images" customHeaderFields:nil];
+        [self.flOperation addData:image forKey:@"image" mimeType:@"image/jpeg" fileName:@"upload.jpg"];
+        
+        [self.flOperation onCompletion:^(MKNetworkOperation *operation)
+        {
+            NSLog(@"%@", [operation responseString]);
+            /*
+             This is where you handle a successful 200 response
+             */
+        }
+       onError:^(NSError *error) {
+           NSLog(@"%@", error);
+           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                           message:[error localizedDescription]
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"Dismiss"
+                                                 otherButtonTitles:nil];
+           [alert show];        
+       }];
+        
+        [self.flUploadEngine enqueueOperation:self.flOperation ];
         
         NSString *device_id = @"123dsdasl";
         NSString *category_id = [activity.category_id stringValue];
@@ -136,8 +159,6 @@
         [dateFormatterE setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         
         NSString *end = [dateFormatterE stringFromDate:activity.begin];
-        
-        NSString *image = @"http://www.dufacoshop.nl/media/apple-logo1.jpg";
         
         NSString *post = [NSString stringWithFormat:@"device_id=%1$@&category_id=%2$@&location=%3$@&title=%4$@&content=%5$@&tags=%6$@&co_lat=%7$@&co_long=%8$@&begin=%9$@&end=%10$@&image=%11$@",device_id,category_id,location,title,description,tags,co_lat,co_long,begin,end,image];
         NSLog(@"%@",post);
