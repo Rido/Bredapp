@@ -7,6 +7,7 @@
 //
 
 #import "NSString+JSON.h"
+#import "JSONKit.h"
 
 @implementation NSString (JSON)
 

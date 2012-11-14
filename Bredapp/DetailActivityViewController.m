@@ -7,7 +7,6 @@
 //
 
 #import "DetailActivityViewController.h"
-#import "SHK.h"
 
 @interface DetailActivityViewController ()
 
@@ -54,17 +53,17 @@
     content = [content stringByAppendingString:date];
     content = [content stringByAppendingString:where];
     content = [content stringByAppendingString:description];
-    SHKItem *item = [SHKItem image:image title:content];
-    
-    // Get the ShareKit action sheet
-    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
-    
-    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
-    // but sometimes it may not find one. To be safe, set it explicitly
-    [SHK setRootViewController:self];
-    
-    // Display the action sheet
-    [actionSheet showFromToolbar:self.navigationController.toolbar];
+//    SHKItem *item = [SHKItem image:image title:content];
+//    
+//    // Get the ShareKit action sheet
+//    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+//    
+//    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+//    // but sometimes it may not find one. To be safe, set it explicitly
+//    [SHK setRootViewController:self];
+//    
+//    // Display the action sheet
+//    [actionSheet showFromToolbar:self.navigationController.toolbar];
 }
 
 
@@ -76,7 +75,4 @@
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
 @end

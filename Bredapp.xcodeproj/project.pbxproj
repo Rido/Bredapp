@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42575C85165293E0002D9C34 /* MySKHConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 42575C84165293E0002D9C34 /* MySKHConfig.m */; };
 		427109FD165095F000663624 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427109FC165095F000663624 /* CFNetwork.framework */; };
 		427109FF165095F600663624 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427109FE165095F600663624 /* Twitter.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		42710A011650960200663624 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42710A001650960200663624 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		42710A031650961D00663624 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42710A021650961D00663624 /* SystemConfiguration.framework */; };
 		42710A051650962D00663624 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42710A041650962D00663624 /* Security.framework */; };
 		42710A071650963500663624 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42710A061650963500663624 /* MessageUI.framework */; };
-		427493CD1651B7B70075F306 /* libShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 427493861651B77D0075F306 /* libShareKit.a */; };
-		427493CE1651B7D20075F306 /* ShareKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 427493881651B77D0075F306 /* ShareKit.bundle */; };
 		427EF19A1646A0D700DCBAB0 /* ToevoegenWaarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF1991646A0D700DCBAB0 /* ToevoegenWaarViewController.m */; };
 		427EF19E1646A10200DCBAB0 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF19D1646A10200DCBAB0 /* MapAnnotation.m */; };
 		427EF1A11646A12700DCBAB0 /* CLLocation+Geocodereverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF1A01646A12700DCBAB0 /* CLLocation+Geocodereverse.m */; };
@@ -62,6 +59,15 @@
 		64B3F1F416428BAD000AF870 /* 259-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E416428BAD000AF870 /* 259-list.png */; };
 		64B3F1F516428BAD000AF870 /* 259-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64B3F1E516428BAD000AF870 /* 259-list@2x.png */; };
 		64B88CF11653C5E50007A5EE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88CF01653C5E50007A5EE /* MBProgressHUD.m */; };
+		64B88D5C1653D1510007A5EE /* NSAlert+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D491653D1510007A5EE /* NSAlert+MKNetworkKitAdditions.m */; };
+		64B88D5D1653D1510007A5EE /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D4B1653D1510007A5EE /* NSData+Base64.m */; };
+		64B88D5E1653D1510007A5EE /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D4D1653D1510007A5EE /* NSDate+RFC1123.m */; };
+		64B88D5F1653D1510007A5EE /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D4F1653D1510007A5EE /* NSDictionary+RequestEncoding.m */; };
+		64B88D601653D1510007A5EE /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D511653D1510007A5EE /* NSString+MKNetworkKitAdditions.m */; };
+		64B88D611653D1510007A5EE /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D531653D1510007A5EE /* UIAlertView+MKNetworkKitAdditions.m */; };
+		64B88D621653D1510007A5EE /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D551653D1510007A5EE /* MKNetworkEngine.m */; };
+		64B88D631653D1510007A5EE /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D581653D1510007A5EE /* MKNetworkOperation.m */; };
+		64B88D641653D1510007A5EE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B88D5B1653D1510007A5EE /* Reachability.m */; };
 		8D02BD9F164BD159006E196E /* ToevoegenWanneerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */; };
 		C724C8A61643F0DE00392E0A /* no_photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C724C8A51643F0DE00392E0A /* no_photo.jpeg */; };
 		C724C8AA1643F11D00392E0A /* ToevoegenWatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C724C8A91643F11D00392E0A /* ToevoegenWatViewController.m */; };
@@ -77,278 +83,13 @@
 		F5F38BE4164BC6B000C3F8ED /* ActivityAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F38BE3164BC6B000C3F8ED /* ActivityAnnotation.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		427493831651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
-			remoteInfo = "Demo App";
-		};
-		427493851651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AB5342E1552AADD00171BCE;
-			remoteInfo = "Static Library";
-		};
-		427493871651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AB5360F1552E26800171BCE;
-			remoteInfo = "Resource Bundle";
-		};
-		427493891651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A0F9246156BA2A0009CB40A;
-			remoteInfo = "Static Library Core";
-		};
-		4274938B1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFCAE160E11810086B98A;
-			remoteInfo = JSONKit;
-		};
-		4274938D1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFCC0160E11F90086B98A;
-			remoteInfo = SSKeyChain;
-		};
-		4274938F1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A16F37E161340DD0019645D;
-			remoteInfo = OAuth;
-		};
-		427493911651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFCD1160E123C0086B98A;
-			remoteInfo = Reachability;
-		};
-		427493931651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE0307160E1A3F00FEC06E;
-			remoteInfo = Print;
-		};
-		427493951651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE0318160E1A6300FEC06E;
-			remoteInfo = Logout;
-		};
-		427493971651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE0329160E1A8A00FEC06E;
-			remoteInfo = Copy;
-		};
-		427493991651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE02D9160E188400FEC06E;
-			remoteInfo = Email;
-		};
-		4274939B1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE033A160E1ABC00FEC06E;
-			remoteInfo = "Open in Safari";
-		};
-		4274939D1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE034B160E1AF400FEC06E;
-			remoteInfo = "Save to Album";
-		};
-		4274939F1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE02EA160E18A700FEC06E;
-			remoteInfo = "Text Message";
-		};
-		427493A11651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE035C160E1B3A00FEC06E;
-			remoteInfo = Kippt;
-		};
-		427493A31651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE036C160E1B3D00FEC06E;
-			remoteInfo = Delicious;
-		};
-		427493A51651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE038C160E1B4000FEC06E;
-			remoteInfo = Readability;
-		};
-		427493A71651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE037C160E1B3E00FEC06E;
-			remoteInfo = Diigo;
-		};
-		427493A91651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE039C160E1B4200FEC06E;
-			remoteInfo = VKontakte;
-		};
-		427493AB1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE03B2160E1C0600FEC06E;
-			remoteInfo = Evernote;
-		};
-		427493AD1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFCE2160E127B0086B98A;
-			remoteInfo = "Evernote SDK";
-		};
-		427493AF1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFD4D160E14590086B98A;
-			remoteInfo = Facebook;
-		};
-		427493B11651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFD09160E131B0086B98A;
-			remoteInfo = "Facebook SDK";
-		};
-		427493B31651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE03C2160E1C0800FEC06E;
-			remoteInfo = FoursquareV2;
-		};
-		427493B51651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE03D2160E1C0C00FEC06E;
-			remoteInfo = Flickr;
-		};
-		427493B71651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFD24160E13740086B98A;
-			remoteInfo = "Flickr SDK";
-		};
-		427493B91651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE03E2160E1C0D00FEC06E;
-			remoteInfo = "Google Reader";
-		};
-		427493BB1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A16F3C216134A890019645D;
-			remoteInfo = Instagram;
-		};
-		427493BD1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE03F2160E1C0E00FEC06E;
-			remoteInfo = Instapaper;
-		};
-		427493BF1651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE040D160E1D5400FEC06E;
-			remoteInfo = LinkedIn;
-		};
-		427493C11651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE041D160E1D5800FEC06E;
-			remoteInfo = Pinboard;
-		};
-		427493C31651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE042D160E1D5A00FEC06E;
-			remoteInfo = "Read It Later";
-		};
-		427493C51651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7AEE043D160E1D5B00FEC06E;
-			remoteInfo = Tumblr;
-		};
-		427493C71651B77D0075F306 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7A1AFD3A160E14340086B98A;
-			remoteInfo = Twitter;
-		};
-		64B88D1F1653C7100007A5EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7AB5342D1552AADD00171BCE;
-			remoteInfo = "Static Library";
-		};
-		64B88D211653C7100007A5EE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7AB5360E1552E26800171BCE;
-			remoteInfo = "Resource Bundle";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		42575C83165293E0002D9C34 /* MySKHConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySKHConfig.h; sourceTree = "<group>"; };
-		42575C84165293E0002D9C34 /* MySKHConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySKHConfig.m; sourceTree = "<group>"; };
 		427109FC165095F000663624 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		427109FE165095F600663624 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		42710A001650960200663624 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		42710A021650961D00663624 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		42710A041650962D00663624 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		42710A061650963500663624 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		427493591651B77B0075F306 /* ShareKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ShareKit.xcodeproj; path = Submodules/ShareKit/ShareKit.xcodeproj; sourceTree = "<group>"; };
 		427EF1981646A0D700DCBAB0 /* ToevoegenWaarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenWaarViewController.h; sourceTree = "<group>"; };
 		427EF1991646A0D700DCBAB0 /* ToevoegenWaarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenWaarViewController.m; sourceTree = "<group>"; };
 		427EF19C1646A10200DCBAB0 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
@@ -410,6 +151,25 @@
 		64B3F1E516428BAD000AF870 /* 259-list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "259-list@2x.png"; sourceTree = "<group>"; };
 		64B88CEF1653C5E50007A5EE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Submodules/MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
 		64B88CF01653C5E50007A5EE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Submodules/MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
+		64B88D481653D1510007A5EE /* NSAlert+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		64B88D491653D1510007A5EE /* NSAlert+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		64B88D4A1653D1510007A5EE /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		64B88D4B1653D1510007A5EE /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		64B88D4C1653D1510007A5EE /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		64B88D4D1653D1510007A5EE /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		64B88D4E1653D1510007A5EE /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		64B88D4F1653D1510007A5EE /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		64B88D501653D1510007A5EE /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		64B88D511653D1510007A5EE /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		64B88D521653D1510007A5EE /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		64B88D531653D1510007A5EE /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		64B88D541653D1510007A5EE /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		64B88D551653D1510007A5EE /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		64B88D561653D1510007A5EE /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		64B88D571653D1510007A5EE /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		64B88D581653D1510007A5EE /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		64B88D5A1653D1510007A5EE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		64B88D5B1653D1510007A5EE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		8D02BD9D164BD159006E196E /* ToevoegenWanneerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenWanneerViewController.h; sourceTree = "<group>"; };
 		8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenWanneerViewController.m; sourceTree = "<group>"; };
 		C724C8A51643F0DE00392E0A /* no_photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_photo.jpeg; sourceTree = "<group>"; };
@@ -439,13 +199,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				427493CD1651B7B70075F306 /* libShareKit.a in Frameworks */,
+				427109FD165095F000663624 /* CFNetwork.framework in Frameworks */,
 				42710A071650963500663624 /* MessageUI.framework in Frameworks */,
 				42710A051650962D00663624 /* Security.framework in Frameworks */,
 				42710A031650961D00663624 /* SystemConfiguration.framework in Frameworks */,
 				42710A011650960200663624 /* CoreFoundation.framework in Frameworks */,
 				427109FF165095F600663624 /* Twitter.framework in Frameworks */,
-				427109FD165095F000663624 /* CFNetwork.framework in Frameworks */,
 				427EF1A81646A17000DCBAB0 /* MapKit.framework in Frameworks */,
 				427EF1A61646A15B00DCBAB0 /* CoreLocation.framework in Frameworks */,
 				6489A76F1615B849007282EF /* CoreData.framework in Frameworks */,
@@ -458,51 +217,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4274935A1651B77B0075F306 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				427493841651B77D0075F306 /* ShareKitDemo.app */,
-				427493861651B77D0075F306 /* libShareKit.a */,
-				427493881651B77D0075F306 /* ShareKit.bundle */,
-				4274938A1651B77D0075F306 /* libShareKitCore.a */,
-				4274938C1651B77D0075F306 /* libJSONKit.a */,
-				4274938E1651B77D0075F306 /* libSSKeyChain.a */,
-				427493901651B77D0075F306 /* libOAuth.a */,
-				427493921651B77D0075F306 /* libReachability.a */,
-				427493941651B77D0075F306 /* libPrint.a */,
-				427493961651B77D0075F306 /* libLogout.a */,
-				427493981651B77D0075F306 /* libCopy.a */,
-				4274939A1651B77D0075F306 /* libEmail.a */,
-				4274939C1651B77D0075F306 /* libOpen in Safari.a */,
-				4274939E1651B77D0075F306 /* libSave to Album.a */,
-				427493A01651B77D0075F306 /* libText Message.a */,
-				427493A21651B77D0075F306 /* libKippt.a */,
-				427493A41651B77D0075F306 /* libDelicious.a */,
-				427493A61651B77D0075F306 /* libReadability.a */,
-				427493A81651B77D0075F306 /* libDiigo.a */,
-				427493AA1651B77D0075F306 /* libVKontakte.a */,
-				427493AC1651B77D0075F306 /* libEvernote.a */,
-				427493AE1651B77D0075F306 /* libEvernote SDK.a */,
-				427493B01651B77D0075F306 /* libFacebook.a */,
-				427493B21651B77D0075F306 /* libFacebook SDK.a */,
-				427493B41651B77D0075F306 /* libFoursquareV2.a */,
-				427493B61651B77D0075F306 /* libFlickr.a */,
-				427493B81651B77D0075F306 /* libFlickr SDK.a */,
-				427493BA1651B77D0075F306 /* libGoogle Reader.a */,
-				427493BC1651B77D0075F306 /* libInstagram.a */,
-				427493BE1651B77D0075F306 /* libInstapaper.a */,
-				427493C01651B77D0075F306 /* libLinked In.a */,
-				427493C21651B77D0075F306 /* libPinboard.a */,
-				427493C41651B77D0075F306 /* libRead It Later.a */,
-				427493C61651B77D0075F306 /* libTumblr.a */,
-				427493C81651B77D0075F306 /* libTwitter.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		644AEF701623484F0005AA67 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				64B88D461653D1510007A5EE /* MKNetworkKit */,
 				64B88CEF1653C5E50007A5EE /* MBProgressHUD.h */,
 				64B88CF01653C5E50007A5EE /* MBProgressHUD.m */,
 				427EF1A21646A13800DCBAB0 /* NSString+JSON.h */,
@@ -527,7 +245,6 @@
 		6489A72016159912007282EF = {
 			isa = PBXGroup;
 			children = (
-				427493591651B77B0075F306 /* ShareKit.xcodeproj */,
 				6489A73516159912007282EF /* Bredapp */,
 				6489A72E16159912007282EF /* Frameworks */,
 				6489A72C16159912007282EF /* Products */,
@@ -581,8 +298,6 @@
 				6489A76B1615B3C0007282EF /* Breda_Inladen.xcdatamodeld */,
 				427EF19C1646A10200DCBAB0 /* MapAnnotation.h */,
 				427EF19D1646A10200DCBAB0 /* MapAnnotation.m */,
-				42575C83165293E0002D9C34 /* MySKHConfig.h */,
-				42575C84165293E0002D9C34 /* MySKHConfig.m */,
 				427EF1981646A0D700DCBAB0 /* ToevoegenWaarViewController.h */,
 				427EF1991646A0D700DCBAB0 /* ToevoegenWaarViewController.m */,
 				C724C8A81643F11D00392E0A /* ToevoegenWatViewController.h */,
@@ -662,6 +377,49 @@
 			name = Objects;
 			sourceTree = "<group>";
 		};
+		64B88D461653D1510007A5EE /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				64B88D471653D1510007A5EE /* Categories */,
+				64B88D541653D1510007A5EE /* MKNetworkEngine.h */,
+				64B88D551653D1510007A5EE /* MKNetworkEngine.m */,
+				64B88D561653D1510007A5EE /* MKNetworkKit.h */,
+				64B88D571653D1510007A5EE /* MKNetworkOperation.h */,
+				64B88D581653D1510007A5EE /* MKNetworkOperation.m */,
+				64B88D591653D1510007A5EE /* Reachability */,
+			);
+			name = MKNetworkKit;
+			path = Submodules/MKNetworkKit/MKNetworkKit;
+			sourceTree = SOURCE_ROOT;
+		};
+		64B88D471653D1510007A5EE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				64B88D481653D1510007A5EE /* NSAlert+MKNetworkKitAdditions.h */,
+				64B88D491653D1510007A5EE /* NSAlert+MKNetworkKitAdditions.m */,
+				64B88D4A1653D1510007A5EE /* NSData+Base64.h */,
+				64B88D4B1653D1510007A5EE /* NSData+Base64.m */,
+				64B88D4C1653D1510007A5EE /* NSDate+RFC1123.h */,
+				64B88D4D1653D1510007A5EE /* NSDate+RFC1123.m */,
+				64B88D4E1653D1510007A5EE /* NSDictionary+RequestEncoding.h */,
+				64B88D4F1653D1510007A5EE /* NSDictionary+RequestEncoding.m */,
+				64B88D501653D1510007A5EE /* NSString+MKNetworkKitAdditions.h */,
+				64B88D511653D1510007A5EE /* NSString+MKNetworkKitAdditions.m */,
+				64B88D521653D1510007A5EE /* UIAlertView+MKNetworkKitAdditions.h */,
+				64B88D531653D1510007A5EE /* UIAlertView+MKNetworkKitAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		64B88D591653D1510007A5EE /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				64B88D5A1653D1510007A5EE /* Reachability.h */,
+				64B88D5B1653D1510007A5EE /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -676,8 +434,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				64B88D201653C7100007A5EE /* PBXTargetDependency */,
-				64B88D221653C7100007A5EE /* PBXTargetDependency */,
 			);
 			name = Bredapp;
 			productName = Breda_Inladen;
@@ -704,266 +460,12 @@
 			mainGroup = 6489A72016159912007282EF;
 			productRefGroup = 6489A72C16159912007282EF /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4274935A1651B77B0075F306 /* Products */;
-					ProjectRef = 427493591651B77B0075F306 /* ShareKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6489A72A16159912007282EF /* Bredapp */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		427493841651B77D0075F306 /* ShareKitDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ShareKitDemo.app;
-			remoteRef = 427493831651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493861651B77D0075F306 /* libShareKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libShareKit.a;
-			remoteRef = 427493851651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493881651B77D0075F306 /* ShareKit.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ShareKit.bundle;
-			remoteRef = 427493871651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4274938A1651B77D0075F306 /* libShareKitCore.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libShareKitCore.a;
-			remoteRef = 427493891651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4274938C1651B77D0075F306 /* libJSONKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libJSONKit.a;
-			remoteRef = 4274938B1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4274938E1651B77D0075F306 /* libSSKeyChain.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSSKeyChain.a;
-			remoteRef = 4274938D1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493901651B77D0075F306 /* libOAuth.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOAuth.a;
-			remoteRef = 4274938F1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493921651B77D0075F306 /* libReachability.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libReachability.a;
-			remoteRef = 427493911651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493941651B77D0075F306 /* libPrint.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libPrint.a;
-			remoteRef = 427493931651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493961651B77D0075F306 /* libLogout.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libLogout.a;
-			remoteRef = 427493951651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493981651B77D0075F306 /* libCopy.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCopy.a;
-			remoteRef = 427493971651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4274939A1651B77D0075F306 /* libEmail.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEmail.a;
-			remoteRef = 427493991651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4274939C1651B77D0075F306 /* libOpen in Safari.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libOpen in Safari.a";
-			remoteRef = 4274939B1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4274939E1651B77D0075F306 /* libSave to Album.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libSave to Album.a";
-			remoteRef = 4274939D1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493A01651B77D0075F306 /* libText Message.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libText Message.a";
-			remoteRef = 4274939F1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493A21651B77D0075F306 /* libKippt.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libKippt.a;
-			remoteRef = 427493A11651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493A41651B77D0075F306 /* libDelicious.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDelicious.a;
-			remoteRef = 427493A31651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493A61651B77D0075F306 /* libReadability.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libReadability.a;
-			remoteRef = 427493A51651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493A81651B77D0075F306 /* libDiigo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libDiigo.a;
-			remoteRef = 427493A71651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493AA1651B77D0075F306 /* libVKontakte.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libVKontakte.a;
-			remoteRef = 427493A91651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493AC1651B77D0075F306 /* libEvernote.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEvernote.a;
-			remoteRef = 427493AB1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493AE1651B77D0075F306 /* libEvernote SDK.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libEvernote SDK.a";
-			remoteRef = 427493AD1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493B01651B77D0075F306 /* libFacebook.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFacebook.a;
-			remoteRef = 427493AF1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493B21651B77D0075F306 /* libFacebook SDK.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libFacebook SDK.a";
-			remoteRef = 427493B11651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493B41651B77D0075F306 /* libFoursquareV2.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFoursquareV2.a;
-			remoteRef = 427493B31651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493B61651B77D0075F306 /* libFlickr.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFlickr.a;
-			remoteRef = 427493B51651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493B81651B77D0075F306 /* libFlickr SDK.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libFlickr SDK.a";
-			remoteRef = 427493B71651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493BA1651B77D0075F306 /* libGoogle Reader.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libGoogle Reader.a";
-			remoteRef = 427493B91651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493BC1651B77D0075F306 /* libInstagram.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libInstagram.a;
-			remoteRef = 427493BB1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493BE1651B77D0075F306 /* libInstapaper.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libInstapaper.a;
-			remoteRef = 427493BD1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493C01651B77D0075F306 /* libLinked In.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libLinked In.a";
-			remoteRef = 427493BF1651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493C21651B77D0075F306 /* libPinboard.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libPinboard.a;
-			remoteRef = 427493C11651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493C41651B77D0075F306 /* libRead It Later.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libRead It Later.a";
-			remoteRef = 427493C31651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493C61651B77D0075F306 /* libTumblr.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libTumblr.a;
-			remoteRef = 427493C51651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		427493C81651B77D0075F306 /* libTwitter.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libTwitter.a;
-			remoteRef = 427493C71651B77D0075F306 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6489A72916159912007282EF /* Resources */ = {
@@ -974,7 +476,6 @@
 				6489A74916159912007282EF /* MainStoryboard.storyboard in Resources */,
 				6489A75D16159EDB007282EF /* Default.png in Resources */,
 				6489A76116159EE7007282EF /* Default-568h@2x.png in Resources */,
-				427493CE1651B7D20075F306 /* ShareKit.bundle in Resources */,
 				6489A76216159F42007282EF /* Default@2x.png in Resources */,
 				64B3F1E616428BAD000AF870 /* 05-plus.png in Resources */,
 				64B3F1E716428BAD000AF870 /* 05-plus@2x.png in Resources */,
@@ -1032,26 +533,21 @@
 				F50AB49C164BE6620098D555 /* ToevoegenVoorbeeldViewController.m in Sources */,
 				6406A3D5164D166B00E17158 /* Category.m in Sources */,
 				6406A3E4164D2D8000E17158 /* CustomNavBar.m in Sources */,
-				42575C85165293E0002D9C34 /* MySKHConfig.m in Sources */,
 				CDF74D531653B4110057CE07 /* TempActivity.m in Sources */,
 				64B88CF11653C5E50007A5EE /* MBProgressHUD.m in Sources */,
+				64B88D5C1653D1510007A5EE /* NSAlert+MKNetworkKitAdditions.m in Sources */,
+				64B88D5D1653D1510007A5EE /* NSData+Base64.m in Sources */,
+				64B88D5E1653D1510007A5EE /* NSDate+RFC1123.m in Sources */,
+				64B88D5F1653D1510007A5EE /* NSDictionary+RequestEncoding.m in Sources */,
+				64B88D601653D1510007A5EE /* NSString+MKNetworkKitAdditions.m in Sources */,
+				64B88D611653D1510007A5EE /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				64B88D621653D1510007A5EE /* MKNetworkEngine.m in Sources */,
+				64B88D631653D1510007A5EE /* MKNetworkOperation.m in Sources */,
+				64B88D641653D1510007A5EE /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		64B88D201653C7100007A5EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Static Library";
-			targetProxy = 64B88D1F1653C7100007A5EE /* PBXContainerItemProxy */;
-		};
-		64B88D221653C7100007A5EE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Resource Bundle";
-			targetProxy = 64B88D211653C7100007A5EE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6489A73816159912007282EF /* InfoPlist.strings */ = {
@@ -1125,7 +621,7 @@
 		6489A75016159912007282EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bredapp/Bredapp-Prefix.pch";
 				INFOPLIST_FILE = "Bredapp/Bredapp-Info.plist";
@@ -1143,7 +639,7 @@
 		6489A75116159912007282EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bredapp/Bredapp-Prefix.pch";
 				INFOPLIST_FILE = "Bredapp/Bredapp-Info.plist";

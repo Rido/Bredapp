@@ -48,7 +48,6 @@
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 0.5; //user needs to just click
     [self.mapView addGestureRecognizer:lpgr];
-    [lpgr release];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -120,7 +119,6 @@
          [self.mapView removeAnnotations:mapView.annotations];
          [self.mapView addAnnotation: annotation];
          [self.mapView setRegion:region animated:YES];
-         [annotation release];
          
          //Print the location to console
          //NSLog(@"I am currently at %@",locatedAt);
@@ -205,7 +203,6 @@
          [self.mapView removeAnnotations:mapView.annotations];
          [self.mapView addAnnotation: annotation];
          [self.mapView setRegion:region animated:YES];
-         [annotation release];
          
          //Print the location to console
          //NSLog(@"I am currently at %@",locatedAt);
@@ -336,12 +333,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc {
-    [_eigenLocatie release];
-    [_laatZien release];
-    [super dealloc];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

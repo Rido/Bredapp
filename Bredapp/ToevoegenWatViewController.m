@@ -236,7 +236,7 @@
         {
             //foto maken
             #if TARGET_IPHONE_SIMULATOR
-            NSLog("Dit is de simulator je kunt geen foto maken!");
+            NSLog(@"Dit is de simulator je kunt geen foto maken!");
             #else
             pickerC.sourceType = UIImagePickerControllerSourceTypeCamera;
             [self presentViewController:pickerC animated:YES completion:nil];
@@ -389,10 +389,6 @@
 - (void)viewDidUnload {
     //[self setCategorieButton:nil];
     [super viewDidUnload];
-}
-- (void)dealloc {
-
-    [super dealloc];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

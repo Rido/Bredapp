@@ -13,12 +13,13 @@
 @synthesize title, subTitle, coordinate;
 @synthesize activityInArray;
 
-- (id)initWithTitle:(NSString *)theTitle andSubTitle:(NSString *)theSubTitle andTheCoordinate:(CLLocationCoordinate2D)c2d andTheActivityInArray:(NSUInteger*)theActivityInArray;{
-	[super init];
+- (id)initWithTitle:(NSString *)theTitle andSubTitle:(NSString *)theSubTitle andTheCoordinate:(CLLocationCoordinate2D)c2d andTheActivityInArray:(NSUInteger*)theActivityInArray;
+{
     title = theTitle;
     subTitle = theSubTitle;
     coordinate = c2d;
     activityInArray = theActivityInArray;
+    
 	return self;
 }
 

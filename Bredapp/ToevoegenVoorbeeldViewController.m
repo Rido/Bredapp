@@ -7,7 +7,6 @@
 //
 
 #import "ToevoegenVoorbeeldViewController.h"
-#import "SHK.h"
 #import "MBProgressHUD.h"
 
 @interface ToevoegenVoorbeeldViewController ()
@@ -64,17 +63,17 @@
     content = [content stringByAppendingString:where];
     content = [content stringByAppendingString:description];
    
-    SHKItem *item = [SHKItem image:image title:content];
-    
-    // Get the ShareKit action sheet
-    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
-    
-    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
-    // but sometimes it may not find one. To be safe, set it explicitly
-    [SHK setRootViewController:self];
-    
-    // Display the action sheet
-    [actionSheet showFromToolbar:self.navigationController.toolbar];
+//    SHKItem *item = [SHKItem image:image title:content];
+//    
+//    // Get the ShareKit action sheet
+//    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+//    
+//    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
+//    // but sometimes it may not find one. To be safe, set it explicitly
+//    [SHK setRootViewController:self];
+//    
+//    // Display the action sheet
+//    [actionSheet showFromToolbar:self.navigationController.toolbar];
 }
 
 - (IBAction)klaar:(id)sender {
@@ -96,7 +95,6 @@
        )
     {
         [alert show];
-        [alert release];
     }
     else
     {
@@ -118,15 +116,7 @@
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
         // Post Image
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-        [request setHTTPShouldHandleCookies:NO];
-        [request setTimeoutInterval:30];
-        [request setHTTPMethod:@"POST"];
-        
-        NSString *boundary = @"----WebKitFormBoundarycC4YiaUFwM44F6rT";
-        NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-        [request setValue:contentType forHTTPHeaderField: @"Content-Type"];
+
         
         NSString *device_id = @"123dsdasl";
         NSString *category_id = [activity.category_id stringValue];
@@ -141,14 +131,11 @@
         [dateFormatterB setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         
         NSString *begin = [dateFormatterB stringFromDate:activity.begin];
-        [dateFormatterB release];
         
         NSDateFormatter *dateFormatterE = [[NSDateFormatter alloc] init];
         [dateFormatterE setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         
         NSString *end = [dateFormatterE stringFromDate:activity.begin];
-        
-        [dateFormatterE release];
         
         NSString *image = @"http://www.dufacoshop.nl/media/apple-logo1.jpg";
         
@@ -196,8 +183,4 @@
     });
 }
 
-- (void)dealloc {
-    [activityImage release];
-    [super dealloc];
-}
 @end
