@@ -28,6 +28,7 @@
 		64438B8816517AC90087254F /* overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64438B8416517AC90087254F /* overlay@2x.png */; };
 		64438B8B16517BB20087254F /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 64438B8916517BB20087254F /* navbar.png */; };
 		64438B8C16517BB20087254F /* navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64438B8A16517BB20087254F /* navbar@2x.png */; };
+		644A146A1653F024006C062A /* FileUploadEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 644A14691653F024006C062A /* FileUploadEngine.m */; };
 		644AEF741623491D0005AA67 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 644AEF731623491D0005AA67 /* JsonParser.m */; };
 		6489A73016159912007282EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6489A72F16159912007282EF /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6489A73216159912007282EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6489A73116159912007282EF /* Foundation.framework */; };
@@ -336,6 +337,8 @@
 		64438B8416517AC90087254F /* overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overlay@2x.png"; sourceTree = "<group>"; };
 		64438B8916517BB20087254F /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
 		64438B8A16517BB20087254F /* navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2x.png"; sourceTree = "<group>"; };
+		644A14681653F024006C062A /* FileUploadEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUploadEngine.h; sourceTree = "<group>"; };
+		644A14691653F024006C062A /* FileUploadEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUploadEngine.m; sourceTree = "<group>"; };
 		644AEF721623491D0005AA67 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
 		644AEF731623491D0005AA67 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
 		6489A72B16159912007282EF /* Bredapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bredapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -672,6 +675,8 @@
 		644AEF701623484F0005AA67 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				644A14681653F024006C062A /* FileUploadEngine.h */,
+				644A14691653F024006C062A /* FileUploadEngine.m */,
 				64B88D671653DA310007A5EE /* JSONKit.h */,
 				64B88D681653DA310007A5EE /* JSONKit.m */,
 				64B88D461653D1510007A5EE /* MKNetworkKit */,
@@ -1460,6 +1465,7 @@
 				64B88D641653D1510007A5EE /* Reachability.m in Sources */,
 				64B88D691653DA310007A5EE /* JSONKit.m in Sources */,
 				8DCB6F071653E88700454D32 /* SortActivity.m in Sources */,
+				644A146A1653F024006C062A /* FileUploadEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
