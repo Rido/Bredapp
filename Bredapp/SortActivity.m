@@ -100,7 +100,7 @@
         
         CLLocationDistance dist = [locationManager.location distanceFromLocation:actLoc];
         
-        
+        cur.distance = [NSNumber numberWithDouble:dist];
         NSLog(@"DIST: %f", dist); // Wrong formatting may show wrong value!
     }
     

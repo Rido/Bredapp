@@ -13,7 +13,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "89"
          endingLineNumber = "89"
-         landmarkName = "-prepareForSegue:sender:"
+         landmarkName = "-textFieldDidBeginEditing:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,11 +21,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Bredapp/ToevoegenWaarViewController.m"
-         timestampString = "374610813.59286"
+         timestampString = "374616228.202726"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "398"
-         endingLineNumber = "398">
+         startingLineNumber = "391"
+         endingLineNumber = "391"
+         landmarkName = "-prepareForSegue:sender:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -64,6 +66,19 @@
          startingLineNumber = "63"
          endingLineNumber = "63"
          landmarkName = "-delen:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Bredapp/ToevoegenWaarViewController.m"
+         timestampString = "374615733.399579"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

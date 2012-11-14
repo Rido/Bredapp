@@ -21,6 +21,7 @@
 
 @implementation ToevoegenWaarViewController{
     NSMutableArray *myAnnotations;
+    BOOL *mapLoaded;
 }
 
 @synthesize addressField;
@@ -72,57 +73,16 @@
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     mapView.mapType = MKMapTypeStandard;
     mapView.showsUserLocation = true;
-    
+    mapLoaded = false;
 }
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
-    [self vulAdresField];
+
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
-}
-
--(void)vulAdresField{
-    if (!self.geocoder) {
-        self.geocoder = [[CLGeocoder alloc] init];
-    }
-    
-    CLLocation *locatie = [[CLLocation alloc] initWithLatitude:mapView.userLocation.coordinate.latitude longitude:mapView.userLocation.coordinate.longitude];
-    
-    [self.geocoder reverseGeocodeLocation: locatie completionHandler:
-     
-     ^(NSArray *placemarks, NSError *error) {
- 
-         
-         //Get nearby address
-         
-         CLPlacemark *placemark = [placemarks objectAtIndex:0];
-
-         //String to hold address
-         
-         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-         
-         addressField.text = locatedAt;
-         
-         MapAnnotation *annotation = [[MapAnnotation alloc] initWithTitle:@"Locatie" subtitle:@"nieuwe activiteit" coordinate:locatie.coordinate];
-         
-         MKCoordinateRegion region;
-         region.center = annotation.coordinate;
-         
-         MKCoordinateSpan span;
-         span.latitudeDelta = 0.01;
-         span.longitudeDelta = 0.01;
-         region.span = span;
-         
-         [self.mapView removeAnnotations:mapView.annotations];
-         [self.mapView addAnnotation: annotation];
-         [self.mapView setRegion:region animated:YES];
-
-         
-     }];
-    
 }
 
 -(void)dismissKeyboard {
@@ -221,6 +181,52 @@
     }
 }
 
+- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+    if(!mapLoaded){
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.005;
+    span.longitudeDelta = 0.005;
+    CLLocationCoordinate2D location;
+    location.latitude = aUserLocation.coordinate.latitude;
+    location.longitude = aUserLocation.coordinate.longitude;
+    region.span = span;
+    region.center = location;
+    [aMapView setRegion:region animated:YES];
+    
+    if (!self.geocoder) {
+        self.geocoder = [[CLGeocoder alloc] init];
+    }
+    
+    CLLocation *locatie = [[CLLocation alloc] initWithLatitude:location.latitude longitude:location.longitude];
+    
+    [self.geocoder reverseGeocodeLocation: locatie completionHandler:
+     
+     ^(NSArray *placemarks, NSError *error) {
+         
+         
+         
+         //Get nearby address
+         
+         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+         
+         
+         
+         //String to hold address
+         
+         NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+         
+         addressField.text = locatedAt;
+         
+         //Print the location to console
+         //NSLog(@"I am currently at %@",locatedAt);
+         
+         
+     }];
+    }
+    mapLoaded = true;
+}
+
 - (IBAction)eigenLocatie:(id)sender {
     
     if (!self.geocoder) {
@@ -301,19 +307,6 @@
         
         [addressField resignFirstResponder];
     }];
-}
-
-- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.005;
-    span.longitudeDelta = 0.005;
-    CLLocationCoordinate2D location;
-    location.latitude = aUserLocation.coordinate.latitude;
-    location.longitude = aUserLocation.coordinate.longitude;
-    region.span = span;
-    region.center = location;
-    [aMapView setRegion:region animated:YES];
 }
 
 - (void)viewDidUnload
