@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SplashViewController.h"
 #import "LijstActiviteitenViewController.h"
+#import <Socialize/Socialize.h>
 
 @implementation AppDelegate
 
@@ -22,6 +23,9 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     SplashViewController *controller = (SplashViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    [Socialize storeConsumerKey:@"bf3bdc91-2998-43ed-a7be-c0d89df76c14"];
+    [Socialize storeConsumerSecret:@"9723f820-30f1-4b33-b908-a11af0101a8c"];
     
     // Override point for customization after application launch.
     return YES;
