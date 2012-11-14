@@ -11,11 +11,14 @@
 #import "Activity.h"
 #import "Category.h"
 
-@interface ToevoegenWatViewController : UIViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate>{
+@interface ToevoegenWatViewController : UIViewController< UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate,UITextFieldDelegate,UIActionSheetDelegate>
+{
     UIPickerView*categoriePicker;
     NSMutableArray*categorieen;
+    NSInteger selectedRow;
+    NSMutableArray *categoriedataArray;
 }
-
+@property (nonatomic, retain) NSString *selectedText;
 @property (nonatomic, strong) AppDelegate *myApp;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic,retain)NSFetchedResultsController * fetchedResultsController;
@@ -34,6 +37,7 @@
 - (IBAction)textfieldClicked:(id)sender;
 - (IBAction)textfieldLooseFocus:(id)sender;
 
+-(void) setComboData:(NSMutableArray *) data;
 -(void)categorie_tapped;
 -(UIImage*)imageWithImage:(UIImage*)image
              scaledToSize:(CGSize)newSize;
