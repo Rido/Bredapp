@@ -655,34 +655,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="D65-OC-75K">
-                                <rect key="frame" x="20" y="183" width="280" height="95"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bredapp.png" id="ZHC-jd-fwM">
-                                <rect key="frame" x="170" y="52" width="130" height="123"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="m8a-Yg-Zxi">
-                                <rect key="frame" x="20" y="52" width="134" height="62"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="pmo-Oh-2Wv">
-                                <rect key="frame" x="20" y="122" width="134" height="53"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lah-h9-si0">
-                                <rect key="frame" x="20" y="20" width="280" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VuA-Iw-Rgt">
                                 <rect key="frame" x="0.0" y="323" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -694,6 +666,57 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="overlay.png" id="Th3-Ze-d7p">
+                                <rect key="frame" x="23" y="0.0" width="265" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="A31-sx-jpg">
+                                <rect key="frame" x="15" y="208" width="287" height="101"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Voetballen in het park is altijd geweldig en leuk. Kom je elke dinsdag meevoetballen? Graag eigen schoenen mee en verzamelen bij de boom.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="bredapp.png" id="wqF-Ga-rPx">
+                                <rect key="frame" x="15" y="50" width="150" height="150"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Dinsdag 2 oktober 12:00 - 13:00" id="Pz3-f2-iYT">
+                                <rect key="frame" x="195" y="44" width="120" height="47"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Dinsdag 2 oktober 12:00 - 13:00" id="neO-ak-wB1">
+                                <rect key="frame" x="195" y="87" width="134" height="43"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="Parklaan 11a, Breda" id="aws-cU-K1y">
+                                <rect key="frame" x="195" y="134" width="107" height="53"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="feD-IX-DYJ">
+                                <rect key="frame" x="83" y="4" width="137" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="flag_begin.png" id="N1O-PE-U3A">
+                                <rect key="frame" x="173" y="55" width="21" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="flag_end.png" id="zXI-gC-KbG">
+                                <rect key="frame" x="173" y="96" width="21" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mini_map.png" id="5Xw-jS-PIA">
+                                <rect key="frame" x="173" y="141" width="21" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -706,11 +729,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityImage" destination="ZHC-jd-fwM" id="h69-L5-2VX"/>
-                        <outlet property="datetimeTextView" destination="m8a-Yg-Zxi" id="jaI-yH-VJ9"/>
-                        <outlet property="descriptionTextView" destination="D65-OC-75K" id="Fva-S7-myv"/>
-                        <outlet property="titleLabel" destination="Lah-h9-si0" id="grp-w7-yA3"/>
-                        <outlet property="whereTextView" destination="pmo-Oh-2Wv" id="xyH-Yy-91N"/>
+                        <outlet property="activityImage" destination="wqF-Ga-rPx" id="WGL-cq-u5a"/>
+                        <outlet property="datetimeTextView" destination="Pz3-f2-iYT" id="zyZ-6i-l5b"/>
+                        <outlet property="descriptionTextView" destination="A31-sx-jpg" id="ESA-6A-89c"/>
+                        <outlet property="endDatetimeTextView" destination="neO-ak-wB1" id="a4t-GM-jOK"/>
+                        <outlet property="titleLabel" destination="feD-IX-DYJ" id="HLG-MP-aUs"/>
+                        <outlet property="whereTextView" destination="aws-cU-K1y" id="sd0-mg-VOP"/>
                         <segue destination="EBx-B8-T2z" kind="modal" identifier="toBegin" id="uPR-SX-4hM"/>
                     </connections>
                 </viewController>

@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Avans_Groep2. All rights reserved.
 //
 
+#import <Socialize/Socialize.h>
 #import "ToevoegenVoorbeeldViewController.h"
 
 @interface ToevoegenVoorbeeldViewController ()
@@ -17,7 +18,7 @@
 @synthesize activity, activityImage;
 @synthesize category;
 @synthesize titleLabel;
-@synthesize datetimeTextView;
+@synthesize datetimeTextView, endDatetimeTextView;
 @synthesize whereTextView;
 @synthesize descriptionTextView;
 @synthesize myApp, managedObjectContext;
@@ -41,12 +42,14 @@
     self.managedObjectContext = [myApp managedObjectContext];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [formatter setDateFormat:@"EEEE d MMMM HH:mm"];
     
     titleLabel.text = activity.title;
     datetimeTextView.text = [formatter stringFromDate:activity.begin];
+    datetimeTextView.text = [formatter stringFromDate:activity.end];
     whereTextView.text = activity.address;
     descriptionTextView.text = activity.content;
+    activityImage.image = activity.image;
 }
 
 - (IBAction)delen:(id)sender {
@@ -64,18 +67,62 @@
     content = [content stringByAppendingString:where];
     content = [content stringByAppendingString:description];
    
-//    SHKItem *item = [SHKItem image:image title:content];
-//    
-//    // Get the ShareKit action sheet
-//    SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
-//    
-//    // ShareKit detects top view controller (the one intended to present ShareKit UI) automatically,
-//    // but sometimes it may not find one. To be safe, set it explicitly
-//    [SHK setRootViewController:self];
-//    
-//    // Display the action sheet
-//    [actionSheet showFromToolbar:self.navigationController.toolbar];
+    [self showShareDialogWithOptions];
 }
+
+- (void)showShareDialogWithOptions {
+    id<SZEntity> entity = [SZEntity entityWithKey:@"activity" name:@"Bredapp activiteit"];
+    
+    SZShareOptions *options = [SZShareUtils userShareOptions];
+    
+    options.dontShareLocation = YES;
+    
+    options.willShowSMSComposerBlock = ^(SZSMSShareData *smsData) {
+        smsData = [NSString stringWithFormat:@"Kom ook naar de Bredapp activiteit \"%@\" %@", activity.title, activity.image_url];
+        
+        NSLog(@"Sharing SMS");
+    };
+    
+    options.willShowEmailComposerBlock = ^(SZEmailShareData *emailData) {
+        emailData.messageBody = [NSString stringWithFormat:@"Kom ook naar de Bredapp activiteit \"%@\" %@", activity.title, activity.image_url];
+        
+        NSLog(@"Sharing Email");
+    };
+    
+    options.willAttemptPostingToSocialNetworkBlock = ^(SZSocialNetwork network, SZSocialNetworkPostData *postData) {
+        if (network == SZSocialNetworkTwitter) {
+            NSString *customStatus = [NSString stringWithFormat:@"Kom ook naar de Bredapp activiteit \"%@\" %@", activity.title, activity.image_url];
+            
+            [postData.params setObject:customStatus forKey:@"status"];
+            
+        } else if (network == SZSocialNetworkFacebook) {
+            NSString *customMessage = [NSString stringWithFormat:@"Kom ook naar de Bredapp activiteit \"%@\" %@", activity.title, activity.image_url];
+            
+            [postData.params setObject:customMessage forKey:@"message"];
+            [postData.params setObject:activity.image_url forKey:@"link"];
+            [postData.params setObject:activity.title forKey:@"name"];
+            [postData.params setObject:@"Bredapp" forKey:@"description"];
+        }
+        
+        NSLog(@"Posting to %d", network);
+    };
+    
+    options.didSucceedPostingToSocialNetworkBlock = ^(SZSocialNetwork network, id result) {
+        NSLog(@"Posted %@ to %d", result, network);
+    };
+    
+    options.didFailPostingToSocialNetworkBlock = ^(SZSocialNetwork network, NSError *error) {
+        NSLog(@"Failed posting to %d", network);
+    };
+    
+    [SZShareUtils showShareDialogWithViewController:self options:options entity:entity completion:^(NSArray *shares) {
+        // `shares` is a list of all shares created during the lifetime of the share dialog
+        NSLog(@"Created %d shares: %@", [shares count], shares);
+    } cancellation:^{
+        NSLog(@"Share creation cancelled");
+    }];
+}
+
 
 - (IBAction)klaar:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Lege velden"
