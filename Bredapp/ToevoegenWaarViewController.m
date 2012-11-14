@@ -383,8 +383,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toStep3"]) {
         
-        activity.co_lat = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.latitude];
-        activity.co_long = [NSNumber numberWithFloat:mapView.userLocation.location.coordinate.longitude];
+        activity.co_lat = [NSNumber numberWithFloat:mapView.region.center.latitude];
+        activity.co_long = [NSNumber numberWithFloat:mapView.region.center.longitude];
         
         activity.address = addressField.text;
     

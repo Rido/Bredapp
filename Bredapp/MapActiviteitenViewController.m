@@ -86,11 +86,12 @@
     NSUInteger count = [activities count];
     for (NSUInteger i = 0; i < count; i++) {
         Activity *info = [activities objectAtIndex: i];
-        
+        NSLog(@"hoi");
         //  location for activity.
         CLLocationCoordinate2D location;
         location.latitude = [info.co_lat doubleValue];
         location.longitude = [info.co_long doubleValue];
+        NSLog(@"Latitude: %f", location.latitude);
         // Add the annotation to our map view
         annotation = [[ActivityAnnotation alloc] initWithTitle:info.title andSubTitle:@"subtitle" andTheCoordinate:location andTheActivityInArray:&i];
         annotation.activityInArray = 0;

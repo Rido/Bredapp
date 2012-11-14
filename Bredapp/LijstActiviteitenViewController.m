@@ -63,9 +63,19 @@
     
     if(sender.selectedSegmentIndex == 0) {
         
-        // Sorteren op tijd
-        NSLog(@"Sorteren op tijd");
-    
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription
+                                       entityForName:@"Activity" inManagedObjectContext:managedObjectContext];
+        [fetchRequest setEntity:entity];
+        
+        NSSortDescriptor *sort = [[NSSortDescriptor alloc]
+                                  initWithKey:@"begin" ascending:NO];
+        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+        
+        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
+        
+        NSArray *activiteiten = [aFetchedResultsController fetchedObjects];
+        NSLog(@"%@", activiteiten);
     } else if (sender.selectedSegmentIndex == 1) {
         
         // Sorteren op afstand
