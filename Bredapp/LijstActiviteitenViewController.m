@@ -16,7 +16,8 @@
 
 @end
 
-@implementation LijstActiviteitenViewController
+@implementation LijstActiviteitenViewController{
+}
 
 @synthesize myApp;
 @synthesize managedObjectContext;
@@ -62,20 +63,21 @@
 - (IBAction)sortingChanged:(UISegmentedControl *)sender {
     
     if(sender.selectedSegmentIndex == 0) {
+       /* NSArray *allObjects = [_fetchedResultsController fetchedObjects];
+                NSSortDescriptor *sortNameDescriptor =
+        [[NSSortDescriptor alloc] initWithKey:@"distance"
+                                     ascending:YES];
         
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription
-                                       entityForName:@"Activity" inManagedObjectContext:managedObjectContext];
-        [fetchRequest setEntity:entity];
+        NSArray *sortDescriptors = [[NSArray alloc]
+                                     initWithObjects:sortNameDescriptor, nil];
         
-        NSSortDescriptor *sort = [[NSSortDescriptor alloc]
-                                  initWithKey:@"begin" ascending:NO];
-        [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
-        
-        NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Root"];
-        
-        NSArray *activiteiten = [aFetchedResultsController fetchedObjects];
-        NSLog(@"%@", activiteiten);
+        // items is a synthesized ivar that we use as the table view
+        // data source.
+        [self.tableView setDataSource:[allObjects sortedArrayUsingDescriptors:sortDescriptors]];
+        [self.tableView reloadData];
+        //NSLog(@"Activiteiten: %@", sortedArray);
+        */
+        NSLog(@"Sorteren op tijd");
     } else if (sender.selectedSegmentIndex == 1) {
         
         // Sorteren op afstand
