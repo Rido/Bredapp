@@ -19,6 +19,7 @@
 @dynamic co_lat;
 @dynamic co_long;
 @dynamic content;
+@dynamic distance;
 @dynamic device_id;
 @dynamic end;
 @dynamic image;

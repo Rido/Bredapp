@@ -33,6 +33,7 @@
 @property (strong, nonatomic) TempActivity *activity;
 @property (strong, nonatomic) Category *category;
 
+- (IBAction)tappedTextview:(id)sender;
 @property (retain, nonatomic) IBOutlet UIImageView *categoriePlaatje;
 - (IBAction)selectOrTakePhoto:(id)sender;
 - (IBAction)textfieldClicked:(id)sender;

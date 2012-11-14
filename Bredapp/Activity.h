@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSNumber *category_id;
 @property (nonatomic, retain) NSNumber *co_lat;
 @property (nonatomic, retain) NSNumber *co_long;
+@property (nonatomic, retain) NSNumber *distance;
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, retain) NSString *content;
 @property (nonatomic, retain) NSString *device_id;

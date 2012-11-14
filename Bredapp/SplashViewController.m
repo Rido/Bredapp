@@ -8,6 +8,7 @@
 
 #import "SplashViewController.h"
 #import "IsIphone5.h"
+#import "SortActivity.h"
 #import "JsonParser.h"
 #import "Activity.h"
 #import "Category.h"
@@ -58,6 +59,11 @@
                                                  name:@"JsonError"
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivedUpdateNotification:)
+                                                 name:@"SortingDone"
+                                               object:nil];
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
         // webservice
@@ -65,9 +71,11 @@
         [_jsonActivity loadCategories];
         [_jsonActivity loadActivities];
         
+        SortActivity *_sort = [[SortActivity alloc] init];
+        [_sort sortDistanceActivity];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            //            // after potential delay or finished loading, go to loaded screen.
-            //            [self performSelector:@selector(goToNextView) withObject:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"SortingDone" object:self];
         });
     });
 }
@@ -79,6 +87,10 @@
         statusLabel.text = @"Activiteiten verwerken";
     }
     else if ([[notification name] isEqualToString:@"ActivitiesDone"])
+    {
+        statusLabel.text = @"Data verwerken";
+    }
+    else if ([[notification name] isEqualToString:@"SortingDone"])
     {
         statusLabel.text = @"Data is verwerkt";
         [self performSegueWithIdentifier:@"doneLoading" sender:self];

@@ -169,7 +169,6 @@
         [fetchRequest setEntity:entity];
         [fetchRequest setPredicate:pred];
         
-        
         NSArray *queryResults = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
        
         Category *category = [queryResults objectAtIndex:0];
