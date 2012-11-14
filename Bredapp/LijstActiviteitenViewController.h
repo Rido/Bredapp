@@ -15,4 +15,6 @@
 @property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
+- (IBAction)sortingChanged:(UISegmentedControl *)sender;
+
 @end
