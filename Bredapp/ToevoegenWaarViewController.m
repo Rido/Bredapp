@@ -61,7 +61,6 @@
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     //mapView.mapType = MKMapTypeHybrid;
     mapView.showsUserLocation = true;
-    
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {

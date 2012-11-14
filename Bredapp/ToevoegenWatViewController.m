@@ -413,4 +413,7 @@
     }
 }
 
+- (IBAction)tappedTextview:(id)sender {
+    NSLog(@"tapped");
+}
 @end

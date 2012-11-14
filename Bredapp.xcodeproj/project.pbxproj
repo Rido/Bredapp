@@ -293,6 +293,7 @@
 		64B892A41653E0300007A5EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B892A31653E0300007A5EE /* QuartzCore.framework */; };
 		64B892AB1653ED5C0007A5EE /* FileUploadEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B892AA1653ED5C0007A5EE /* FileUploadEngine.m */; };
 		8D02BD9F164BD159006E196E /* ToevoegenWanneerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */; };
+		8DCB6F071653E88700454D32 /* SortActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCB6F061653E88700454D32 /* SortActivity.m */; };
 		C724C8A61643F0DE00392E0A /* no_photo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C724C8A51643F0DE00392E0A /* no_photo.jpeg */; };
 		C724C8AA1643F11D00392E0A /* ToevoegenWatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C724C8A91643F11D00392E0A /* ToevoegenWatViewController.m */; };
 		CDF74D531653B4110057CE07 /* TempActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF74D521653B4110057CE07 /* TempActivity.m */; };
@@ -622,6 +623,8 @@
 		64B892AA1653ED5C0007A5EE /* FileUploadEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUploadEngine.m; sourceTree = "<group>"; };
 		8D02BD9D164BD159006E196E /* ToevoegenWanneerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenWanneerViewController.h; sourceTree = "<group>"; };
 		8D02BD9E164BD159006E196E /* ToevoegenWanneerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenWanneerViewController.m; sourceTree = "<group>"; };
+		8DCB6F051653E88700454D32 /* SortActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortActivity.h; sourceTree = "<group>"; };
+		8DCB6F061653E88700454D32 /* SortActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortActivity.m; sourceTree = "<group>"; };
 		C724C8A51643F0DE00392E0A /* no_photo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = no_photo.jpeg; sourceTree = "<group>"; };
 		C724C8A81643F11D00392E0A /* ToevoegenWatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToevoegenWatViewController.h; sourceTree = "<group>"; };
 		C724C8A91643F11D00392E0A /* ToevoegenWatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToevoegenWatViewController.m; sourceTree = "<group>"; };
@@ -689,13 +692,15 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		644AEF71162349080005AA67 /* JsonParser */ = {
+		644AEF71162349080005AA67 /* Data parser */ = {
 			isa = PBXGroup;
 			children = (
 				644AEF721623491D0005AA67 /* JsonParser.h */,
 				644AEF731623491D0005AA67 /* JsonParser.m */,
+				8DCB6F051653E88700454D32 /* SortActivity.h */,
+				8DCB6F061653E88700454D32 /* SortActivity.m */,
 			);
-			name = JsonParser;
+			name = "Data parser";
 			sourceTree = "<group>";
 		};
 		6489A72016159912007282EF = {
@@ -739,7 +744,7 @@
 		6489A73516159912007282EF /* Bredapp */ = {
 			isa = PBXGroup;
 			children = (
-				644AEF71162349080005AA67 /* JsonParser */,
+				644AEF71162349080005AA67 /* Data parser */,
 				644AEF701623484F0005AA67 /* Classes */,
 				6489A75B16159E09007282EF /* Objects */,
 				6489A75416159972007282EF /* Images */,
@@ -1459,7 +1464,11 @@
 				64B88D631653D1510007A5EE /* MKNetworkOperation.m in Sources */,
 				64B88D641653D1510007A5EE /* Reachability.m in Sources */,
 				64B88D691653DA310007A5EE /* JSONKit.m in Sources */,
+<<<<<<< HEAD
 				64B892AB1653ED5C0007A5EE /* FileUploadEngine.m in Sources */,
+=======
+				8DCB6F071653E88700454D32 /* SortActivity.m in Sources */,
+>>>>>>> da22aebd02ba18f7701a8689b17dd236ca89b12c
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

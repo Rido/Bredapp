@@ -91,8 +91,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "393"
          endingLineNumber = "393"
-         landmarkName = "-dealloc"
-         landmarkType = "5">
+         landmarkName = "@implementation ToevoegenWatViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
