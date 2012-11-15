@@ -46,7 +46,7 @@
     
     titleLabel.text = activity.title;
     datetimeTextView.text = [formatter stringFromDate:activity.begin];
-    datetimeTextView.text = [formatter stringFromDate:activity.end];
+    endDatetimeTextView.text = [formatter stringFromDate:activity.end];
     whereTextView.text = activity.address;
     descriptionTextView.text = activity.content;
     activityImage.image = activity.image;
@@ -131,16 +131,15 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     
-    if([activity.category_id intValue] <= 0
-//       [activity.title length] <= 1 ||
-//       [activity.content length] <= 5 ||
-//       activity.image == nil ||
-//       [activity.co_lat doubleValue] <= 0 ||
-//       [activity.co_long doubleValue] <= 0 ||
-//       [activity.address length] <= 0 ||
-//       activity.begin == nil ||
-//       activity.end == nil
-       )
+    if([activity.category_id intValue] <= 0 ||
+       [activity.title length] <= 1 ||
+       [activity.content length] <= 5 ||
+       activity.image == nil ||
+       [activity.co_lat doubleValue] <= 0 ||
+       [activity.co_long doubleValue] <= 0 ||
+       [activity.address length] <= 0 ||
+       activity.begin == nil ||
+       activity.end == nil)
     {
         [alert show];
     }
